@@ -15,7 +15,7 @@ export async function POST(request: Request) {
 
     await resend.emails.send({
       from: "MovSys Website <onboarding@resend.dev>",
-      to: "movsisyan.mikael@gmail.com",
+      to: "naremnats@gmail.com",
       subject: `Project inquiry from ${name}`,
       replyTo: email,
       text: `
