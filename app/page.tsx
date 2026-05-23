@@ -1,4 +1,12 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const heroBgRef = useRef<HTMLImageElement>(null);
   const services = [
     "PCB Design",
     "Embedded Systems",
@@ -8,38 +16,72 @@ export default function Home() {
     "Signal Integrity",
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (heroBgRef.current) {
+        heroBgRef.current.style.transform = `translateY(${scrollY * 0.35}px)`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main className="bg-black text-white">
       {/* HERO */}
       <section className="relative h-screen overflow-hidden">
         <img
+          ref={heroBgRef}
           src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop"
           alt="PCB"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover will-change-transform"
+          style={{ transform: "translateY(0px)" }}
         />
 
         <div className="absolute inset-0 bg-black/55" />
 
         {/* NAVBAR */}
-        <nav className="absolute top-0 left-0 z-20 flex w-full items-center justify-between px-8 py-6">
-          <h1 className="text-xl font-semibold tracking-[0.2em]">
-            MOVSYS ENGINEERING & CONSULTING
-          </h1>
+        <nav className="absolute top-0 left-0 z-50 w-full px-4 py-6 md:px-8">
+  <div className="flex items-center justify-between gap-3">
+    <h1 className="max-w-[70%] text-xs font-semibold tracking-[0.08em] md:max-w-none md:text-xl md:tracking-[0.2em]">
+      MovSys Engineering & Consulting
+    </h1>
 
-          <div className="hidden gap-8 text-sm md:flex">
-            <a href="#">Services</a>
-            <a href="#">Projects</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-          </div>
-        </nav>
+    <div className="hidden gap-8 text-sm md:flex">
+      <a href="/">Home</a>
+      <a href="/projects">Projects</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <button
+      onClick={() => setMenuOpen(!menuOpen)}
+      className="relative z-50 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/40 md:hidden"
+      aria-label="Toggle menu"
+    >
+      <div className="flex flex-col gap-1.5">
+        <span className="h-0.5 w-5 bg-white"></span>
+        <span className="h-0.5 w-5 bg-white"></span>
+        <span className="h-0.5 w-5 bg-white"></span>
+      </div>
+    </button>
+  </div>
+
+  {menuOpen && (
+    <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm backdrop-blur md:hidden">
+      <a href="/">Home</a>
+      <a href="/projects">Projects</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  )}
+</nav>
 
         {/* HERO CONTENT */}
         <div className="relative z-10 flex h-full items-center px-8">
           <div className="max-w-5xl">
-            <p className="mb-6 text-sm uppercase tracking-[0.3em] text-neutral-300">
-              Electrical Hardware Consultant
-            </p>
 
             <h2 className="max-w-4xl text-5xl font-semibold leading-tight md:text-7xl">
               PCB design and embedded hardware engineered for real-world
@@ -56,9 +98,12 @@ export default function Home() {
                 Start a Project
               </button>
 
-              <button className="rounded-full border border-white/30 px-6 py-3 text-sm transition hover:bg-white/10">
+              <Link
+                href="/projects"
+                className="rounded-full border border-white/30 px-6 py-3 text-sm transition hover:bg-white/10"
+              >
                 View Work
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -128,7 +173,7 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="border-t border-white/10 px-8 py-10 text-sm text-neutral-500">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 md:flex-row">
-          <p>© 2026 Nare Systems</p>
+          <p>© 2026 MovSys Engineering & Consulting</p>
 
           <div className="flex gap-6">
             <a href="#">LinkedIn</a>
