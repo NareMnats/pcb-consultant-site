@@ -46,7 +46,7 @@ export default function Home() {
         <nav className="absolute top-0 left-0 z-50 w-full px-4 py-6 md:px-8">
   <div className="flex items-center justify-between gap-3">
     <h1 className="max-w-[70%] text-xs font-semibold tracking-[0.08em] md:max-w-none md:text-xl md:tracking-[0.2em]">
-      MovSys Engineering & Consulting
+      MOVSYS ENGINEERING & CONSULTING
     </h1>
 
     <div className="hidden gap-8 text-sm md:flex">
