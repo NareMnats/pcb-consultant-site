@@ -91,6 +91,13 @@ export default function Projects() {
 </nav>
 
       <section className="px-8 py-24">
+
+  {menuOpen && (
+    <div
+      className="fixed inset-0 z-40 md:hidden"
+      onClick={() => setMenuOpen(false)}
+    />
+  )}
         <div className="mx-auto max-w-7xl">
           <p className="mb-6 text-sm uppercase tracking-[0.3em] text-neutral-500">
             Selected Work

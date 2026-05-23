@@ -80,6 +80,12 @@ export default function Home() {
 </nav>
 
         {/* HERO CONTENT */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-40 md:hidden"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
         <div className="relative z-10 flex h-full items-center px-8 pt-24 md:pt-0">
           <div className="max-w-5xl">
 

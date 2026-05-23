@@ -67,6 +67,12 @@ export default function Services() {
       </nav>
 
       <header className="relative h-[60vh] overflow-hidden">
+        {menuOpen && (
+          <div
+            className="fixed inset-0 z-40 md:hidden"
+            onClick={() => setMenuOpen(false)}
+          />
+        )}
         <img
           src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format&fit=crop"
           alt="Electronics background"
