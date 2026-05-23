@@ -45,14 +45,14 @@ export default function Home() {
         {/* NAVBAR */}
         <nav className="absolute top-0 left-0 z-50 w-full px-4 py-6 md:px-8">
   <div className="flex items-center justify-between gap-3">
-    <h1 className="max-w-[70%] text-xs font-semibold tracking-[0.08em] md:max-w-none md:text-xl md:tracking-[0.2em]">
+    <h1 className="max-w-[60%] text-xs font-semibold tracking-[0.08em] md:max-w-none md:text-xl md:tracking-[0.2em]">
       MOVSYS ENGINEERING & CONSULTING
     </h1>
 
     <div className="hidden gap-8 text-sm md:flex">
       <a href="/">Home</a>
       <a href="/projects">Projects</a>
-      <a href="#">Services</a>
+      <a href="/services">Services</a>
       <a href="#">Contact</a>
     </div>
 
@@ -73,7 +73,7 @@ export default function Home() {
     <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm backdrop-blur md:hidden">
       <a href="/">Home</a>
       <a href="/projects">Projects</a>
-      <a href="#">Services</a>
+      <a href="/services">Services</a>
       <a href="#">Contact</a>
     </div>
   )}
