@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 export default function Projects() {
     const [menuOpen, setMenuOpen] = useState(false);
   const projects = [
@@ -69,7 +70,7 @@ export default function Projects() {
         Services
       </a>
 
-      <a href="#" className="transition hover:text-white">
+      <a href="/contact" className="transition hover:text-white">
         Contact
       </a>
     </div>
@@ -92,7 +93,7 @@ export default function Projects() {
       <a href="/">Home</a>
       <a href="/projects">Projects</a>
       <a href="/services">Services</a>
-      <a href="#">Contact</a>
+      <a href="/contact">Contact</a>
     </div>
   )}
 </nav>
@@ -183,9 +184,9 @@ export default function Projects() {
             </h3>
           </div>
 
-          <button className="w-fit rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-neutral-200">
+          <Link href="/contact" className="w-fit rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-neutral-200">
             Start a Project
-          </button>
+          </Link>
         </div>
       </section>
     </main>

@@ -53,7 +53,7 @@ export default function Home() {
       <a href="/">Home</a>
       <a href="/projects">Projects</a>
       <a href="/services">Services</a>
-      <a href="#">Contact</a>
+      <a href="/contact">Contact</a>
     </div>
 
     <button
@@ -74,7 +74,7 @@ export default function Home() {
       <a href="/">Home</a>
       <a href="/projects">Projects</a>
       <a href="/services">Services</a>
-      <a href="#">Contact</a>
+      <a href="/contact">Contact</a>
     </div>
   )}
 </nav>
@@ -100,9 +100,12 @@ export default function Home() {
             </p>
 
             <div className="mt-10 flex gap-4">
-              <button className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-neutral-200">
+              <Link
+                href="/contact"
+                className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-neutral-200"
+              >
                 Start a Project
-              </button>
+              </Link>
 
               <Link
                 href="/projects"

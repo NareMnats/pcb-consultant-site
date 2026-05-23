@@ -99,7 +99,7 @@ export default function Services() {
             <Link href="/services" className="text-white">
               Services
             </Link>
-            <Link href="#" className="transition hover:text-white">
+            <Link href="/contact" className="transition hover:text-white">
               Contact
             </Link>
           </div>
@@ -122,7 +122,7 @@ export default function Services() {
             <Link href="/">Home</Link>
             <Link href="/projects">Projects</Link>
             <Link href="/services">Services</Link>
-            <Link href="#">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </div>
         )}
       </nav>
@@ -214,9 +214,9 @@ export default function Services() {
             </h3>
           </div>
 
-          <button className="w-fit rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-neutral-200">
+          <Link href="/contact" className="w-fit rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-neutral-200">
             Start a Project
-          </button>
+          </Link>
         </div>
       </section>
 
