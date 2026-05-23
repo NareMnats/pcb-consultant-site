@@ -7,7 +7,7 @@ export default function Projects() {
       title: "Wall-Mounted Touchpanel Control System",
       category: "Commercial AV Hardware",
       description:
-        "Compact wall-mounted touchpanel hardware: Extron TLP Pro 300M, designed for room control, AV systems, lighting, shades, HVAC, and security interfaces.",
+        "Compact wall-mounted touchpanel hardware: Extron TLP Pro 300M, designed for room control, AV systems, lighting, shades, HVAC, and security interfaces. Contributed to project while working at Extron Electronics.",
       specs: [
         "3.5-inch touchscreen",
         "320 × 480 display",
@@ -21,7 +21,7 @@ export default function Projects() {
       title: "Voice-Enabled Bluetooth Remote Control",
       category: "Wireless Hardware",
       description:
-        "Compact handheld classroom control remote designed for voice-enabled presentation management, wireless navigation, and quick access to instructional tools across connected classroom devices.",
+        "Compact handheld classroom control remote designed for voice-enabled presentation management, wireless navigation, and quick access to instructional tools across connected classroom devices. Contributed to project while working at Merlyn Mind.",
       specs: [
     "Wireless USB receiver",
     "Push-to-talk voice control",
@@ -31,14 +31,21 @@ export default function Projects() {
       imagePosition: "object-[100%_center]",
     },
     {
-      title: "Power Distribution Module",
-      category: "Power Electronics",
-      description:
-        "Custom hardware module for regulated power delivery, protection, and system integration.",
-      specs: ["DC-DC regulation", "Thermal planning", "Prototype validation"],
-      image:
-        "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070&auto=format&fit=crop",
-    },
+  title: "SSI 100 System Status Indicator",
+  category: "Commercial AV Hardware",
+  description:
+    "Architectural room status indicator concept inspired by the Extron SSI 100, designed for occupancy visibility, scheduling status, safety indication, and integrated AV room workflows. Contributed to project while working at Extron Electronics.",
+  specs: [
+    "Multi-color backlit display",
+    "PoE-powered operation",
+    "Wall & ceiling mount options",
+    "Calendar integration",
+    "Occupancy sensor support",
+    "Custom engraved lens",
+  ],
+  image: "/images/ssi100.png",
+  imagePosition: "object-[70%_center]",
+},
   ];
 
   return (
@@ -90,7 +97,7 @@ export default function Projects() {
   )}
 </nav>
 
-      <section className="px-8 py-24">
+      <section className="px-8 py-24 md:py-32">
 
   {menuOpen && (
     <div
@@ -104,7 +111,7 @@ export default function Projects() {
           </p>
 
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-            <h2 className="text-5xl font-semibold leading-tight md:text-7xl">
+            <h2 className="text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
               Hardware projects designed with precision, clarity, and production
               in mind.
             </h2>
