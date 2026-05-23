@@ -58,7 +58,7 @@ export default function Home() {
 
     <button
       onClick={() => setMenuOpen(!menuOpen)}
-      className="relative z-50 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-black/40 md:hidden"
+      className="relative z-50 flex h-10 w-10 shrink-0 items-center justify-center md:hidden"
       aria-label="Toggle menu"
     >
       <div className="flex flex-col gap-1.5">
