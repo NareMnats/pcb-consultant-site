@@ -1,4 +1,7 @@
+"use client";
+import { useState } from "react";
 export default function Projects() {
+    const [menuOpen, setMenuOpen] = useState(false);
   const projects = [
     {
       title: "Wall-Mounted Touchpanel Control System",
@@ -40,26 +43,52 @@ export default function Projects() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <nav className="flex w-full items-center justify-between border-b border-white/10 px-8 py-6">
-        <h1 className="text-xl font-semibold tracking-[0.2em]">
-          MOVSYS ENGINEERING & CONSULTING
-        </h1>
+      <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/70 px-4 py-6 backdrop-blur md:px-8">
+  <div className="flex items-center justify-between gap-3">
+    <h1 className="max-w-[70%] text-xs font-semibold tracking-[0.08em] md:max-w-none md:text-xl md:tracking-[0.2em]">
+      MovSys Engineering & Consulting
+    </h1>
 
-        <div className="hidden gap-8 text-sm text-neutral-300 md:flex">
-          <a href="/" className="transition hover:text-white">
-            Home
-          </a>
-          <a href="/projects" className="text-white">
-            Projects
-          </a>
-          <a href="#" className="transition hover:text-white">
-            Services
-          </a>
-          <a href="#" className="transition hover:text-white">
-            Contact
-          </a>
-        </div>
-      </nav>
+    <div className="hidden gap-8 text-sm md:flex">
+      <a href="/" className="transition hover:text-white">
+        Home
+      </a>
+
+      <a href="/projects" className="text-white">
+        Projects
+      </a>
+
+      <a href="#" className="transition hover:text-white">
+        Services
+      </a>
+
+      <a href="#" className="transition hover:text-white">
+        Contact
+      </a>
+    </div>
+
+    <button
+      onClick={() => setMenuOpen(!menuOpen)}
+      className="relative z-50 flex h-10 w-10 shrink-0 items-center justify-center md:hidden"
+      aria-label="Toggle menu"
+    >
+      <div className="flex flex-col gap-1.5">
+        <span className="h-0.5 w-5 bg-white"></span>
+        <span className="h-0.5 w-5 bg-white"></span>
+        <span className="h-0.5 w-5 bg-white"></span>
+      </div>
+    </button>
+  </div>
+
+  {menuOpen && (
+    <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm backdrop-blur md:hidden">
+      <a href="/">Home</a>
+      <a href="/projects">Projects</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  )}
+</nav>
 
       <section className="px-8 py-24">
         <div className="mx-auto max-w-7xl">
