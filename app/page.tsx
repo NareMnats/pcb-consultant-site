@@ -80,10 +80,10 @@ export default function Home() {
 </nav>
 
         {/* HERO CONTENT */}
-        <div className="relative z-10 flex h-full items-center px-8">
+        <div className="relative z-10 flex h-full items-center px-8 pt-24 md:pt-0">
           <div className="max-w-5xl">
 
-            <h2 className="max-w-4xl text-5xl font-semibold leading-tight md:text-7xl">
+            <h2 className="max-w-4xl text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
               PCB design and embedded hardware engineered for real-world
               production.
             </h2>
