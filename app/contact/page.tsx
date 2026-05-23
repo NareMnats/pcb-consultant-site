@@ -38,7 +38,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/70 px-4 py-6 backdrop-blur md:px-8">
         <div className="flex items-center justify-between gap-3">
           <h1 className="max-w-[70%] text-xs font-semibold tracking-[0.08em] md:max-w-none md:text-xl md:tracking-[0.2em]">
-            <span className="md:hidden">MOVSYS</span>
+            <span className="md:hidden">MOVSYS ENGINEERING & CONSULTING</span>
             <span className="hidden md:inline">MOVSYS ENGINEERING & CONSULTING</span>
           </h1>
 
