@@ -1,11 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import SiteNav from "@/components/SiteNav";
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const heroBgRef = useRef<HTMLImageElement>(null);
   const services = [
     "PCB Design",
@@ -42,50 +41,9 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black/55" />
 
-        {/* NAVBAR */}
-        <nav className="absolute top-0 left-0 z-50 w-full px-4 py-6 md:px-8">
-  <div className="flex items-center justify-between gap-3">
-    <h1 className="max-w-[60%] text-xs font-semibold tracking-[0.08em] md:max-w-none md:text-xl md:tracking-[0.2em]">
-      MOVSYS ENGINEERING & CONSULTING
-    </h1>
-
-    <div className="hidden gap-8 text-sm md:flex">
-      <a href="/">Home</a>
-      <a href="/projects">Projects</a>
-      <a href="/services">Services</a>
-      <a href="/contact">Contact</a>
-    </div>
-
-    <button
-      onClick={() => setMenuOpen(!menuOpen)}
-      className="relative z-50 flex h-10 w-10 shrink-0 items-center justify-center md:hidden"
-      aria-label="Toggle menu"
-    >
-      <div className="flex flex-col gap-1.5">
-        <span className="h-0.5 w-5 bg-white"></span>
-        <span className="h-0.5 w-5 bg-white"></span>
-        <span className="h-0.5 w-5 bg-white"></span>
-      </div>
-    </button>
-  </div>
-
-  {menuOpen && (
-    <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm backdrop-blur md:hidden">
-      <a href="/">Home</a>
-      <a href="/projects">Projects</a>
-      <a href="/services">Services</a>
-      <a href="/contact">Contact</a>
-    </div>
-  )}
-</nav>
+        <SiteNav active="home" variant="overlay" />
 
         {/* HERO CONTENT */}
-      {menuOpen && (
-        <div
-          className="fixed inset-0 z-40 md:hidden"
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
         <div className="relative z-10 flex h-full items-center px-8 pt-24 md:pt-0">
           <div className="max-w-5xl">
 

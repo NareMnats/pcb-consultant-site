@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import SiteNav from "@/components/SiteNav";
 
 export default function Contact() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -35,49 +34,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/70 px-4 py-6 backdrop-blur md:px-8">
-        <div className="flex items-center justify-between gap-3">
-          <h1 className="max-w-[70%] text-xs font-semibold tracking-[0.08em] md:max-w-none md:text-xl md:tracking-[0.2em]">
-            <span className="md:hidden">MOVSYS ENGINEERING & CONSULTING</span>
-            <span className="hidden md:inline">MOVSYS ENGINEERING & CONSULTING</span>
-          </h1>
-
-          <div className="hidden gap-8 text-sm md:flex">
-            <Link href="/" className="transition hover:text-white">Home</Link>
-            <Link href="/projects" className="transition hover:text-white">Projects</Link>
-            <Link href="/services" className="transition hover:text-white">Services</Link>
-            <Link href="/contact" className="text-white">Contact</Link>
-          </div>
-
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="relative z-50 flex h-10 w-10 shrink-0 items-center justify-center md:hidden"
-            aria-label="Toggle menu"
-          >
-            <div className="flex flex-col gap-1.5">
-              <span className="h-0.5 w-5 bg-white"></span>
-              <span className="h-0.5 w-5 bg-white"></span>
-              <span className="h-0.5 w-5 bg-white"></span>
-            </div>
-          </button>
-        </div>
-
-        {menuOpen && (
-          <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm backdrop-blur md:hidden">
-            <Link href="/">Home</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/contact">Contact</Link>
-          </div>
-        )}
-      </nav>
-
-      {menuOpen && (
-        <div
-          className="fixed inset-0 z-40 md:hidden"
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
+      <SiteNav active="contact" />
 
       <header className="px-8 py-24">
         <div className="mx-auto max-w-7xl">
@@ -85,7 +42,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
           <h1 className="text-4xl font-semibold">Start a Project or Ask a Question</h1>
 
-          <p className="mt-6 max-w-2xl text-neutral-400">Send a brief message describing your project, constraints, and timeline — I’ll get back to you promptly.</p>
+          <p className="mt-6 max-w-2xl text-neutral-400">Send a brief message describing your project, constraints, and timeline, and I'll get back to you as soon as possible.</p>
         </div>
       </header>
 
