@@ -90,7 +90,7 @@ export default function Home() {
           <div className="max-w-5xl">
 
             <h2 className="max-w-4xl text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
-              PCB design and embedded hardware engineered for real-world
+              Embedded hardware design engineered for real-world
               production.
             </h2>
 
