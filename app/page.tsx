@@ -48,13 +48,12 @@ export default function Home() {
           <div className="max-w-5xl">
 
             <h2 className="max-w-4xl text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
-              Embedded hardware design engineered for real-world
-              production.
+              Embedded hardware development for early to mid-stage product builds
             </h2>
 
             <p className="mt-8 max-w-2xl text-lg text-neutral-300">
-              Schematic capture, PCB layout, embedded firmware, and manufacturing
-              support for startups and engineering teams.
+              I help startups and engineering teams take hardware systems from architecture to working EVT prototypes, 
+              including component selection, schematic design, PCB layout, and board bring-up.
             </p>
 
             <div className="mt-10 flex gap-4">
@@ -84,7 +83,7 @@ export default function Home() {
           </p>
 
           <h3 className="mb-16 max-w-3xl text-4xl font-semibold">
-            End-to-end hardware development for modern electronic products.
+              What I Can Do For Your Team
           </h3>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -95,9 +94,7 @@ export default function Home() {
               >
                 <h4 className="text-2xl font-medium">{service}</h4>
 
-                <p className="mt-4 text-neutral-400">
-                  Modern engineering workflows focused on manufacturability,
-                  reliability, and scalability.
+                <p className="mt-4 text-neutral-400">            
                 </p>
               </div>
             ))}
