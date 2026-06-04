@@ -105,39 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURED PROJECT */}
-      <section className="px-8 pb-28">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2">
-          <div className="overflow-hidden rounded-3xl">
-            <img
-              src="https://images.unsplash.com/photo-1563770660941-10a63607692e?q=80&w=1974&auto=format&fit=crop"
-              alt="Electronics"
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          <div className="flex flex-col justify-center">
-            <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
-              Featured Project
-            </p>
-
-            <h3 className="mt-6 text-5xl font-semibold leading-tight">
-              High-speed embedded control platform for industrial monitoring.
-            </h3>
-
-            <p className="mt-8 text-lg text-neutral-400">
-              Multi-layer PCB architecture, embedded firmware development, and
-              production-ready validation workflows for harsh environments.
-            </p>
-
-            <button className="mt-10 w-fit rounded-full border border-white/20 px-6 py-3 text-sm transition hover:bg-white hover:text-black">
-              View Case Study
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
+            {/* FOOTER */}
       <footer className="border-t border-white/10 px-8 py-10 text-sm text-neutral-500">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 md:flex-row">
           <p>© 2026 MovSys Engineering & Consulting</p>
