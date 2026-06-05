@@ -20,7 +20,7 @@ export default function Services() {
          "End-user and system-level expectations",
          "Electrical performance specifications",
          "Design constraints, including mechanical, power, cost, and manufacturing considerations",
-         "Set performance targets including measurable acceptance criteria"
+         "Performance targets including measurable acceptance criteria"
         ],
         "Strong requirements at this stage help ensure a smooth transition into architecture and implementation."
       ],
@@ -29,13 +29,33 @@ export default function Services() {
       title: "System Architecture",
       //description:
         //"Translate product requirements into a clear hardware architecture, including system block diagrams, interface planning, and MCU/SoC selection.",
-      //details:
-        //"A well-defined system architecture provides a clear blueprint for the hardware design, ensuring that all components work together to meet the product requirements. This service includes analyzing the product goals, identifying key hardware blocks, defining interfaces and communication protocols, and establishing design constraints such as power, size, cost, and performance targets. By starting with a solid architecture, we can reduce risks, improve design efficiency, and create a more robust and scalable hardware solution."
+      details: [
+        "With requirements defined, I develop a high-level system architecture that models the product’s hardware structure.",
+        "This includes:",
+        [
+         "System block diagram definition",
+         "Partitioning of subsystems and functional blocks",
+         "Microcontroller/System-on-Chip selection considerations",
+         "Interface planning"
+        ],
+        "The goal is to establish a system foundation for prototype development giving an idea of how the different pieces will connect and communicate."
+      ],    
     },
       {
       title: "Component Selection",
       //description:
         //"Select appropriate microcontrollers, sensors, power components, connectors, communication devices, and supporting circuits.",
+      details: [
+        "Once the architecture is defined, I refine the design through detailed component selection and trade-off analysis.",
+        "This process includes:",
+        [
+          "Technology research and trade-off evaluation",
+          "Selection of key ICs based on performance, cost, availability, and lifecycle",
+          "Interface selection and compatibility checks across system blocks",
+          "Power budget review and optimization"
+        ],
+        "This step ensures the design is technically balanced, manufacturable, and aligned with system-level requirements before schematic and PCB implementation."
+      ],
     },
     {
       title: "Schematic Design",
