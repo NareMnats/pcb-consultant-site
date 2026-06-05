@@ -18,9 +18,8 @@ export default function Services() {
         [
          "Product use cases and operating environment",
          "End-user and system-level expectations",
-         "Electrical performance specifications, i",
+         "Electrical performance specifications",
          "Design constraints, including mechanical, power, cost, and manufacturing considerations",
-         "How key requirements will be validated",
          "Set performance targets including measurable acceptance criteria"
         ],
         "Strong requirements at this stage help ensure a smooth transition into architecture and implementation."
@@ -113,7 +112,7 @@ export default function Services() {
                     e.preventDefault();
                   }
                 }}
-                className="rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/10"
+                className="rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/10"
               >
 
                 <h3 className="mt-5 text-2xl font-medium">{service.title}</h3>
