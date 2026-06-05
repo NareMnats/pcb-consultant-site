@@ -108,7 +108,13 @@ export default function Home() {
           <p>© 2026 MovSys Engineering & Consulting</p>
 
           <div className="flex gap-6">
-            <a href="#">LinkedIn</a>
+            <a
+              href="https://www.linkedin.com/in/mikaelmovsisyan/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              LinkedIn
+            </a>
             <a href="#">Email</a>
           </div>
         </div>
