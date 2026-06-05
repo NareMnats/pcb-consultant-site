@@ -35,7 +35,9 @@ export default function SiteNav({
       <nav className={navClass}>
         <div className="flex items-center justify-between gap-3">
           <h1 className="max-w-[70%] text-xs font-semibold tracking-[0.08em] lg:max-w-none lg:text-xl lg:tracking-[0.2em]">
-            MOVSYS ENGINEERING & CONSULTING
+            <Link href="/" className="block">
+              MOVSYS ENGINEERING & CONSULTING
+            </Link>
           </h1>
 
           <div className="hidden gap-8 text-sm text-neutral-300 lg:flex">
