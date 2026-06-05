@@ -10,8 +10,8 @@ export default function Services() {
    
     {
       title: "Requirements Definition",
-      description:
-        "Define clear product requirements early to accelerate development. Focus on use cases and end-user needs.",
+      //description:
+        //"Define clear product requirements early to accelerate development. Focus on use cases and end-user needs.",
       details: [
         "This stage defines the foundation of the entire project. Clear, well-structured requirements significantly reduce iteration cycles and downstream redesign effort.",
         "I work with you to define:",
@@ -29,8 +29,8 @@ export default function Services() {
       title: "System Architecture",
       //description:
         //"Translate product requirements into a clear hardware architecture, including system block diagrams, interface planning, and MCU/SoC selection.",
-      details:
-        "A well-defined system architecture provides a clear blueprint for the hardware design, ensuring that all components work together to meet the product requirements. This service includes analyzing the product goals, identifying key hardware blocks, defining interfaces and communication protocols, and establishing design constraints such as power, size, cost, and performance targets. By starting with a solid architecture, we can reduce risks, improve design efficiency, and create a more robust and scalable hardware solution."
+      //details:
+        //"A well-defined system architecture provides a clear blueprint for the hardware design, ensuring that all components work together to meet the product requirements. This service includes analyzing the product goals, identifying key hardware blocks, defining interfaces and communication protocols, and establishing design constraints such as power, size, cost, and performance targets. By starting with a solid architecture, we can reduce risks, improve design efficiency, and create a more robust and scalable hardware solution."
     },
       {
       title: "Component Selection",
@@ -40,7 +40,7 @@ export default function Services() {
     {
       title: "Schematic Design",
       //description:
-        "Develop detailed electrical schematics that define the circuit implementation, component connections, and design intent.",
+        //"Develop detailed electrical schematics that define the circuit implementation, component connections, and design intent.",
     },
     {
       title: "PCB Layout",
