@@ -6,7 +6,7 @@ import SiteNav from "@/components/SiteNav";
 import ServiceModal from "@/components/ServiceModal";
 
 export default function Services() {
-  const services = [
+  const initialServices = [
     {
       title: "System Architecture",
       description:
@@ -68,7 +68,13 @@ export default function Services() {
     "Test, debug, revise, and prepare for the next build.",
   ];
 
+  const [servicesList, setServicesList] = useState<any[]>(initialServices);
   const [selected, setSelected] = useState<any>(null);
+
+  const handleSave = (updated: any) => {
+    setServicesList((prev) => prev.map((s) => (s.title === updated.title ? updated : s)));
+    setSelected(updated);
+  };
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -93,7 +99,7 @@ export default function Services() {
       <section className="px-8 pb-28">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
+            {servicesList.map((service) => (
               <article
                 key={service.title}
                 role="button"
@@ -119,7 +125,9 @@ export default function Services() {
         </div>
       </section>
 
-      {selected && <ServiceModal service={selected} onClose={() => setSelected(null)} />}
+      {selected && (
+        <ServiceModal service={selected} onClose={() => setSelected(null)} onSave={handleSave} />
+      )}
 
       <section className="border-t border-white/10 px-8 py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
