@@ -112,13 +112,13 @@ export default function Services() {
                     e.preventDefault();
                   }
                 }}
-                className="h-[11rem] rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/10 flex flex-col justify-between items-center text-center overflow-hidden"
+                className="h-[11rem] rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/10 flex flex-col justify-center items-center text-center overflow-hidden"
               >
 
-                <div>
-                  <h3 className="mt-5 text-2xl font-medium">{service.title}</h3>
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-medium">{service.title}</h3>
 
-                  <p className="mt-4 text-neutral-400">
+                  <p className="text-neutral-400">
                     {service.description}
                   </p>
                 </div>
