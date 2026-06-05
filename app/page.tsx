@@ -7,12 +7,12 @@ import SiteNav from "@/components/SiteNav";
 export default function Home() {
   const heroBgRef = useRef<HTMLImageElement>(null);
   const services = [
-    "PCB Design",
-    "Embedded Systems",
-    "Prototype Development",
-    "Firmware Engineering",
-    "Manufacturing Support",
-    "Signal Integrity",
+    "System Architecture",
+    "Component Selection",
+    "Schematic & PCB Design",
+    "Firmware Development",
+    "Bring-up & Debug",
+    "Prototype Validation"
   ];
 
   useEffect(() => {
