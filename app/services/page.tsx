@@ -107,9 +107,6 @@ export default function Services() {
                 }}
                 className="rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/10"
               >
-                <p className="text-xs uppercase tracking-[0.25em] text-neutral-500">
-                  {service.phase}
-                </p>
 
                 <h3 className="mt-5 text-2xl font-medium">{service.title}</h3>
 
