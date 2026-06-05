@@ -7,17 +7,24 @@ import ServiceModal from "@/components/ServiceModal";
 
 export default function Services() {
   const initialServices = [
-    {
-      title: "System Architecture",
-      description:
-        "Define the overall hardware system, major subsystems, interfaces, constraints, and technical direction before detailed design begins.",
-      details:
-        "A well-defined system architecture provides a clear blueprint for the hardware design, ensuring that all components work together to meet the product requirements. This service includes analyzing the product goals, identifying key hardware blocks, defining interfaces and communication protocols, and establishing design constraints such as power, size, cost, and performance targets. By starting with a solid architecture, we can reduce risks, improve design efficiency, and create a more robust and scalable hardware solution."
-    },
+   
     {
       title: "Requirements Definition",
       description:
-        "Translate product goals into clear electrical, mechanical, firmware, power, enviro requirements.",
+        "Define clear product requirements early to reduce redesign cycles and accelerate EVT development. Focus on use cases, system constraints, performance targets, and end-user needs.",
+      details: [
+        "Capture key use cases and user needs.",
+        "Define electrical, mechanical, firmware, and power constraints.",
+        "Set performance targets and manufacturability criteria.",
+        "Document traceable requirements to reduce rework.",
+      ],
+    },
+    {
+      title: "System Architecture",
+      description:
+        "Translate product requirements into a clear hardware architecture, including system block diagrams, interface planning, and MCU/SoC selection.",
+      details:
+        "A well-defined system architecture provides a clear blueprint for the hardware design, ensuring that all components work together to meet the product requirements. This service includes analyzing the product goals, identifying key hardware blocks, defining interfaces and communication protocols, and establishing design constraints such as power, size, cost, and performance targets. By starting with a solid architecture, we can reduce risks, improve design efficiency, and create a more robust and scalable hardware solution."
     },
     {
       title: "Block Diagram",

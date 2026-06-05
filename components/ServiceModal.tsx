@@ -2,6 +2,24 @@
 
 import { useEffect, useState } from "react";
 
+const renderDetails = (details: any) => {
+  if (Array.isArray(details)) {
+    return (
+      <ul className="mt-4 list-disc space-y-3 pl-5 text-neutral-400">
+        {details.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    );
+  }
+
+  return (
+    <p className="mt-4 text-neutral-400">
+      {details}
+    </p>
+  );
+};
+
 export default function ServiceModal({
   service,
   onClose,
@@ -53,9 +71,7 @@ export default function ServiceModal({
 
         <h3 className="text-2xl font-semibold">{service?.title}</h3>
 
-        <p className="mt-4 text-neutral-400">
-          {service?.details ?? service?.description ?? "No additional details provided."}
-        </p>
+        {renderDetails(service?.details ?? service?.description ?? "No additional details provided.")}
       </div>
     </div>
   );
