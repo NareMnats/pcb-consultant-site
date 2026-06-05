@@ -87,20 +87,14 @@ export default function Services() {
       <SiteNav active="services" />
 
       <section className="px-8 py-24 md:py-32">
-        
-
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-            <h2 className="text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
-              Hardware engineering support from concept through prototype
-              validation.
-            </h2>
-          <div className="mx-auto max-w-7xl">
-            <p className="mb-6 text-sm uppercase tracking-[0.3em] text-neutral-500">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-6 text-sm uppercase tracking-[0.3em] text-neutral-500">
             Services
           </p>
 
-          </div>
-        </div>
+          <h2 className="text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
+            Hardware engineering support from concept through prototype validation.
+          </h2>
       </section>
 
       <section className="px-8 pb-28">
