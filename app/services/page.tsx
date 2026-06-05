@@ -112,7 +112,7 @@ export default function Services() {
                     e.preventDefault();
                   }
                 }}
-                className="h-full min-h-[11rem] rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/10 flex flex-col justify-between"
+                className="h-[11rem] rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/10 flex flex-col justify-between overflow-hidden"
               >
 
                 <div>
