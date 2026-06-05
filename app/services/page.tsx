@@ -54,11 +54,7 @@ export default function Services() {
       description:
         "Evaluate early hardware prototypes to confirm functionality, identify issues, and prepare the design for iteration.",
     },
-    {
-      title: "Debugging & Troubleshooting",
-      description:
-        "Investigate electrical, firmware, layout, assembly, and system-level issues using structured debugging methods.",
-    },
+    
   ];
 
   const process = [
@@ -70,13 +66,8 @@ export default function Services() {
     "Test, debug, revise, and prepare for the next build.",
   ];
 
-  const [servicesList, setServicesList] = useState<any[]>(initialServices);
+  const [servicesList] = useState<any[]>(initialServices);
   const [selected, setSelected] = useState<any>(null);
-
-  const handleSave = (updated: any) => {
-    setServicesList((prev) => prev.map((s) => (s.title === updated.title ? updated : s)));
-    setSelected(updated);
-  };
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -128,7 +119,7 @@ export default function Services() {
       </section>
 
       {selected && (
-        <ServiceModal service={selected} onClose={() => setSelected(null)} onSave={handleSave} />
+        <ServiceModal service={selected} onClose={() => setSelected(null)} />
       )}
 
       <section className="border-t border-white/10 px-8 py-24">
