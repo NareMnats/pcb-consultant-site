@@ -58,6 +58,11 @@ export default function Services() {
         //"Develop basic firmware used to bring up hardware, verify board functions, exercise peripherals, and support testing.",
     },
     {
+      title: "Bring-Up & Debug",
+      //description:
+        //"Develop basic firmware used to bring up hardware, verify board functions, exercise peripherals, and support testing.",
+    },
+    {
       title: "Prototype Testing",
       //description:
         //"Evaluate early hardware prototypes to confirm functionality, identify issues, and prepare the design for iteration.",
@@ -112,7 +117,7 @@ export default function Services() {
                     e.preventDefault();
                   }
                 }}
-                className="group rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:bg-emerald-400 hover:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/40 flex flex-col justify-center items-center text-center"
+                className="group rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:bg-emerald-500 hover:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 flex flex-col justify-center items-center text-center"
               >
 
                 <h3 className="text-2xl font-medium transition-colors duration-200 group-hover:text-black">
