@@ -95,6 +95,7 @@ export default function Services() {
           <h2 className="text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
             Hardware engineering support from concept through prototype validation.
           </h2>
+        </div>
       </section>
 
       <section className="px-8 pb-28">
