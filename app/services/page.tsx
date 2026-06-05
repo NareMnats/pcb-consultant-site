@@ -11,6 +11,8 @@ export default function Services() {
       title: "System Architecture",
       description:
         "Define the overall hardware system, major subsystems, interfaces, constraints, and technical direction before detailed design begins.",
+      details:
+        "A well-defined system architecture provides a clear blueprint for the hardware design, ensuring that all components work together to meet the product requirements. This service includes analyzing the product goals, identifying key hardware blocks, defining interfaces and communication protocols, and establishing design constraints such as power, size, cost, and performance targets. By starting with a solid architecture, we can reduce risks, improve design efficiency, and create a more robust and scalable hardware solution."
     },
     {
       title: "Requirements Definition",
