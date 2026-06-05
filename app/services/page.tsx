@@ -11,7 +11,7 @@ export default function Services() {
     {
       title: "Requirements Definition",
       description:
-        "Define clear product requirements early to reduce redesign cycles and accelerate development. Focus on use cases, system constraints, performance targets, and end-user needs.",
+        "Define clear product requirements early to accelerate development. Focus on use cases and end-user needs.",
       details: [
         "This stage defines the foundation of the entire project. Clear, well-structured requirements significantly reduce iteration cycles and downstream redesign effort.",
         "I work with you to define:",
