@@ -98,7 +98,7 @@ export default function ServiceModal({
       <div className="relative z-10 max-w-3xl w-full max-h-[80vh] overflow-auto rounded-2xl bg-neutral-950 border border-white/10 p-8 text-white">
         <button
           aria-label="Close"
-          className="absolute right-3 top-3 text-neutral-300"
+          className="absolute right-3 top-3 text-neutral-300 transition duration-200 hover:text-emerald-400"
           onClick={onClose}
         >
           ✕

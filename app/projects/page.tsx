@@ -131,7 +131,7 @@ export default function Projects() {
             </h3>
           </div>
 
-          <Link href="/contact" className="w-fit rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-neutral-200">
+          <Link href="/contact" className="w-fit rounded-full bg-emerald-500 px-6 py-3 text-sm font-medium text-black transition hover:bg-emerald-400">
             Start a Project
           </Link>
         </div>
