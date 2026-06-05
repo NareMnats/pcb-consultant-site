@@ -90,7 +90,7 @@ export default function Home() {
             {services.map((service) => (
               <div
                 key={service}
-                className="rounded-3xl border border-white/10 bg-neutral-950 p-8 transition hover:border-white/30"
+                className="rounded-3xl border border-white/10 bg-neutral-950 p-8"
               >
                 <h4 className="text-2xl font-medium">{service}</h4>
 

@@ -1,67 +1,59 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import SiteNav from "@/components/SiteNav";
+import ServiceModal from "@/components/ServiceModal";
 
 export default function Services() {
   const services = [
     {
       title: "System Architecture",
-      phase: "Planning",
       description:
         "Define the overall hardware system, major subsystems, interfaces, constraints, and technical direction before detailed design begins.",
     },
     {
       title: "Requirements Definition",
-      phase: "Planning",
       description:
-        "Translate product goals into clear electrical, mechanical, firmware, power, environmental, and manufacturing requirements.",
+        "Translate product goals into clear electrical, mechanical, firmware, power, enviro requirements.",
     },
     {
       title: "Block Diagram",
-      phase: "Planning",
       description:
         "Create a high-level technical map of the system showing functional blocks, signal flow, power domains, and key interfaces.",
     },
     {
       title: "Component Selection",
-      phase: "Design",
       description:
         "Select appropriate microcontrollers, sensors, power components, connectors, communication devices, and supporting circuitry.",
     },
     {
       title: "Schematic Design",
-      phase: "Design",
       description:
         "Develop detailed electrical schematics that define the circuit implementation, component connections, and design intent.",
     },
     {
       title: "PCB Layout",
-      phase: "Design",
       description:
         "Translate the schematic into a manufacturable PCB layout with attention to routing, placement, power, grounding, and reliability.",
     },
     {
       title: "Fabrication",
-      phase: "Build",
       description:
         "Placeholder service for coordinating fabrication outputs, board files, manufacturing packages, and vendor handoff.",
     },
     {
       title: "Test Firmware",
-      phase: "Validation",
       description:
         "Develop basic firmware used to bring up hardware, verify board functions, exercise peripherals, and support testing.",
     },
     {
       title: "Prototype Testing",
-      phase: "Validation",
       description:
         "Evaluate early hardware prototypes to confirm functionality, identify issues, and prepare the design for iteration.",
     },
     {
       title: "Debugging & Troubleshooting",
-      phase: "Validation",
       description:
         "Investigate electrical, firmware, layout, assembly, and system-level issues using structured debugging methods.",
     },
@@ -75,6 +67,8 @@ export default function Services() {
     "Bring up the prototype with test firmware.",
     "Test, debug, revise, and prepare for the next build.",
   ];
+
+  const [selected, setSelected] = useState<any>(null);
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -102,7 +96,16 @@ export default function Services() {
             {services.map((service) => (
               <article
                 key={service.title}
-                className="rounded-3xl border border-white/10 bg-neutral-950 p-8 transition hover:border-white/30"
+                role="button"
+                tabIndex={0}
+                onClick={() => setSelected(service)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    setSelected(service);
+                    e.preventDefault();
+                  }
+                }}
+                className="rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/10"
               >
                 <p className="text-xs uppercase tracking-[0.25em] text-neutral-500">
                   {service.phase}
@@ -118,6 +121,8 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      {selected && <ServiceModal service={selected} onClose={() => setSelected(null)} />}
 
       <section className="border-t border-white/10 px-8 py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr]">
