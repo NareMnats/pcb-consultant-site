@@ -27,19 +27,19 @@ export default function Services() {
     },
     {
       title: "System Architecture",
-      description:
-        "Translate product requirements into a clear hardware architecture, including system block diagrams, interface planning, and MCU/SoC selection.",
+      //description:
+        //"Translate product requirements into a clear hardware architecture, including system block diagrams, interface planning, and MCU/SoC selection.",
       details:
         "A well-defined system architecture provides a clear blueprint for the hardware design, ensuring that all components work together to meet the product requirements. This service includes analyzing the product goals, identifying key hardware blocks, defining interfaces and communication protocols, and establishing design constraints such as power, size, cost, and performance targets. By starting with a solid architecture, we can reduce risks, improve design efficiency, and create a more robust and scalable hardware solution."
     },
       {
       title: "Component Selection",
-      description:
-        "Select appropriate microcontrollers, sensors, power components, connectors, communication devices, and supporting circuits.",
+      //description:
+        //"Select appropriate microcontrollers, sensors, power components, connectors, communication devices, and supporting circuits.",
     },
     {
       title: "Schematic Design",
-      description:
+      //description:
         "Develop detailed electrical schematics that define the circuit implementation, component connections, and design intent.",
     },
     {
@@ -112,7 +112,7 @@ export default function Services() {
                     e.preventDefault();
                   }
                 }}
-                className="h-[11rem] rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:border-white/30 focus:outline-none focus:ring-2 focus:ring-white/10 flex flex-col justify-center items-center text-center overflow-hidden"
+                className="h-[11rem] rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:border-emerald-400 hover:bg-emerald-950/20 focus:outline-none focus:ring-2 focus:ring-emerald-400/40 flex flex-col justify-center items-center text-center overflow-hidden"
               >
 
                 <div className="space-y-4">
