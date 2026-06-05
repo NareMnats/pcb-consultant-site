@@ -11,12 +11,19 @@ export default function Services() {
     {
       title: "Requirements Definition",
       description:
-        "Define clear product requirements early to reduce redesign cycles and accelerate EVT development. Focus on use cases, system constraints, performance targets, and end-user needs.",
+        "Define clear product requirements early to reduce redesign cycles and accelerate development. Focus on use cases, system constraints, performance targets, and end-user needs.",
       details: [
-        "Capture key use cases and user needs.",
-        "Define electrical, mechanical, firmware, and power constraints.",
-        "Set performance targets and manufacturability criteria.",
-        "Document traceable requirements to reduce rework.",
+        "This stage defines the foundation of the entire project. Clear, well-structured requirements significantly reduce iteration cycles and downstream redesign effort.",
+        "I work with you to define:",
+        [
+         "Product use cases and operating environment",
+         "End-user and system-level expectations",
+         "Electrical performance specifications, i",
+         "Design constraints, including mechanical, power, cost, and manufacturing considerations",
+         "How key requirements will be validated",
+         "Set performance targets including measurable acceptance criteria"
+        ],
+        "Strong requirements at this stage help ensure a smooth transition into architecture and implementation."
       ],
     },
     {
@@ -26,15 +33,10 @@ export default function Services() {
       details:
         "A well-defined system architecture provides a clear blueprint for the hardware design, ensuring that all components work together to meet the product requirements. This service includes analyzing the product goals, identifying key hardware blocks, defining interfaces and communication protocols, and establishing design constraints such as power, size, cost, and performance targets. By starting with a solid architecture, we can reduce risks, improve design efficiency, and create a more robust and scalable hardware solution."
     },
-    {
-      title: "Block Diagram",
-      description:
-        "Create a high-level technical map of the system showing functional blocks, signal flow, power domains, and key interfaces.",
-    },
-    {
+      {
       title: "Component Selection",
       description:
-        "Select appropriate microcontrollers, sensors, power components, connectors, communication devices, and supporting circuitry.",
+        "Select appropriate microcontrollers, sensors, power components, connectors, communication devices, and supporting circuits.",
     },
     {
       title: "Schematic Design",

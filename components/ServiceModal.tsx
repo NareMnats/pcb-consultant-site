@@ -2,21 +2,64 @@
 
 import { useEffect, useState } from "react";
 
+const parseDetailBlocks = (details: string) => {
+  const blocks = details
+    .split(/\n\s*\n/)
+    .map((block) => block.trim())
+    .filter(Boolean);
+
+  return blocks.map((block) => {
+    const lines = block
+      .split(/\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+    const isList = lines.every((line) => /^([*-]|\d+\.)\s+/.test(line));
+
+    return {
+      type: isList ? "list" : "paragraph",
+      items: isList ? lines.map((line) => line.replace(/^([*-]|\d+\.)\s+/, "")) : [block],
+    };
+  });
+};
+
 const renderDetails = (details: any) => {
   if (Array.isArray(details)) {
     return (
-      <ul className="mt-4 list-disc space-y-3 pl-5 text-neutral-400">
-        {details.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+      <div className="mt-4 space-y-4 text-neutral-400">
+        {details.map((item, index) =>
+          Array.isArray(item) ? (
+            <ul key={index} className="list-disc space-y-3 pl-5">
+              {item.map((subItem: any, subIndex: number) => (
+                <li key={subIndex}>{subItem}</li>
+              ))}
+            </ul>
+          ) : (
+            <p key={index}>{item}</p>
+          )
+        )}
+      </div>
     );
   }
 
+  const blocks = parseDetailBlocks(String(details));
+
   return (
-    <p className="mt-4 text-neutral-400">
-      {details}
-    </p>
+    <div className="mt-4 text-neutral-400">
+      {blocks.map((block, index) =>
+        block.type === "list" ? (
+          <ul key={index} className="list-disc space-y-3 pl-5">
+            {block.items.map((item, itemIndex) => (
+              <li key={itemIndex}>{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p key={index} className={index ? "mt-4" : ""}>
+            {block.items[0]}
+          </p>
+        )
+      )}
+    </div>
   );
 };
 
