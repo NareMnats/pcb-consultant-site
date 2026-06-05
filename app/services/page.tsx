@@ -44,23 +44,23 @@ export default function Services() {
     },
     {
       title: "PCB Layout",
-      description:
-        "Translate the schematic into a manufacturable PCB layout with attention to routing, placement, power, grounding, and reliability.",
+      //description:
+       // "Translate the schematic into a manufacturable PCB layout with attention to routing, placement, power, grounding, and reliability.",
     },
     {
       title: "Fabrication",
-      description:
-        "Placeholder service for coordinating fabrication outputs, board files, manufacturing packages, and vendor handoff.",
+      //description:
+       // "Placeholder service for coordinating fabrication outputs, board files, manufacturing packages, and vendor handoff.",
     },
     {
       title: "Test Firmware",
-      description:
-        "Develop basic firmware used to bring up hardware, verify board functions, exercise peripherals, and support testing.",
+      //description:
+        //"Develop basic firmware used to bring up hardware, verify board functions, exercise peripherals, and support testing.",
     },
     {
       title: "Prototype Testing",
-      description:
-        "Evaluate early hardware prototypes to confirm functionality, identify issues, and prepare the design for iteration.",
+      //description:
+        //"Evaluate early hardware prototypes to confirm functionality, identify issues, and prepare the design for iteration.",
     },
     
   ];
