@@ -88,13 +88,13 @@ export default function Services() {
 
       <section className="px-8 py-24 md:py-32">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-6 text-sm uppercase tracking-[0.3em] text-neutral-500">
-            Services
-          </p>
-
           <h2 className="text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
             Hardware engineering support from concept through prototype validation.
           </h2>
+
+          <p className="mt-6 text-sm uppercase tracking-[0.3em] text-neutral-500">
+            Services
+          </p>
         </div>
       </section>
 
