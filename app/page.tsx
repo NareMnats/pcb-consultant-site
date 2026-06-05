@@ -41,7 +41,7 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black/55" />
 
-        <SiteNav active="home" variant="overlay" />
+        <SiteNav active="home" variant="sticky" />
 
         {/* HERO CONTENT */}
         <div className="relative z-10 flex h-full items-center px-8 pt-24 md:pt-0">
@@ -59,7 +59,7 @@ export default function Home() {
             <div className="mt-10 flex gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-neutral-200"
+                className="rounded-full bg-emerald-500 px-6 py-3 text-sm font-medium text-black transition hover:bg-emerald-400"
               >
                 Start a Project
               </Link>
