@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import type { Service, ServiceDetail } from "@/lib/services";
 
 const parseDetailBlocks = (details: string) => {
   const blocks = details
@@ -23,14 +24,14 @@ const parseDetailBlocks = (details: string) => {
   });
 };
 
-const renderDetails = (details: any) => {
+const renderDetails = (details: ServiceDetail[] | string) => {
   if (Array.isArray(details)) {
     return (
       <div className="mt-4 space-y-4 text-neutral-400">
         {details.map((item, index) =>
           Array.isArray(item) ? (
             <ul key={index} className="list-disc space-y-3 pl-5">
-              {item.map((subItem: any, subIndex: number) => (
+              {item.map((subItem, subIndex) => (
                 <li key={subIndex}>{subItem}</li>
               ))}
             </ul>
@@ -67,10 +68,10 @@ export default function ServiceModal({
   service,
   onClose,
 }: {
-  service: any;
+  service: Service;
   onClose: () => void;
 }) {
-  const [imageUrl, setImageUrl] = useState<string | undefined>(service?.image);
+  const imageUrl = service.image;
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -86,10 +87,6 @@ export default function ServiceModal({
       document.body.style.overflow = prev;
     };
   }, [onClose]);
-
-  useEffect(() => {
-    setImageUrl(service?.image);
-  }, [service]);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -107,14 +104,14 @@ export default function ServiceModal({
         {imageUrl && (
           <img
             src={imageUrl}
-            alt={service?.title ?? "service image"}
+            alt={service.title}
             className="w-full h-48 object-cover rounded-md mb-4"
           />
         )}
 
-        <h3 className="text-2xl font-semibold">{service?.title}</h3>
+        <h3 className="text-2xl font-semibold">{service.title}</h3>
 
-        {renderDetails(service?.details ?? service?.description ?? "No additional details provided.")}
+        {renderDetails(service.details ?? service.description ?? "No additional details provided.")}
       </div>
     </div>
   );

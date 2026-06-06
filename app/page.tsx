@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import SiteNav from "@/components/SiteNav";
 import ServiceModal from "@/components/ServiceModal";
-import services from "@/lib/services";
+import services, { type Service } from "@/lib/services";
 
 export default function Home() {
   const heroBgRef = useRef<HTMLImageElement>(null);
-  const [servicesList] = useState<any[]>(services);
-  const [selected, setSelected] = useState<any>(null);
+  const [servicesList] = useState<Service[]>(services);
+  const [selected, setSelected] = useState<Service | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,7 +99,7 @@ export default function Home() {
                       }}
                       className="group rounded-3xl border border-white/10 bg-neutral-900 p-8 shadow-xl shadow-black/30 cursor-pointer transition-all duration-200 hover:bg-emerald-500 hover:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 flex flex-col justify-center items-center text-center min-h-[100px]"
                     >
-                      <h4 className="text-2xl font-medium transition-colors duration-200 group-hover:text-black" style={{ fontFamily: 'var(--font-roboto)' }}>{service.title}</h4>
+                      <h4 className="text-2xl font-medium transition-colors duration-200 group-hover:text-black">{service.title}</h4>
 
                       <p className="text-neutral-400 transition-colors duration-200 group-hover:text-black"></p>
                     </article>

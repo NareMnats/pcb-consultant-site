@@ -59,7 +59,7 @@ export default function SiteNav({
             </Link>
           </h1>
 
-          <div className="hidden gap-8 text-sm font-medium text-neutral-300 font-[var(--font-lato)] lg:flex">
+          <div className="hidden gap-8 text-sm font-medium text-neutral-300 lg:flex">
             {navItems.map((item) => (
               <Link
                 key={item.key}
@@ -91,7 +91,7 @@ export default function SiteNav({
         </div>
 
         {menuOpen && (
-          <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm font-medium text-neutral-200 font-[var(--font-lato)] backdrop-blur lg:hidden">
+          <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm font-medium text-neutral-200 backdrop-blur lg:hidden">
             {navItems.map((item) => (
               <Link
                 key={item.key}

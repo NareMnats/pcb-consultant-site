@@ -42,7 +42,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
           <h1 className="text-4xl font-semibold">Start a Project or Ask a Question</h1>
 
-          <p className="mt-6 max-w-2xl text-neutral-400">Send a brief message describing your project, constraints, and timeline, and I'll get back to you as soon as possible.</p>
+          <p className="mt-6 max-w-2xl text-neutral-400">Send a brief message describing your project, constraints, and timeline, and I&apos;ll get back to you as soon as possible.</p>
         </div>
       </header>
 

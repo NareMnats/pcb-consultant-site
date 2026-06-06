@@ -1,4 +1,13 @@
-const services = [
+export type ServiceDetail = string | string[];
+
+export type Service = {
+  title: string;
+  details: ServiceDetail[];
+  image?: string;
+  description?: string;
+};
+
+const services: Service[] = [
   {
     title: "Requirements Definition",
     details: [

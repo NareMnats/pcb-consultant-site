@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import SiteNav from "@/components/SiteNav";
 import ServiceModal from "@/components/ServiceModal";
-import services from "@/lib/services";
+import services, { type Service } from "@/lib/services";
 
 export default function Services() {
   const process = [
@@ -16,8 +16,8 @@ export default function Services() {
     "Test, debug, revise, and prepare for the next build.",
   ];
 
-  const [servicesList] = useState<any[]>(services);
-  const [selected, setSelected] = useState<any>(null);
+  const [servicesList] = useState<Service[]>(services);
+  const [selected, setSelected] = useState<Service | null>(null);
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -53,7 +53,7 @@ export default function Services() {
                 className="group rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:bg-emerald-500 hover:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 flex flex-col justify-center items-center text-center min-h-[100px]"
               >
 
-                <h3 className="text-2xl font-medium transition-colors duration-200 group-hover:text-black" style={{ fontFamily: 'var(--font-roboto)' }}>
+                <h3 className="text-2xl font-medium transition-colors duration-200 group-hover:text-black">
                   {service.title}
                 </h3>
               </article>
