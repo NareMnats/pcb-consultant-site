@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useState, type MouseEvent } from "react";
 
 type NavItem = {
   href: string;
@@ -11,7 +12,7 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { href: "/", label: "HOME", key: "home" },
-  { href: "/services", label: "SERVICES", key: "services" },
+  { href: "/#services", label: "SERVICES", key: "services" },
   { href: "/projects", label: "PROJECTS", key: "projects" },
   { href: "/about", label: "ABOUT ME", key: "about" },
   { href: "/contact", label: "CONTACT", key: "contact" },
@@ -25,10 +26,28 @@ export default function SiteNav({
   variant?: "sticky" | "overlay";
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
   const navClass =
     variant === "overlay"
       ? "absolute top-0 left-0 z-50 w-full px-4 py-6 md:px-8"
       : "sticky top-0 z-50 w-full border-b border-white/10 bg-black/70 px-4 py-6 backdrop-blur md:px-8";
+
+  const handleNavClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (pathname === "/" && href.startsWith("/#")) {
+      const target = document.getElementById(href.slice(2));
+
+      if (target) {
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.pushState(null, "", href);
+      }
+    }
+
+    setMenuOpen(false);
+  };
 
   return (
     <>
@@ -45,6 +64,7 @@ export default function SiteNav({
               <Link
                 key={item.key}
                 href={item.href}
+                onClick={(event) => handleNavClick(event, item.href)}
                 className={
                   item.key === active
                     ? "text-white border-b-4 border-transparent transition-colors duration-200 hover:border-emerald-500"
@@ -76,6 +96,7 @@ export default function SiteNav({
               <Link
                 key={item.key}
                 href={item.href}
+                onClick={(event) => handleNavClick(event, item.href)}
                 className={
                   item.key === active
                     ? "text-white border-b-4 border-transparent transition-colors duration-200 hover:border-emerald-500"

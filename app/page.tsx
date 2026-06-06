@@ -1,19 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import SiteNav from "@/components/SiteNav";
+import ServiceModal from "@/components/ServiceModal";
+import services from "@/lib/services";
 
 export default function Home() {
   const heroBgRef = useRef<HTMLImageElement>(null);
-  const services = [
-    "System Architecture",
-    "Component Selection",
-    "Schematic & PCB Design",
-    "Firmware Development",
-    "Bring-up & Debug",
-    "Prototype Validation"
-  ];
+  const [servicesList] = useState<any[]>(services);
+  const [selected, setSelected] = useState<any>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,32 +71,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="px-8 py-28">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
-            Capabilities
-          </p>
+      
 
-          <h3 className="mb-16 max-w-3xl text-4xl font-semibold">
-              What I Can Do For Your Team
-          </h3>
-
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <div
-                key={service}
-                className="rounded-3xl border border-white/10 bg-neutral-900 p-8 shadow-xl shadow-black/30"
-              >
-                <h4 className="text-2xl font-medium">{service}</h4>
-
-                <p className="mt-4 text-neutral-400">            
+            {/* SERVICES */}
+            <section id="services" className="px-8 py-28">
+              <div className="mx-auto max-w-7xl">
+                <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
+                  Services
                 </p>
+
+                <h3 className="mb-16 max-w-3xl text-4xl font-semibold">
+                  What I Can Do For Your Team
+                </h3>
+
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {servicesList.map((service) => (
+                    <article
+                      key={service.title}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => setSelected(service)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          setSelected(service);
+                          e.preventDefault();
+                        }
+                      }}
+                      className="group rounded-3xl border border-white/10 bg-neutral-900 p-8 shadow-xl shadow-black/30 cursor-pointer transition-all duration-200 hover:bg-emerald-500 hover:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 flex flex-col justify-center items-center text-center min-h-[100px]"
+                    >
+                      <h4 className="text-2xl font-medium transition-colors duration-200 group-hover:text-black" style={{ fontFamily: 'var(--font-roboto)' }}>{service.title}</h4>
+
+                      <p className="text-neutral-400 transition-colors duration-200 group-hover:text-black"></p>
+                    </article>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </section>
+
+            {selected && (
+              <ServiceModal service={selected} onClose={() => setSelected(null)} />
+            )}
 
             {/* FOOTER */}
       <footer className="border-t border-white/10 px-8 py-10 text-sm text-neutral-500">
