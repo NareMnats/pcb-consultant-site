@@ -204,7 +204,7 @@ export default function Services() {
                 className="group rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:bg-emerald-500 hover:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 flex flex-col justify-center items-center text-center"
               >
 
-                <h3 className="text-2xl font-medium transition-colors duration-200 group-hover:text-black">
+                <h3 className="text-2xl font-medium font-[var(--font-lato)] transition-colors duration-200 group-hover:text-black">
                   {service.title}
                 </h3>
               </article>
