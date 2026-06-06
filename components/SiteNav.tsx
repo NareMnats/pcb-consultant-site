@@ -47,8 +47,8 @@ export default function SiteNav({
                 href={item.href}
                 className={
                   item.key === active
-                    ? "text-white border-b-2 border-transparent transition hover:border-emerald-400"
-                    : "text-neutral-300 border-b-2 border-transparent transition hover:text-white hover:border-emerald-400"
+                    ? "text-white border-b-4 border-transparent transition-colors duration-200 hover:border-emerald-500"
+                    : "text-neutral-300 border-b-4 border-transparent transition-colors duration-200 hover:text-white hover:border-emerald-500"
                 }
               >
                 {item.label}
@@ -78,8 +78,8 @@ export default function SiteNav({
                 href={item.href}
                 className={
                   item.key === active
-                    ? "text-white border-b-2 border-transparent transition hover:border-emerald-400"
-                    : "text-neutral-200 border-b-2 border-transparent transition hover:text-white hover:border-emerald-400"
+                    ? "text-white border-b-4 border-transparent transition-colors duration-200 hover:border-emerald-500"
+                    : "text-neutral-200 border-b-4 border-transparent transition-colors duration-200 hover:text-white hover:border-emerald-500"
                 }
               >
                 {item.label}
