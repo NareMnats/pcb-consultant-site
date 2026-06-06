@@ -40,15 +40,15 @@ export default function SiteNav({
             </Link>
           </h1>
 
-          <div className="hidden gap-8 text-base text-neutral-300 lg:flex">
+          <div className="hidden gap-8 text-sm font-semibold text-neutral-300 font-[var(--font-lato)] lg:flex">
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
                 className={
                   item.key === active
-                    ? "text-white"
-                    : "transition hover:text-white"
+                    ? "text-white border-b-2 border-transparent transition hover:border-emerald-400"
+                    : "text-neutral-300 border-b-2 border-transparent transition hover:text-white hover:border-emerald-400"
                 }
               >
                 {item.label}
@@ -71,12 +71,16 @@ export default function SiteNav({
         </div>
 
         {menuOpen && (
-          <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-base text-neutral-200 backdrop-blur lg:hidden">
+          <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm font-semibold text-neutral-200 font-[var(--font-lato)] backdrop-blur lg:hidden">
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
-                className={item.key === active ? "text-white" : ""}
+                className={
+                  item.key === active
+                    ? "text-white border-b-2 border-transparent transition hover:border-emerald-400"
+                    : "text-neutral-200 border-b-2 border-transparent transition hover:text-white hover:border-emerald-400"
+                }
               >
                 {item.label}
               </Link>
