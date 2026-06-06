@@ -10,11 +10,11 @@ type NavItem = {
 };
 
 const navItems: NavItem[] = [
-  { href: "/", label: "Home", key: "home" },
-  { href: "/services", label: "Services", key: "services" },
-  { href: "/projects", label: "Projects", key: "projects" },
-  { href: "/about", label: "About Me", key: "about" },
-  { href: "/contact", label: "Contact", key: "contact" },
+  { href: "/", label: "HOME", key: "home" },
+  { href: "/services", label: "SERVICES", key: "services" },
+  { href: "/projects", label: "PROJECTS", key: "projects" },
+  { href: "/about", label: "ABOUT ME", key: "about" },
+  { href: "/contact", label: "CONTACT", key: "contact" },
 ];
 
 export default function SiteNav({
@@ -40,13 +40,15 @@ export default function SiteNav({
             </Link>
           </h1>
 
-          <div className="hidden gap-8 text-sm text-neutral-300 lg:flex">
+          <div className="hidden gap-8 text-base text-neutral-300 lg:flex">
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 href={item.href}
                 className={
-                  item.key === active ? "text-white" : "transition hover:text-white"
+                  item.key === active
+                    ? "text-white"
+                    : "transition hover:text-white"
                 }
               >
                 {item.label}
@@ -69,7 +71,7 @@ export default function SiteNav({
         </div>
 
         {menuOpen && (
-          <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm text-neutral-200 backdrop-blur lg:hidden">
+          <div className="relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-base text-neutral-200 backdrop-blur lg:hidden">
             {navItems.map((item) => (
               <Link
                 key={item.key}
