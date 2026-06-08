@@ -27,7 +27,7 @@ export default function Projects() {
       specs: [
         "Power-over Ethernet (PoE)",
         "Embedded Linux",
-        "ARM Cortex-A9 Processor",
+        "ARM Cortex-A9",
         "Mixed-Signal PCB",
         "Hardware Validation",
         "Manufacturing Support",
@@ -138,11 +138,11 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-8 grid grid-cols-2 gap-3">
                   {project.specs.map((spec) => (
                     <span
                       key={spec}
-                      className="rounded-full border border-white/10 px-4 py-2 text-sm text-neutral-300"
+                      className="rounded-full border border-white/10 px-4 py-2 text-center text-sm text-neutral-300"
                     >
                       {spec}
                     </span>
