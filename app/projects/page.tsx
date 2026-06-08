@@ -18,7 +18,7 @@ type Project = {
 export default function Projects() {
   const projects: Project[] = [
     {
-      title: "TLP300M",
+      title: "TouchLink Panel TLP300M",
       category: "AV Hardware",
       description:
         "Designed a compact 3.5-inch Power-over-Ethernet (PoE), wall mounted touch panel for room control applications including AV systems, HVAC, lighting, and shades. The product expanded the company's TouchLink portfolio by introducing its first touch panel in this form factor.",
@@ -138,7 +138,7 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                <div className="mt-8 grid grid-cols-2 gap-3">
+                <div className="mt-8 grid grid-cols-3 gap-3">
                   {project.specs.map((spec) => (
                     <span
                       key={spec}
