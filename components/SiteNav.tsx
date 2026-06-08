@@ -30,7 +30,7 @@ export default function SiteNav({
   const navClass =
     variant === "overlay"
       ? "absolute top-0 left-0 z-50 w-full px-4 py-6 md:px-8"
-      : "sticky top-0 z-50 w-full border-b border-white/10 bg-black/70 px-4 py-6 backdrop-blur md:px-8";
+      : "sticky top-0 z-50 w-full bg-transparent px-4 py-6 md:px-8";
 
   const handleNavClick = (
     event: MouseEvent<HTMLAnchorElement>,
