@@ -18,17 +18,17 @@ type Project = {
 export default function Projects() {
   const projects: Project[] = [
     {
-      title: "Wall-Mounted Touchpanel Control System",
-      category: "Commercial AV Hardware",
+      title: "TLP300M",
+      category: "AV Hardware",
       description:
-        "Designed a compact 3.5-inch Power-over-Ethernet (PoE) touch panel for room control applications including AV systems, HVAC, lighting, and shades. The product expanded the company's TouchLink portfolio by introducing its first touch panel in this form factor.",
+        "Designed a compact 3.5-inch Power-over-Ethernet (PoE), wall mounted touch panel for room control applications including AV systems, HVAC, lighting, and shades. The product expanded the company's TouchLink portfolio by introducing its first touch panel in this form factor.",
       credit:
         "Developed while employed as Hardware Design Engineer at Extron Electronics (2018-2022).",
       specs: [
         "Power-over Ethernet (PoE)",
-        "1-Gang Juncion Box",
+        "Embedded Linux",
+        "ARM Cortex-A9 Processor",
         "Mixed-Signal PCB",
-        "High-Speed Digital Design",
         "Hardware Validation",
         "Manufacturing Support",
       ],
