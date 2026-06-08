@@ -187,7 +187,7 @@ export default function Projects() {
 
           <Link
             href="/contact"
-            className="w-fit rounded-full bg-emerald-500 px-6 py-3 text-sm font-medium text-black transition hover:bg-emerald-400"
+            className="w-fit rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition hover:bg-[#3dbe42]"
           >
             Start a Project
           </Link>
@@ -232,7 +232,7 @@ function ProjectModal({
         <button
           type="button"
           aria-label="Close"
-          className="absolute right-3 top-3 text-neutral-300 transition duration-200 hover:text-emerald-400"
+          className="absolute right-3 top-3 text-neutral-300 transition duration-200 hover:text-[#3dbe42]"
           onClick={onClose}
         >
           X

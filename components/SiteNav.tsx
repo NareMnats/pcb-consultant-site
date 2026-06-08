@@ -67,8 +67,8 @@ export default function SiteNav({
                 onClick={(event) => handleNavClick(event, item.href)}
                 className={
                   item.key === active
-                    ? "text-white border-b-4 border-transparent transition-colors duration-200 hover:border-emerald-500"
-                    : "text-neutral-300 border-b-4 border-transparent transition-colors duration-200 hover:text-white hover:border-emerald-500"
+                    ? "text-white border-b-4 border-transparent transition-colors duration-200 hover:border-[#3dbe42]"
+                    : "text-neutral-300 border-b-4 border-transparent transition-colors duration-200 hover:text-white hover:border-[#3dbe42]"
                 }
               >
                 {item.label}
@@ -99,8 +99,8 @@ export default function SiteNav({
                 onClick={(event) => handleNavClick(event, item.href)}
                 className={
                   item.key === active
-                    ? "text-white border-b-4 border-transparent transition-colors duration-200 hover:border-emerald-500"
-                    : "text-neutral-200 border-b-4 border-transparent transition-colors duration-200 hover:text-white hover:border-emerald-500"
+                    ? "text-white border-b-4 border-transparent transition-colors duration-200 hover:border-[#3dbe42]"
+                    : "text-neutral-200 border-b-4 border-transparent transition-colors duration-200 hover:text-white hover:border-[#3dbe42]"
                 }
               >
                 {item.label}

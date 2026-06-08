@@ -55,7 +55,7 @@ export default function Home() {
             <div className="mt-10 flex gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-emerald-500 px-6 py-3 text-sm font-medium text-black transition hover:bg-emerald-400"
+                className="rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition hover:bg-[#3dbe42]"
               >
                 Start a Project
               </Link>
@@ -97,7 +97,7 @@ export default function Home() {
                           e.preventDefault();
                         }
                       }}
-                      className="group rounded-3xl border border-white/10 bg-neutral-900 p-8 shadow-xl shadow-black/30 cursor-pointer transition-all duration-200 hover:bg-emerald-500 hover:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 flex flex-col justify-center items-center text-center min-h-[100px]"
+                      className="group rounded-3xl border border-white/10 bg-neutral-900 p-8 shadow-xl shadow-black/30 cursor-pointer transition-all duration-200 hover:bg-[#3dbe42] hover:border-[#3dbe42] focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 flex flex-col justify-center items-center text-center min-h-[100px]"
                     >
                       <h4 className="text-2xl font-medium transition-colors duration-200 group-hover:text-black">{service.title}</h4>
 

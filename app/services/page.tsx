@@ -50,7 +50,7 @@ export default function Services() {
                     e.preventDefault();
                   }
                 }}
-                className="group rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:bg-emerald-500 hover:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 flex flex-col justify-center items-center text-center min-h-[100px]"
+                className="group rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:bg-[#3dbe42] hover:border-[#3dbe42] focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 flex flex-col justify-center items-center text-center min-h-[100px]"
               >
 
                 <h3 className="text-2xl font-medium transition-colors duration-200 group-hover:text-black">
@@ -107,7 +107,7 @@ export default function Services() {
             </h3>
           </div>
 
-          <Link href="/contact" className="w-fit rounded-full bg-emerald-500 px-6 py-3 text-sm font-medium text-black transition hover:bg-emerald-400">
+          <Link href="/contact" className="w-fit rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition hover:bg-[#3dbe42]">
             Start a Project
           </Link>
         </div>
