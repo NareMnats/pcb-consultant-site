@@ -1,15 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import SiteNav from "@/components/SiteNav";
 
+type Project = {
+  title: string;
+  category: string;
+  description: string;
+  credit: string;
+  specs: string[];
+  details: string[];
+  image: string;
+  imagePosition?: string;
+};
+
 export default function Projects() {
-  const projects = [
+  const projects: Project[] = [
     {
       title: "Wall-Mounted Touchpanel Control System",
       category: "Commercial AV Hardware",
       description:
-        "Compact wall-mounted touchpanel hardware: Extron TLP Pro 300M, designed for room control, AV systems, lighting, shades, HVAC, and security interfaces.",
+        "Designed a compact 3.5-inch Power-over-Ethernet (PoE) touch panel for room control applications including AV systems, HVAC, lighting, and shades. The product expanded the company's TouchLink portfolio by introducing its first touch panel in this form factor.",
       credit:
         "Developed while employed as Hardware Design Engineer at Extron Electronics (2018-2022).",
       specs: [
@@ -17,6 +29,11 @@ export default function Projects() {
         "320 x 480 display",
         "PoE-enabled design",
         "Wall-mount enclosure",
+      ],
+      details: [
+        "Designed around a compact 3.5-inch touchscreen form factor.",
+        "Supported PoE-enabled wall-mounted room control applications.",
+        "Integrated into AV, lighting, shades, HVAC, and security workflows.",
       ],
       image:
         "https://media.extron.com/public/landing/content/tlppro300m/img/tlppro300m_environment.jpg",
@@ -32,6 +49,11 @@ export default function Projects() {
         "Wireless USB receiver",
         "Push-to-talk voice control",
         "Air mouse navigation",
+      ],
+      details: [
+        "Supported wireless control through a USB receiver.",
+        "Included push-to-talk voice interaction for classroom workflows.",
+        "Provided air mouse navigation for connected presentation devices.",
       ],
       image: "/images/merlynremote_withlaptop.png",
       imagePosition: "object-[100%_center]",
@@ -51,10 +73,16 @@ export default function Projects() {
         "Occupancy sensor support",
         "Custom engraved lens",
       ],
+      details: [
+        "Displayed multi-color room status indication.",
+        "Supported PoE-powered wall and ceiling mount use cases.",
+        "Designed around scheduling, occupancy, and integrated AV room workflows.",
+      ],
       image: "/images/ssi100.png",
       imagePosition: "object-[70%_center]",
     },
   ];
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <main className="min-h-screen bg-black text-white">
@@ -119,11 +147,15 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <button className="mt-10 w-fit rounded-full border border-white/20 px-6 py-3 text-sm transition hover:bg-white hover:text-black">
+                <button
+                  type="button"
+                  onClick={() => setSelectedProject(project)}
+                  className="mt-10 w-fit rounded-full border border-white/20 px-6 py-3 text-sm transition hover:bg-white hover:text-black"
+                >
                   View Project
                 </button>
 
-                <p className="absolute bottom-6 right-8 max-w-[75%] text-right text-xs leading-relaxed text-neutral-500 md:bottom-8 md:right-12">
+                <p className="absolute bottom-6 right-8 max-w-[calc(100%-4rem)] truncate text-right text-xs text-neutral-500 md:bottom-8 md:right-12 md:max-w-[calc(100%-6rem)]">
                   {project.credit}
                 </p>
               </div>
@@ -131,6 +163,13 @@ export default function Projects() {
           ))}
         </div>
       </section>
+
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
 
       <section className="border-t border-white/10 px-8 py-24">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-end">
@@ -153,5 +192,72 @@ export default function Projects() {
         </div>
       </section>
     </main>
+  );
+}
+
+function ProjectModal({
+  project,
+  onClose,
+}: {
+  project: Project;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    document.addEventListener("keydown", onKey);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [onClose]);
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+      <button
+        type="button"
+        aria-label="Close project details"
+        className="absolute inset-0 bg-black/60"
+        onClick={onClose}
+      />
+
+      <div className="relative z-10 max-h-[80vh] w-full max-w-3xl overflow-auto rounded-2xl border border-white/10 bg-neutral-950 p-8 text-white">
+        <button
+          type="button"
+          aria-label="Close"
+          className="absolute right-3 top-3 px-2 text-neutral-300 transition duration-200 hover:text-emerald-400"
+          onClick={onClose}
+        >
+          x
+        </button>
+
+        <img
+          src={project.image}
+          alt={project.title}
+          className={`mb-4 h-48 w-full rounded-md object-cover ${
+            project.imagePosition || "object-center"
+          }`}
+        />
+
+        <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+          {project.category}
+        </p>
+
+        <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
+
+        <p className="mt-4 text-neutral-400">{project.description}</p>
+
+        <ul className="mt-6 list-disc space-y-3 pl-5 text-neutral-400">
+          {project.details.map((detail) => (
+            <li key={detail}>{detail}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
