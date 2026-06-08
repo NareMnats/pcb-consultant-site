@@ -1,8 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { Josefin_Sans } from "next/font/google";
 import { usePathname } from "next/navigation";
 import { useState, type MouseEvent } from "react";
+import movsysIcon from "@/app/movsys_icon.png";
 
 type NavItem = {
   href: string;
@@ -17,6 +20,11 @@ const navItems: NavItem[] = [
   { href: "/about", label: "ABOUT ME", key: "about" },
   { href: "/contact", label: "CONTACT", key: "contact" },
 ];
+
+const josefinSans = Josefin_Sans({
+  subsets: ["latin"],
+  weight: ["600"],
+});
 
 export default function SiteNav({
   active,
@@ -53,9 +61,21 @@ export default function SiteNav({
     <>
       <nav className={navClass}>
         <div className="flex items-center justify-between gap-3">
-          <h1 className="max-w-[70%] text-xs font-semibold tracking-[0.08em] lg:max-w-none lg:text-xl lg:tracking-[0.2em]">
-            <Link href="/" className="block">
-              MOVSYS ENGINEERING & CONSULTING
+          <h1
+            className={`${josefinSans.className} max-w-[74%] text-[15px] font-semibold lg:max-w-none lg:text-[22px]`}
+          >
+            <Link href="/" className="flex min-w-0 items-center gap-2.5">
+              <Image
+                src={movsysIcon}
+                alt=""
+                width={31}
+                height={35}
+                className="h-[35px] w-auto shrink-0"
+                priority
+              />
+              <span className="truncate tracking-[0.15em]">
+                MOVSYS ENGINEERING & CONSULTING
+              </span>
             </Link>
           </h1>
 
