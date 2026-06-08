@@ -1,16 +1,20 @@
 "use client";
+
 import Link from "next/link";
 import SiteNav from "@/components/SiteNav";
+
 export default function Projects() {
   const projects = [
     {
       title: "Wall-Mounted Touchpanel Control System",
       category: "Commercial AV Hardware",
       description:
-        "Compact wall-mounted touchpanel hardware: Extron TLP Pro 300M, designed for room control, AV systems, lighting, shades, HVAC, and security interfaces. Developed while employed as Hardware Design Engineer at Extron Electronics (2018–2022)",
+        "Compact wall-mounted touchpanel hardware: Extron TLP Pro 300M, designed for room control, AV systems, lighting, shades, HVAC, and security interfaces.",
+      credit:
+        "Developed while employed as Hardware Design Engineer at Extron Electronics (2018-2022).",
       specs: [
         "3.5-inch touchscreen",
-        "320 × 480 display",
+        "320 x 480 display",
         "PoE-enabled design",
         "Wall-mount enclosure",
       ],
@@ -21,31 +25,35 @@ export default function Projects() {
       title: "Voice-Enabled Bluetooth Remote Control",
       category: "Wireless Hardware",
       description:
-        "Compact handheld classroom control remote designed for voice-enabled presentation management, wireless navigation, and quick access to instructional tools across connected classroom devices. Developed while employed as Senior Electrical Engineer at Merlyn Mind (2020–2026).",
+        "Compact handheld classroom control remote designed for voice-enabled presentation management, wireless navigation, and quick access to instructional tools across connected classroom devices.",
+      credit:
+        "Developed while employed as Senior Electrical Engineer at Merlyn Mind (2020-2026).",
       specs: [
-    "Wireless USB receiver",
-    "Push-to-talk voice control",
-    "Air mouse navigation",
-  ],
+        "Wireless USB receiver",
+        "Push-to-talk voice control",
+        "Air mouse navigation",
+      ],
       image: "/images/merlynremote_withlaptop.png",
       imagePosition: "object-[100%_center]",
     },
     {
-  title: "SSI 100 System Status Indicator",
-  category: "Commercial AV Hardware",
-  description:
-    "Architectural room status indicator concept inspired by the Extron SSI 100, designed for occupancy visibility, scheduling status, safety indication, and integrated AV room workflows. Developed while employed as Hardware Design Engineer at Extron Electronics (2018–2022).",
-  specs: [
-    "Multi-color backlit display",
-    "PoE-powered operation",
-    "Wall & ceiling mount options",
-    "Calendar integration",
-    "Occupancy sensor support",
-    "Custom engraved lens",
-  ],
-  image: "/images/ssi100.png",
-  imagePosition: "object-[70%_center]",
-},
+      title: "SSI 100 System Status Indicator",
+      category: "Commercial AV Hardware",
+      description:
+        "Architectural room status indicator concept inspired by the Extron SSI 100, designed for occupancy visibility, scheduling status, safety indication, and integrated AV room workflows.",
+      credit:
+        "Developed while employed as Hardware Design Engineer at Extron Electronics (2018-2022).",
+      specs: [
+        "Multi-color backlit display",
+        "PoE-powered operation",
+        "Wall & ceiling mount options",
+        "Calendar integration",
+        "Occupancy sensor support",
+        "Custom engraved lens",
+      ],
+      image: "/images/ssi100.png",
+      imagePosition: "object-[70%_center]",
+    },
   ];
 
   return (
@@ -60,8 +68,7 @@ export default function Projects() {
 
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <h2 className="text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
-              Hardware projects designed with precision, clarity, and production
-              in mind.
+              Hardware projects designed with precision and production in mind.
             </h2>
           </div>
         </div>
@@ -82,11 +89,13 @@ export default function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className={`h-full w-full object-cover transition duration-700 hover:scale-105 ${project.imagePosition || "object-center"}`}
+                  className={`h-full w-full object-cover transition duration-700 hover:scale-105 ${
+                    project.imagePosition || "object-center"
+                  }`}
                 />
               </div>
 
-              <div className="flex flex-col justify-center p-8 md:p-12">
+              <div className="relative flex min-h-[28rem] flex-col justify-center p-8 pb-16 md:p-12 md:pb-20">
                 <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
                   {project.category}
                 </p>
@@ -113,6 +122,10 @@ export default function Projects() {
                 <button className="mt-10 w-fit rounded-full border border-white/20 px-6 py-3 text-sm transition hover:bg-white hover:text-black">
                   View Project
                 </button>
+
+                <p className="absolute bottom-6 right-8 max-w-[75%] text-right text-xs leading-relaxed text-neutral-500 md:bottom-8 md:right-12">
+                  {project.credit}
+                </p>
               </div>
             </article>
           ))}
@@ -127,11 +140,14 @@ export default function Projects() {
             </p>
 
             <h3 className="mt-6 max-w-2xl text-4xl font-semibold">
-              Let’s discuss the hardware, constraints, and path to production.
+              Let&apos;s discuss the hardware, constraints, and path to production.
             </h3>
           </div>
 
-          <Link href="/contact" className="w-fit rounded-full bg-emerald-500 px-6 py-3 text-sm font-medium text-black transition hover:bg-emerald-400">
+          <Link
+            href="/contact"
+            className="w-fit rounded-full bg-emerald-500 px-6 py-3 text-sm font-medium text-black transition hover:bg-emerald-400"
+          >
             Start a Project
           </Link>
         </div>
