@@ -19,7 +19,9 @@ const parseDetailBlocks = (details: string) => {
 
     return {
       type: isList ? "list" : "paragraph",
-      items: isList ? lines.map((line) => line.replace(/^([*-]|\d+\.)\s+/, "")) : [block],
+      items: isList
+        ? lines.map((line) => line.replace(/^([*-]|\d+\.)\s+/, ""))
+        : [block],
     };
   });
 };
@@ -37,7 +39,7 @@ const renderDetails = (details: ServiceDetail[] | string) => {
             </ul>
           ) : (
             <p key={index}>{item}</p>
-          )
+          ),
         )}
       </div>
     );
@@ -58,7 +60,7 @@ const renderDetails = (details: ServiceDetail[] | string) => {
           <p key={index} className={index ? "mt-4" : ""}>
             {block.items[0]}
           </p>
-        )
+        ),
       )}
     </div>
   );
@@ -74,17 +76,17 @@ export default function ServiceModal({
   const imageUrl = service.image;
 
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
     };
 
     document.addEventListener("keydown", onKey);
-    const prev = document.body.style.overflow;
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prev;
+      document.body.style.overflow = previousOverflow;
     };
   }, [onClose]);
 
@@ -92,26 +94,30 @@ export default function ServiceModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="absolute inset-0 bg-black/60" onClick={onClose} />
 
-      <div className="relative z-10 max-w-3xl w-full max-h-[80vh] overflow-auto rounded-2xl bg-neutral-950 border border-white/10 p-8 text-white">
+      <div className="relative z-10 max-h-[80vh] w-full max-w-3xl overflow-auto rounded-2xl border border-white/10 bg-neutral-950 p-8 text-white">
         <button
           aria-label="Close"
           className="absolute right-3 top-3 text-neutral-300 transition duration-200 hover:text-emerald-400"
           onClick={onClose}
         >
-          ✕
+          X
         </button>
 
         {imageUrl && (
           <img
             src={imageUrl}
             alt={service.title}
-            className="w-full h-48 object-cover rounded-md mb-4"
+            className="mb-4 h-48 w-full rounded-md object-cover"
           />
         )}
 
         <h3 className="text-2xl font-semibold">{service.title}</h3>
 
-        {renderDetails(service.details ?? service.description ?? "No additional details provided.")}
+        {renderDetails(
+          service.details ??
+            service.description ??
+            "No additional details provided.",
+        )}
       </div>
     </div>
   );

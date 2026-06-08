@@ -30,7 +30,7 @@ export default function Projects() {
         "Mixed-Signal PCB",
         "High-Speed Digital Design",
         "Hardware Validation",
-        "Manufacturing Support"
+        "Manufacturing Support",
       ],
       details: [
         "Designed around a compact 3.5-inch touchscreen form factor.",
@@ -235,7 +235,7 @@ function ProjectModal({
           className="absolute right-3 top-3 text-neutral-300 transition duration-200 hover:text-emerald-400"
           onClick={onClose}
         >
-          âœ•
+          X
         </button>
 
         <img
