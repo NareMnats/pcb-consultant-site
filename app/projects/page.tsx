@@ -25,10 +25,12 @@ export default function Projects() {
       credit:
         "Developed while employed as Hardware Design Engineer at Extron Electronics (2018-2022).",
       specs: [
-        "3.5-inch touchscreen",
-        "320 x 480 display",
-        "PoE-enabled design",
-        "Wall-mount enclosure",
+        "Power-over Ethernet (PoE)",
+        "1-Gang Juncion Box",
+        "Mixed-Signal PCB",
+        "High-Speed Digital Design",
+        "Hardware Validation",
+        "Manufacturing Support"
       ],
       details: [
         "Designed around a compact 3.5-inch touchscreen form factor.",
@@ -150,7 +152,7 @@ export default function Projects() {
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
-                  className="mt-10 w-fit rounded-full border border-white/20 px-6 py-3 text-sm transition hover:bg-white hover:text-black"
+                  className="mt-10 w-fit cursor-pointer rounded-full border border-white/20 px-6 py-3 text-sm transition hover:bg-white hover:text-black"
                 >
                   View Project
                 </button>
@@ -230,10 +232,10 @@ function ProjectModal({
         <button
           type="button"
           aria-label="Close"
-          className="absolute right-3 top-3 px-2 text-neutral-300 transition duration-200 hover:text-emerald-400"
+          className="absolute right-3 top-3 text-neutral-300 transition duration-200 hover:text-emerald-400"
           onClick={onClose}
         >
-          x
+          âœ•
         </button>
 
         <img
