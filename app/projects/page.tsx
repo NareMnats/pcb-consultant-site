@@ -7,7 +7,7 @@ export default function Projects() {
       title: "Wall-Mounted Touchpanel Control System",
       category: "Commercial AV Hardware",
       description:
-        "Compact wall-mounted touchpanel hardware: Extron TLP Pro 300M, designed for room control, AV systems, lighting, shades, HVAC, and security interfaces. Contributed to project while working at Extron Electronics.",
+        "Compact wall-mounted touchpanel hardware: Extron TLP Pro 300M, designed for room control, AV systems, lighting, shades, HVAC, and security interfaces. Developed while employed as Hardware Design Engineer at Extron Electronics (2018–2022)",
       specs: [
         "3.5-inch touchscreen",
         "320 × 480 display",
@@ -21,7 +21,7 @@ export default function Projects() {
       title: "Voice-Enabled Bluetooth Remote Control",
       category: "Wireless Hardware",
       description:
-        "Compact handheld classroom control remote designed for voice-enabled presentation management, wireless navigation, and quick access to instructional tools across connected classroom devices. Contributed to project while working at Merlyn Mind.",
+        "Compact handheld classroom control remote designed for voice-enabled presentation management, wireless navigation, and quick access to instructional tools across connected classroom devices. Developed while employed as Senior Electrical Engineer at Merlyn Mind (2020–2026).",
       specs: [
     "Wireless USB receiver",
     "Push-to-talk voice control",
@@ -34,7 +34,7 @@ export default function Projects() {
   title: "SSI 100 System Status Indicator",
   category: "Commercial AV Hardware",
   description:
-    "Architectural room status indicator concept inspired by the Extron SSI 100, designed for occupancy visibility, scheduling status, safety indication, and integrated AV room workflows. Contributed to project while working at Extron Electronics.",
+    "Architectural room status indicator concept inspired by the Extron SSI 100, designed for occupancy visibility, scheduling status, safety indication, and integrated AV room workflows. Developed while employed as Hardware Design Engineer at Extron Electronics (2018–2022).",
   specs: [
     "Multi-color backlit display",
     "PoE-powered operation",
