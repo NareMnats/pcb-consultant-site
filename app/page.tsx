@@ -99,7 +99,7 @@ export default function Home() {
                       }}
                       className="group rounded-3xl border border-white/10 bg-neutral-900 p-8 shadow-xl shadow-black/30 cursor-pointer transition-all duration-200 hover:bg-[#3dbe42] hover:border-[#3dbe42] focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 flex flex-col justify-center items-center text-center min-h-[100px]"
                     >
-                      <h4 className="text-2xl font-medium transition-colors duration-200 group-hover:text-black">{service.title}</h4>
+                      <span className="text-2xl font-medium transition-colors duration-200 group-hover:text-black">{service.title}</span>
 
                       <p className="text-neutral-400 transition-colors duration-200 group-hover:text-black"></p>
                     </article>

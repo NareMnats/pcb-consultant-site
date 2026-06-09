@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Josefin_Sans } from "next/font/google";
 import { usePathname } from "next/navigation";
 import { useState, type MouseEvent } from "react";
 import movsysIcon from "@/app/movsys_icon.png";
@@ -21,11 +20,6 @@ const navItems: NavItem[] = [
   { href: "/contact", label: "CONTACT", key: "contact" },
 ];
 
-const josefinSans = Josefin_Sans({
-  subsets: ["latin"],
-  weight: ["600"],
-});
-
 export default function SiteNav({
   active,
   variant = "sticky",
@@ -38,7 +32,7 @@ export default function SiteNav({
   const navClass =
     variant === "overlay"
       ? "absolute top-0 left-0 z-50 w-full px-4 py-6 md:px-8"
-      : "sticky top-0 z-50 w-full bg-transparent px-4 py-6 md:px-8";
+      : "relative z-50 w-full bg-transparent px-4 py-6 md:px-8";
 
   const handleNavClick = (
     event: MouseEvent<HTMLAnchorElement>,
@@ -61,9 +55,7 @@ export default function SiteNav({
     <>
       <nav className={navClass}>
         <div className="flex items-center justify-between gap-3">
-          <h1
-            className={`${josefinSans.className} max-w-[74%] text-[15px] font-semibold lg:max-w-none lg:text-[22px]`}
-          >
+          <h1 className="max-w-[74%] text-[15px] font-semibold lg:max-w-none lg:text-[22px]">
             <Link href="/" className="flex min-w-0 items-center gap-2.5">
               <Image
                 src={movsysIcon}

@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
+
+const josefinSans = Josefin_Sans({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-josefin-sans",
+});
 
 export const metadata: Metadata = {
   title: "MovSys Engineering & Consulting",
@@ -12,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className={`${josefinSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
