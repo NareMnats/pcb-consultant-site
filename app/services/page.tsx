@@ -17,7 +17,7 @@ export default function Services() {
     "Test, debug, revise, and prepare for the next build.",
   ];
 
-  const [servicesList] = useState<Service[]>(services.slice(0, 6));
+  const [servicesList] = useState<Service[]>(services);
   const [selected, setSelected] = useState<Service | null>(null);
 
   return (

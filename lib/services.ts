@@ -136,6 +136,13 @@ const services: Service[] = [
       "This step ensures the design is technically balanced, manufacturable, and aligned with system-level requirements before schematic and PCB implementation.",
     ],
   },
+  {
+    title: "Placeholder Service",
+    details: [
+      "Placeholder details for an additional workflow step.",
+      "This content can be replaced with the final service description later.",
+    ],
+  },
 ];
 
 export default services;
