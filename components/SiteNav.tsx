@@ -65,7 +65,10 @@ export default function SiteNav({
                 className="h-[35px] w-auto shrink-0"
                 priority
               />
-              <span className="truncate tracking-[0.15em]">
+              <span className="truncate tracking-[0.1425em] sm:hidden">
+                MOVSYS ENGINEERING
+              </span>
+              <span className="hidden truncate tracking-[0.1425em] sm:inline">
                 MOVSYS ENGINEERING & CONSULTING
               </span>
             </Link>
