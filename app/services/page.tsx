@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import SiteNav from "@/components/SiteNav";
 import ServiceModal from "@/components/ServiceModal";
+import ServiceWorkflow from "@/components/ServiceWorkflow";
 import services, { type Service } from "@/lib/services";
 
 export default function Services() {
@@ -37,28 +38,7 @@ export default function Services() {
 
       <section className="px-8 pb-28">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {servicesList.map((service) => (
-              <article
-                key={service.title}
-                role="button"
-                tabIndex={0}
-                onClick={() => setSelected(service)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    setSelected(service);
-                    e.preventDefault();
-                  }
-                }}
-                className="group rounded-3xl border border-white/10 bg-neutral-950 p-8 cursor-pointer transition-all duration-200 hover:bg-[#3dbe42] hover:border-[#3dbe42] focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 flex flex-col justify-center items-center text-center min-h-[100px]"
-              >
-
-                <span className="text-2xl font-medium transition-colors duration-200 group-hover:text-black">
-                  {service.title}
-                </span>
-              </article>
-            ))}
-          </div>
+          <ServiceWorkflow services={servicesList} onSelect={setSelected} />
         </div>
       </section>
 
