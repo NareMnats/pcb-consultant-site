@@ -40,7 +40,7 @@ export default function Home() {
         <SiteNav active="home" variant="sticky" />
 
         {/* HERO CONTENT */}
-        <div className="relative z-10 flex items-start px-8 pt-12 md:h-full md:items-center md:pt-0">
+        <div className="relative z-10 flex items-start px-8 pt-10 md:h-full md:items-center md:pt-0">
           <div className="max-w-5xl">
 
             <h2 className="max-w-4xl text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
