@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type MouseEvent } from "react";
-import movsysIcon from "@/app/movsys_icon.png";
 
 type NavItem = {
   href: string;
@@ -58,10 +57,10 @@ export default function SiteNav({
           <h1 className="max-w-[74%] text-[15px] font-semibold lg:max-w-none lg:text-[22px]">
             <Link href="/" className="flex min-w-0 items-center gap-2.5">
               <Image
-                src={movsysIcon}
+                src="/movsys-logo.svg"
                 alt=""
                 width={31}
-                height={35}
+                height={36}
                 className="h-[35px] w-auto shrink-0"
                 priority
               />
