@@ -49,8 +49,7 @@ export default function Home() {
             </h2>
 
             <p className="mt-8 max-w-2xl text-lg text-neutral-300">
-              I help startups and engineering teams take hardware systems from architecture to working EVT prototypes, 
-              including component selection, schematic design, PCB layout, and board bring-up.
+              Helping startups and engineering teams turn hardware concepts into EVT-ready prototypes.
             </p>
 
             <div className="mt-10 flex gap-4">
