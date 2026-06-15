@@ -70,24 +70,23 @@ const services: Service[] = [
     title: "Component Selection",
     details: {
       intro:
-        "Once the architecture is defined, I refine the design through detailed component selection and trade-off analysis.",
+        "Evaluate technologies and identify critical components (e.g. microcontrollers, sensors) which align with product functional and performance requirements. Once part selections are made, the system block diagram can be refined.",
       bullets: [
         {
-          heading: "Technology research and trade-off evaluation",
-          text: "compare available approaches against performance, schedule, cost, and risk.",
+          heading: "Trade-Off Analyses",
+          text: "Select components balancing electrical performance, power consumption, cost, and availability at major distributors (e.g. Digikey, Mouser)",
         },
         {
-          heading:
-            "Selection of key ICs based on performance, cost, availability, and lifecycle",
-          text: "choose components that fit the design goals and are practical to source.",
+          heading: "Interface Compatibility",
+          text: "Validate that the selected parts can communicate with one another including protocols and logic-level alignment",
         },
         {
-          heading: "Interface selection and compatibility checks across system blocks",
-          text: "confirm voltage levels, timing, protocols, and integration assumptions early.",
+          heading: "Power Analysis",
+          text: "Finalize power tree and use component datasheets to calculate current consumption per voltage rail and total power consumption",
         },
         {
-          heading: "Power budget review and optimization",
-          text: "estimate consumption and refine the power architecture before schematic capture.",
+          heading: "CAD Library & Part Integration",
+          text: "Ensure all selected components are implementation-ready with validated symbols, footprints, pin mapping and 3D models",
         },
       ],
     },
@@ -96,27 +95,23 @@ const services: Service[] = [
     title: "Schematic Design",
     details: {
       intro:
-        "I perform full schematic design and capture using Altium Designer. Where applicable, I use circuit-level SPICE simulation to validate key circuit stages prior to implementation.",
+        "Translate validated system architecture into complete electrical implementation. Schematic design is performed in Altium Designer.",
       bullets: [
         {
-          heading: "Component symbol and footprint definition",
-          text: "create or verify library parts so schematic and layout data stay aligned.",
+          heading: "Circuit Design",
+          text: "Develop power, digital, analog, and mixed-signal circuits, interface implementation and component sizing",
         },
         {
-          heading: "Complete circuit implementation based on system architecture",
-          text: "translate the architecture into detailed, reviewable electrical design.",
+          heading: "Analysis & Simulation",
+          text: "Perform SPICE simulation and engineering analysis of critical circuits to validate performance and reduce design risk",
         },
         {
-          heading: "Power, digital, and mixed-signal circuit integration",
-          text: "connect regulators, processors, sensors, and analog stages with system behavior in mind.",
+          heading: "Schematic Capture",
+          text: "Create schematics in Altium Designer, implementing designed circuit blocks with selected components",
         },
         {
-          heading: "Interface and subsystem connectivity design",
-          text: "define signal paths, protection, connectors, and configuration details.",
-        },
-        {
-          heading: "Pre-layout design review and verification",
-          text: "catch electrical and integration issues before they become board-level problems.",
+          heading: "Design Review & Verification",
+          text: "Run Electrical Rules Checks (ERCs), connectivity verification, and schematic reviews to identify issues prior to PCB layout",
         },
       ],
     },
@@ -125,31 +120,23 @@ const services: Service[] = [
     title: "PCB Layout",
     details: {
       intro:
-        "With the schematic completed and approved, PCB layout begins. This is performed for low to moderate complexity designs, typically up to about 6-layer boards.",
+        "Convert validated schematics into a physical, manufacturable printed circuit board layout. PCB layout is performed in Altium Designer.",
       bullets: [
         {
-          heading:
-            "Collaboration with mechanical teams to define board outlines, enclosure constraints, connector placement, and mounting requirements",
-          text: "align the PCB with the physical product before placement begins.",
+          heading: "Board Floorplanning",
+          text: "Define board stack-up, board outline, component placement strategy based on functional partitioning and mechanical drawings (connectors, mounting)",
         },
         {
-          heading: "Board floorplanning and stack-up definition",
-          text: "organize components, layers, and routing strategy around power and signal needs.",
+          heading: "Board Layout",
+          text: "Route signals (copper tracks/planes) optimizing design for manufacturability to meet fabrication and assembly capabilities of the selected PCB manufacturer",
         },
         {
-          heading:
-            "Constraint-driven layout for manufacturability and reliable assembly",
-          text: "apply rules that support fabrication, assembly, and long-term reliability.",
+          heading: "Design Review",
+          text: "Run Design Rules Checks (DRCs), connectivity verification, and final review of component placement and routing prior to release",
         },
         {
-          heading:
-            "Signal and power-aware layout practices to support system performance requirements",
-          text: "route critical nets, returns, and power distribution with measurement goals in mind.",
-        },
-        {
-          heading:
-            "PCB manufacturer and assembly constraint review before fabrication",
-          text: "check the finished layout against supplier capabilities before release.",
+          heading: "Production Release",
+          text: "Generate and review fabrication/assembly outputs (Gerbers, drill files, BOM, pick-and-place, STEP models) and provide support during fabrication and initial build",
         },
       ],
     },
