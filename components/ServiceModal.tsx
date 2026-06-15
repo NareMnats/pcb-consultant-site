@@ -35,7 +35,7 @@ const renderDetails = (details: ServiceDetails | string) => {
         <ul className="list-disc space-y-3 pl-5">
           {details.bullets.map((bullet) => (
             <li key={bullet.heading}>
-              <span className="font-semibold text-neutral-200">
+              <span className="font-semibold">
                 {bullet.heading}
               </span>
               {bullet.text && <span>: {bullet.text}</span>}
