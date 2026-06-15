@@ -10,6 +10,7 @@ export type ServiceDetails = {
 
 export type Service = {
   title: string;
+  summary: string;
   details: ServiceDetails;
   image?: string;
   description?: string;
@@ -18,6 +19,8 @@ export type Service = {
 const services: Service[] = [
   {
     title: "Requirements Definition",
+    summary:
+      "Turn product intent into measurable requirements that guide every technical decision.",
     details: {
       intro:
         "Establish clear, measurable system requirements that define what is being built, how it will operate, and how success will be evaluated. Strong requirements at this stage improve downstream design decisions, reducing the risk of project delays and costly redesigns.",
@@ -43,6 +46,8 @@ const services: Service[] = [
   },
   {
     title: "System Architecture",
+    summary:
+      "Shape requirements into a clear hardware architecture with defined blocks, power, interfaces, and form factor.",
     details: {
       intro:
         "Translate system requirements into a high-level architecture that identifies major hardware blocks and defines how they are organized and communicate within the system.",
@@ -68,6 +73,8 @@ const services: Service[] = [
   },
   {
     title: "Component Selection",
+    summary:
+      "Choose implementation-ready parts that balance performance, power, availability, and integration risk.",
     details: {
       intro:
         "Evaluate technologies and identify critical components (e.g. microcontrollers, sensors) which align with product functional and performance requirements. Once part selections are made, the system block diagram can be refined.",
@@ -93,6 +100,8 @@ const services: Service[] = [
   },
   {
     title: "Schematic Design",
+    summary:
+      "Translate the validated architecture into complete Altium schematics ready for layout.",
     details: {
       intro:
         "Translate validated system architecture into complete electrical implementation. Schematic design is performed in Altium Designer.",
@@ -118,6 +127,8 @@ const services: Service[] = [
   },
   {
     title: "PCB Layout",
+    summary:
+      "Convert validated schematics into a manufacturable Altium PCB release package.",
     details: {
       intro:
         "Convert validated schematics into a physical, manufacturable printed circuit board layout. PCB layout is performed in Altium Designer.",
@@ -143,6 +154,8 @@ const services: Service[] = [
   },
   {
     title: "Firmware Development",
+    summary:
+      "Build lightweight firmware and test code early to accelerate hardware bring-up.",
     details: {
       intro:
         "Development of lightweight firmware architecture and test code can begin during PCB fabrication. MCU evaluation kits and breakout boards enable early code development and validation, reducing risk and accelerating system bring-up.",
@@ -168,6 +181,8 @@ const services: Service[] = [
   },
   {
     title: "Bring-Up & Debug",
+    summary:
+      "Power, probe, and debug prototype hardware until each subsystem behaves reliably.",
     details: {
       intro:
         "Validate prototype hardware through systematic testing and debugging to identify and resolve design issues. This phase verifies correct subsystem operation and establishes a stable platform for system test and validation.",
@@ -193,6 +208,8 @@ const services: Service[] = [
   },
   {
     title: "System Test & Validation",
+    summary:
+      "Validate the integrated EVT build against requirements and prepare it for the next development phase.",
     details: {
       intro:
         "Following subsystem verification, perform system-level validation of hardware and firmware functionality to ensure the EVT build meets product objectives and requirements.",

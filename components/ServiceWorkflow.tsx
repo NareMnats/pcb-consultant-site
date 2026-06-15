@@ -9,9 +9,6 @@ export default function ServiceWorkflow({
   services,
   onSelect,
 }: ServiceWorkflowProps) {
-  const placeholderText =
-    "Brief supporting text for this service block will go here.";
-
   return (
     <div className="relative mx-auto max-w-4xl">
       <div className="absolute bottom-14 left-5 top-14 w-px bg-[#3dbe42]/70 sm:bottom-[78px] sm:left-7 sm:top-[78px]" />
@@ -53,7 +50,7 @@ export default function ServiceWorkflow({
                   </h4>
 
                   <p className="mt-3 max-w-md text-sm leading-6 text-neutral-400 sm:mt-4">
-                    {placeholderText}
+                    {service.summary}
                   </p>
                 </div>
               </article>
