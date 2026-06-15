@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import type { Service, ServiceDetail } from "@/lib/services";
+import type { Service, ServiceDetails } from "@/lib/services";
 
 const parseDetailBlocks = (details: string) => {
   const blocks = details
@@ -26,21 +26,22 @@ const parseDetailBlocks = (details: string) => {
   });
 };
 
-const renderDetails = (details: ServiceDetail[] | string) => {
-  if (Array.isArray(details)) {
+const renderDetails = (details: ServiceDetails | string) => {
+  if (typeof details === "object") {
     return (
-      <div className="mt-4 space-y-4 text-neutral-400">
-        {details.map((item, index) =>
-          Array.isArray(item) ? (
-            <ul key={index} className="list-disc space-y-3 pl-5">
-              {item.map((subItem, subIndex) => (
-                <li key={subIndex}>{subItem}</li>
-              ))}
-            </ul>
-          ) : (
-            <p key={index}>{item}</p>
-          ),
-        )}
+      <div className="mt-4 space-y-5 text-neutral-400">
+        <p>{details.intro}</p>
+
+        <ul className="list-disc space-y-3 pl-5">
+          {details.bullets.map((bullet) => (
+            <li key={bullet.heading}>
+              <span className="font-semibold text-neutral-200">
+                {bullet.heading}
+              </span>
+              {bullet.text && <span>: {bullet.text}</span>}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }

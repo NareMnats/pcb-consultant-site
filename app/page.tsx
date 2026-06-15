@@ -48,7 +48,7 @@ export default function Home() {
               Embedded hardware development for early to mid-stage product builds
             </h2>
 
-            <p className="mt-8 max-w-2xl text-lg text-neutral-300">
+            <p className="mt-8 max-w-none whitespace-nowrap text-lg text-neutral-300">
               Helping startups and engineering teams turn hardware concepts into EVT-ready prototypes.
             </p>
 
