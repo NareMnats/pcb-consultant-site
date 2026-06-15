@@ -45,11 +45,11 @@ export default function Home() {
           <div className="max-w-5xl">
 
             <h2 className="max-w-4xl text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
-              Embedded hardware development for early to mid-stage product builds
+              Embedded hardware development for early-stage product builds
             </h2>
 
             <p className="mt-8 max-w-4xl text-balance text-lg text-neutral-300">
-              From system definition through bring-up and validation, helping startups and engineering teams transform concepts into EVT-ready, manufacturable, and testable hardware systems.
+              From system definition through bring-up and validation, helping startups and engineering teams transform concepts into manufacturable and testable hardware systems.
             </p>
 
             <div className="mt-10 flex gap-4">
