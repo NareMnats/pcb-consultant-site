@@ -20,28 +20,23 @@ const services: Service[] = [
     title: "Requirements Definition",
     details: {
       intro:
-        "This stage defines the foundation of the entire project. Clear, well-structured requirements significantly reduce iteration cycles and downstream redesign effort.",
+        "Establish clear, measurable system requirements that define what is being built, how it will operate, and how success will be evaluated. Strong requirements at this stage improve downstream design decisions, reducing the risk of project delays and costly redesigns.",
       bullets: [
         {
-          heading: "Product use cases and operating environment",
-          text: "define where the product will be used and what conditions it must tolerate.",
+          heading: "Operational Scope",
+          text: "Outline product use cases and operating environments",
         },
         {
-          heading: "End-user and system-level expectations",
-          text: "capture the behaviors, interfaces, and constraints the design needs to satisfy.",
+          heading: "Technical Specifications",
+          text: "Detail system-level requirements and electrical specifications",
         },
         {
-          heading: "Electrical performance specifications",
-          text: "set measurable targets for power, signals, interfaces, and operating limits.",
+          heading: "Design Limitations",
+          text: "Define physical, power, cost, and manufacturing constraints",
         },
         {
-          heading:
-            "Design constraints, including mechanical, power, cost, and manufacturing considerations",
-          text: "identify the practical boundaries that shape architecture and implementation choices.",
-        },
-        {
-          heading: "Performance targets including measurable acceptance criteria",
-          text: "turn project goals into clear checkpoints for design review and validation.",
+          heading: "Acceptance Criteria",
+          text: "Set performance targets with measurable success metrics",
         },
       ],
     },
@@ -50,23 +45,23 @@ const services: Service[] = [
     title: "System Architecture",
     details: {
       intro:
-        "With requirements defined, I develop a high-level system architecture that models the product's hardware structure.",
+        "Translate system requirements into a high-level architecture that identifies major hardware blocks and defines how they are organized and communicate within the system.",
       bullets: [
         {
-          heading: "System block diagram definition",
-          text: "map the major functions and show how the hardware is organized.",
+          heading: "Block Diagram",
+          text: "Develop a system block diagram and group functional blocks into subsystems",
         },
         {
-          heading: "Partitioning of subsystems and functional blocks",
-          text: "separate the design into manageable electrical and firmware responsibilities.",
+          heading: "Power Architecture",
+          text: "Define high-level power tree, power regulation topologies and consumption estimates",
         },
         {
-          heading: "Microcontroller/System-on-Chip selection considerations",
-          text: "compare processing, interface, power, and lifecycle needs before locking the core device.",
+          heading: "Interconnect Strategy",
+          text: "Define system interfaces including connectors, communication protocols, and board-to-board interconnects",
         },
         {
-          heading: "Interface planning",
-          text: "define how sensors, power stages, radios, displays, and external systems communicate.",
+          heading: "Form Factor",
+          text: "Plan board shape, size, number of boards (e.g. single vs. multi-board designs)",
         },
       ],
     },
