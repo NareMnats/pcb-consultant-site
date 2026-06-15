@@ -145,24 +145,23 @@ const services: Service[] = [
     title: "Firmware Development",
     details: {
       intro:
-        "I develop firmware needed to exercise, validate, and support the hardware design through prototype development.",
+        "Development of lightweight firmware architecture and test code can begin during PCB fabrication. MCU evaluation kits and breakout boards enable early code development and validation, reducing risk and accelerating system bring-up.",
       bullets: [
         {
-          heading: "Low-level driver development for selected components",
-          text: "bring up the basic software needed to talk to key devices on the board.",
+          heading: "Firmware Architecture",
+          text: "Define firmware structure and execution flow (e.g. state machines, flowcharts)",
         },
         {
-          heading: "Peripheral configuration and interface validation",
-          text: "exercise buses, pins, timers, ADCs, PWMs, and communication links.",
+          heading: "System Initialization",
+          text: "Configure the microcontroller, clocks, and peripherals drivers required for system operation",
         },
         {
-          heading:
-            "Board test routines for sensors, power rails, and communication links",
-          text: "create firmware hooks that make hardware behavior visible during testing.",
+          heading: "Interface Development",
+          text: "Develop and validate communication interfaces (e.g. SPI, I2C, UART, GPIO) using evaluation hardware",
         },
         {
-          heading: "Prototype firmware to support bring-up and early system testing",
-          text: "provide enough functionality to evaluate the board as a system.",
+          heading: "Test Firmware",
+          text: "Develop firmware to test application logic and hardware subsystems using either bare metal or Hardware Abstraction Layer (HAL) code",
         },
       ],
     },
@@ -171,24 +170,23 @@ const services: Service[] = [
     title: "Bring-Up & Debug",
     details: {
       intro:
-        "After prototype boards are assembled, I support first power-on, measurement, and issue resolution.",
+        "Validate prototype hardware through systematic testing and debugging to identify and resolve design issues. This phase verifies correct subsystem operation and establishes a stable platform for system test and validation.",
       bullets: [
         {
-          heading: "Initial power-up checks and current-limit validation",
-          text: "power the board carefully while watching for shorts, excess current, and rail issues.",
+          heading: "Initial Inspection",
+          text: "Perform physical verification of assembled boards including component placement, orientation, solder quality, mechanical fit checks, and detection of shorts using a DMM prior to power-up",
         },
         {
-          heading: "Power rail, clock, reset, and boot-sequence verification",
-          text: "confirm the fundamentals needed before deeper firmware and interface testing.",
+          heading: "System Power-Up",
+          text: "Apply power and verify voltage rails with DMM, power sequencing, regulator stability, current draw, and overall power consumption",
         },
         {
-          heading:
-            "Interface probing with oscilloscopes, logic analyzers, and test firmware",
-          text: "measure real signals and compare behavior against design intent.",
+          heading: "Peripheral Bring-Up",
+          text: "Flash test firmware to boot the system, initialize peripherals, verify clock signals, validate GPIO functionality, and confirm basic system operation. Use lab equipment (e.g. oscilloscope, logic analyzer, DMM) to validate communication interfaces, signal timing, signal integrity, and logic-level behavior",
         },
         {
-          heading: "Hardware issue isolation and corrective action recommendations",
-          text: "separate assembly, layout, component, and firmware causes so fixes are targeted.",
+          heading: "Hardware & Firmware Debug",
+          text: "Troubleshoot hardware and firmware issues and resolve design flaws. Step through firmware execution using a debugger probe to verify system behavior, and execution flow",
         },
       ],
     },
@@ -197,23 +195,23 @@ const services: Service[] = [
     title: "System Test & Validation",
     details: {
       intro:
-        "I validate the assembled system against its requirements and expected operating conditions.",
+        "Following subsystem verification, perform system-level validation of hardware and firmware functionality to ensure the EVT build meets product objectives and requirements.",
       bullets: [
         {
-          heading: "Functional test planning based on defined acceptance criteria",
-          text: "turn requirements into practical tests that confirm the prototype is meeting goals.",
+          heading: "Functional Verification",
+          text: "Execute system firmware to validate full system operation, including application logic, high-level behavior, and integration of individual firmware modules.",
         },
         {
-          heading: "Electrical and firmware behavior validation",
-          text: "verify that measured hardware behavior and embedded software work together.",
+          heading: "Requirements Validation",
+          text: "Execute defined test cases from the verification and validation plan to confirm system behavior against specified requirements and acceptance criteria.",
         },
         {
-          heading: "Environmental and operating-condition checks where applicable",
-          text: "exercise the design across relevant supply, load, temperature, and usage conditions.",
+          heading: "Design Sign-Off",
+          text: "Perform final engineering review of hardware and firmware performance to confirm readiness for EVT completion and transition to DVT or production prototyping.",
         },
         {
-          heading: "Test result documentation and revision recommendations",
-          text: "capture findings clearly so the next revision or pilot build has direction.",
+          heading: "Handoff Documentation",
+          text: "Compile final design package including test results, known issues, design notes, firmware revisions, and recommendations for DVT transition and future iterations.",
         },
       ],
     },
