@@ -48,8 +48,8 @@ export default function Home() {
               Embedded hardware development for early to mid-stage product builds
             </h2>
 
-            <p className="mt-8 max-w-none whitespace-nowrap text-lg text-neutral-300">
-              Helping startups and engineering teams turn hardware concepts into EVT-ready prototypes.
+            <p className="mt-8 max-w-4xl whitespace-normal text-lg text-neutral-300">
+              End-to-end embedded hardware development from system definition through bring-up and validation, helping startups and engineering teams transform concepts into EVT-ready, manufacturable, and testable hardware systems.
             </p>
 
             <div className="mt-10 flex gap-4">
