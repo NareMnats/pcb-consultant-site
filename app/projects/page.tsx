@@ -157,7 +157,9 @@ export default function Projects() {
             </p>
 
             <h3 className="mt-6 max-w-2xl text-4xl font-semibold">
-              Let&apos;s discuss the hardware, constraints, and path to production.
+              Let&apos;s discuss your product
+              <br />
+              concept and needs
             </h3>
           </div>
 
