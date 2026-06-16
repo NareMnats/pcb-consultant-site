@@ -9,7 +9,7 @@ type Project = {
   category: string;
   description: string;
   credit: string;
-  specs: string[];
+  intro: string;
   details: string[];
   image: string;
   imagePosition?: string;
@@ -18,24 +18,19 @@ type Project = {
 export default function Projects() {
   const projects: Project[] = [
     {
-      title: "TouchLink Panel TLP300M",
+      title: "TLP300M TouchLink Panel",
       category: "AV Hardware",
       description:
-        "Designed a compact 3.5-inch Power-over-Ethernet (PoE), wall mounted touch panel for room control applications including AV systems, HVAC, lighting, and shades. The product expanded the company's TouchLink portfolio by introducing its first touch panel in this form factor.",
+        "Compact 3.5-inch PoE powered, wall-mount touchpanel for room control applications including AV systems, HVAC, and lighting. The product expanded the company's TouchLink portfolio by introducing its first touch panel in this reduced form factor.",
       credit:
         "Developed while employed as Hardware Design Engineer at Extron Electronics (2018-2022).",
-      specs: [
-        "Power-over Ethernet (PoE)",
-        "Embedded Linux",
-        "ARM Cortex-A9",
-        "Mixed-Signal PCB",
-        "Hardware Validation",
-        "Manufacturing Support",
-      ],
+      intro:
+        "Led end-to-end hardware development from architecture through product release, including high-speed digital design, mixed-signal PCB development, compliance testing, and manufacturing support.",
       details: [
-        "Designed around a compact 3.5-inch touchscreen form factor.",
-        "Supported PoE-enabled wall-mounted room control applications.",
-        "Integrated into AV, lighting, shades, HVAC, and security workflows.",
+        "Architected the embedded platform, integrating an ARM Cortex-A9 application processor, DDR memory, flash storage, Ethernet, USB, and supporting power infrastructure.",
+        "Defined high-speed PCB requirements, including stackup, impedance control, terminations, and layout constraints for meeting signal integrity.",
+        "Resolved complex hardware and production issues through systematic bring-up, debugging, and root-cause analysis, while introducing a streamlined board programming approach to improve manufacturing efficiency.",
+        "Delivered a compact, low-power hardware platform that met stringent mechanical, thermal, and cost constraints.",
       ],
       image:
         "https://media.extron.com/public/landing/content/tlppro300m/img/tlppro300m_environment.jpg",
@@ -47,11 +42,8 @@ export default function Projects() {
         "Compact handheld classroom control remote designed for voice-enabled presentation management, wireless navigation, and quick access to instructional tools across connected classroom devices.",
       credit:
         "Developed while employed as Senior Electrical Engineer at Merlyn Mind (2020-2026).",
-      specs: [
-        "Wireless USB receiver",
-        "Push-to-talk voice control",
-        "Air mouse navigation",
-      ],
+      intro:
+        "Supported wireless classroom control hardware development for voice-enabled presentation and navigation workflows.",
       details: [
         "Supported wireless control through a USB receiver.",
         "Included push-to-talk voice interaction for classroom workflows.",
@@ -67,14 +59,8 @@ export default function Projects() {
         "Architectural room status indicator concept inspired by the Extron SSI 100, designed for occupancy visibility, scheduling status, safety indication, and integrated AV room workflows.",
       credit:
         "Developed while employed as Hardware Design Engineer at Extron Electronics (2018-2022).",
-      specs: [
-        "Multi-color backlit display",
-        "PoE-powered operation",
-        "Wall & ceiling mount options",
-        "Calendar integration",
-        "Occupancy sensor support",
-        "Custom engraved lens",
-      ],
+      intro:
+        "Developed room-status indicator hardware concepts for integrated AV spaces requiring visible scheduling, occupancy, and safety state feedback.",
       details: [
         "Displayed multi-color room status indication.",
         "Supported PoE-powered wall and ceiling mount use cases.",
@@ -138,23 +124,12 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                <div className="mt-8 grid grid-cols-3 gap-3">
-                  {project.specs.map((spec) => (
-                    <span
-                      key={spec}
-                      className="rounded-full border border-white/10 px-4 py-2 text-center text-sm text-neutral-300"
-                    >
-                      {spec}
-                    </span>
-                  ))}
-                </div>
-
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
                   className="mt-10 w-fit cursor-pointer rounded-full border border-white/20 px-6 py-3 text-sm transition hover:bg-white hover:text-black"
                 >
-                  View Project
+                  View Work
                 </button>
 
                 <p className="absolute bottom-6 right-8 max-w-[calc(100%-4rem)] truncate text-right text-xs text-neutral-500 md:bottom-8 md:right-12 md:max-w-[calc(100%-6rem)]">
@@ -211,11 +186,19 @@ function ProjectModal({
 
     document.addEventListener("keydown", onKey);
     const previousOverflow = document.body.style.overflow;
+    const previousPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
     document.body.style.overflow = "hidden";
 
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = previousOverflow;
+      document.body.style.paddingRight = previousPaddingRight;
     };
   }, [onClose]);
 
@@ -252,9 +235,11 @@ function ProjectModal({
 
         <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
 
-        <p className="mt-4 text-neutral-400">{project.description}</p>
+        <p className="mt-4 text-neutral-400">{project.intro}</p>
 
-        <ul className="mt-6 list-disc space-y-3 pl-5 text-neutral-400">
+        <p className="mt-6 font-semibold">Key Contributions</p>
+
+        <ul className="mt-3 list-disc space-y-3 pl-5 text-neutral-400">
           {project.details.map((detail) => (
             <li key={detail}>{detail}</li>
           ))}
