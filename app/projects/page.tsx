@@ -36,25 +36,26 @@ export default function Projects() {
         "https://media.extron.com/public/landing/content/tlppro300m/img/tlppro300m_environment.jpg",
     },
     {
-      title: "Voice-Enabled Bluetooth Remote Control",
+      title: "Voice Enabled Bluetooth Remote Control",
       category: "Wireless Hardware",
       description:
-        "Compact handheld classroom control remote designed for voice-enabled presentation management, wireless navigation, and quick access to instructional tools across connected classroom devices.",
+        "Wireless hardware designed to allow teachers to interact with the Merlyn AI classroom digital assistant with push-to-talk commands and wireless navigation over BLE, enabling remote control of desktop applications and access to a variety of instructional tools.",
       credit:
         "Developed while employed as Senior Electrical Engineer at Merlyn Mind (2020-2026).",
       intro:
-        "Supported wireless classroom control hardware development for voice-enabled presentation and navigation workflows.",
+        "Developed second-generation hardware prototypes with improved Bluetooth performance, wireless range, and voice quality, while unifying the design with a related product variant to reduce product SKUs and simplify manufacturing and support.",
       details: [
-        "Supported wireless control through a USB receiver.",
-        "Included push-to-talk voice interaction for classroom workflows.",
-        "Provided air mouse navigation for connected presentation devices.",
+        "Defined system hardware architecture and led selection of the Bluetooth LE SoC and critical sensing components through structured technical and vendor-support trade-off studies, using weighted decision matrices to evaluate solution maturity and assess design risk.",
+        "Designed embedded prototypes in Altium constrained by existing mechanical enclosure, reusing existing plastic tooling to reduce time-to-market while incorporating DFM considerations such as trace widths, via-in-pad usage, and testability for production and bring-up.",
+        "Developed board bring-up and validation strategy, including test plans for hardware verification and system-level functionality across power, sensing, BLE, and audio subsystems.",
+        "Implemented test firmware and configured peripherals on a Zephyr RTOS based platform, enabling hardware bring-up and root-cause analysis of IMU, BLE, and audio subsystem issues.",
       ],
       image: "/images/merlynremote_withlaptop.png",
       imagePosition: "object-[100%_center]",
     },
     {
       title: "SSI 100 System Status Indicator",
-      category: "Commercial AV Hardware",
+      category: "Lighting Hardware",
       description:
         "Architectural room status indicator concept inspired by the Extron SSI 100, designed for occupancy visibility, scheduling status, safety indication, and integrated AV room workflows.",
       credit:
@@ -132,7 +133,7 @@ export default function Projects() {
                   View Work
                 </button>
 
-                <p className="absolute bottom-6 right-8 max-w-[calc(100%-4rem)] truncate text-right text-xs text-neutral-500 md:bottom-8 md:right-12 md:max-w-[calc(100%-6rem)]">
+                <p className="absolute bottom-6 right-8 max-w-[calc(100%-4rem)] text-right text-xs leading-snug text-neutral-500 md:bottom-8 md:right-12 md:max-w-[calc(100%-6rem)] md:truncate">
                   {project.credit}
                 </p>
               </div>
