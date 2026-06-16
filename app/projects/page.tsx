@@ -18,7 +18,7 @@ type Project = {
 export default function Projects() {
   const projects: Project[] = [
     {
-      title: "TLP300M TouchLink Panel",
+      title: "TLP 300M TouchLink Panel",
       category: "AV Hardware",
       description:
         "Compact 3.5-inch PoE powered, wall-mount touchpanel for room control applications including AV systems, HVAC, and lighting. The product expanded the company's TouchLink portfolio by introducing its first touch panel in this reduced form factor.",
@@ -28,7 +28,7 @@ export default function Projects() {
         "Led end-to-end hardware development from architecture through product release, including high-speed digital design, mixed-signal PCB development, compliance testing, and manufacturing support.",
       details: [
         "Architected the embedded platform, integrating an ARM Cortex-A9 application processor, DDR memory, flash storage, Ethernet, USB, and supporting power infrastructure.",
-        "Defined high-speed PCB requirements, including stackup, impedance control, terminations, and layout constraints for meeting signal integrity.",
+        "Defined high-speed PCB design requirements including stackup selection, controlled impedance routing, termination strategies, and layout constraints to ensure signal integrity and EMI/EMC compliance.",
         "Resolved complex hardware and production issues through systematic bring-up, debugging, and root-cause analysis, while introducing a streamlined board programming approach to improve manufacturing efficiency.",
         "Delivered a compact, low-power hardware platform that met stringent mechanical, thermal, and cost constraints.",
       ],
@@ -48,7 +48,7 @@ export default function Projects() {
         "Defined system hardware architecture and led selection of the Bluetooth LE SoC and critical sensing components through structured technical and vendor-support trade-off studies, using weighted decision matrices to evaluate solution maturity and assess design risk.",
         "Designed embedded prototypes in Altium constrained by existing mechanical enclosure, reusing existing plastic tooling to reduce time-to-market while incorporating DFM considerations such as trace widths, via-in-pad usage, and testability for production and bring-up.",
         "Developed board bring-up and validation strategy, including test plans for hardware verification and system-level functionality across power, sensing, BLE, and audio subsystems.",
-        "Implemented test firmware and configured peripherals on a Zephyr RTOS based platform, enabling hardware bring-up and root-cause analysis of IMU, BLE, and audio subsystem issues.",
+        "Implemented test firmware and configured peripherals on a Zephyr RTOS based platform, enabling hardware bring-up and root-cause analysis of IMU, BLE, USB and audio issues.",
       ],
       image: "/images/merlynremote_withlaptop.png",
       imagePosition: "object-[100%_center]",
@@ -80,12 +80,12 @@ export default function Projects() {
       <section className="px-8 py-24 md:py-32">
         <div className="mx-auto max-w-7xl">
           <p className="mb-6 text-sm uppercase tracking-[0.3em] text-neutral-500">
-            Selected Work
+            Projects
           </p>
 
           <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
             <h2 className="text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
-              Hardware projects designed with precision and production in mind.
+              Selected Embedded Hardware Work
             </h2>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function Projects() {
                 />
               </div>
 
-              <div className="relative flex min-h-[28rem] flex-col justify-center p-8 pb-16 md:p-12 md:pb-20">
+              <div className="relative flex min-h-[28rem] flex-col justify-center p-8 pb-24 md:p-12 md:pb-20">
                 <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
                   {project.category}
                 </p>
