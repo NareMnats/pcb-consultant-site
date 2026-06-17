@@ -9,7 +9,9 @@ type Project = {
   category: string;
   description: string;
   credit: string;
+  introHeading?: string;
   intro: string;
+  outcome?: string;
   details: string[];
   image: string;
   imagePosition?: string;
@@ -18,19 +20,23 @@ type Project = {
 export default function Projects() {
   const projects: Project[] = [
     {
-      title: "TLP 300M TouchLink Panel",
+      title: "TLP300M TouchLink Panel",
       category: "AV Hardware",
       description:
-        "Compact 3.5-inch PoE powered, wall-mount touchpanel for room control applications including AV systems, HVAC, and lighting. The product expanded the company's TouchLink portfolio by introducing its first touch panel in this reduced form factor.",
+        "Compact PoE-powered touchpanel for room control applications including AV systems, HVAC, lighting, and scheduling. This 3.5-inch design introduced the first touch panel of its size to the company's TouchLink portfolio.",
       credit:
         "Developed while employed as Hardware Design Engineer at Extron Electronics (2018-2022).",
+      introHeading: "System Overview",
       intro:
-        "Led end-to-end hardware development from architecture through product release, including high-speed digital design, mixed-signal PCB development, compliance testing, and manufacturing support.",
+        "Embedded Linux platform based on an ARM Cortex-A9 application processor, integrating DDR memory, flash storage, Ethernet, USB, and sensor interfaces, supported by a multi-rail power architecture with sequencing requirements for reliable boot and peripheral initialization.",
+      outcome:
+        "Successfully completed electrical hardware design ahead of schedule and launched the product in Spring 2020.",
       details: [
-        "Architected the embedded platform, integrating an ARM Cortex-A9 application processor, DDR memory, flash storage, Ethernet, USB, and supporting power infrastructure.",
-        "Defined high-speed PCB design requirements including stackup selection, controlled impedance routing, termination strategies, and layout constraints to ensure signal integrity and EMI/EMC compliance.",
-        "Resolved complex hardware and production issues through systematic bring-up, debugging, and root-cause analysis, while introducing a streamlined board programming approach to improve manufacturing efficiency.",
-        "Delivered a compact, low-power hardware platform that met stringent mechanical, thermal, and cost constraints.",
+        "Owned hardware development from system architecture through production release, including PCB design, system bring-up, electrical and functional validation, and manufacturing transition.",
+        "Architected the embedded platform, including processor selection, memory subsystem design (DDR and flash), and peripheral interfaces integration such as Ethernet, USB, SPI and I2C.",
+        "Defined high-speed PCB design constraints, including stackup, impedance control, termination strategies, and layout considerations to meet signal integrity and EMI requirements.",
+        "Led board bring-up and hardware debug, resolving electrical and production issues through structured root-cause analysis.",
+        "Introduced a streamlined board programming approach that reduced programming and test time during manufacturing, improving production efficiency.",
       ],
       image:
         "https://media.extron.com/public/landing/content/tlppro300m/img/tlppro300m_environment.jpg",
@@ -41,7 +47,7 @@ export default function Projects() {
       description:
         "Wireless hardware designed to allow teachers to interact with the Merlyn AI classroom digital assistant with push-to-talk commands and wireless navigation over BLE, enabling remote control of desktop applications and access to a variety of instructional tools.",
       credit:
-        "Developed while employed as Senior Electrical Engineer at Merlyn Mind (2020-2026).",
+        "Developed while employed as Senior Electrical Engineer at Merlyn Mind (2022-2026).",
       intro:
         "Developed second-generation hardware prototypes with improved Bluetooth performance, wireless range, and voice quality, while unifying the design with a related product variant to reduce product SKUs and simplify manufacturing and support.",
       details: [
@@ -210,7 +216,7 @@ function ProjectModal({
       <button
         type="button"
         aria-label="Close project details"
-        className="absolute inset-0 bg-black/60"
+        className="absolute inset-0 bg-black/70 backdrop-blur-md"
         onClick={onClose}
       />
 
@@ -238,7 +244,13 @@ function ProjectModal({
 
         <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
 
-        <p className="mt-4 text-neutral-400">{project.intro}</p>
+        {project.introHeading && (
+          <p className="mt-6 font-semibold">{project.introHeading}</p>
+        )}
+
+        <p className={`${project.introHeading ? "mt-3" : "mt-4"} text-neutral-400`}>
+          {project.intro}
+        </p>
 
         <p className="mt-6 font-semibold">Key Contributions</p>
 
@@ -247,6 +259,14 @@ function ProjectModal({
             <li key={detail}>{detail}</li>
           ))}
         </ul>
+
+        {project.outcome && (
+          <>
+            <p className="mt-6 font-semibold">Outcome</p>
+
+            <p className="mt-3 text-neutral-400">{project.outcome}</p>
+          </>
+        )}
       </div>
     </div>
   );

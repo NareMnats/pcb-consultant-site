@@ -11,22 +11,14 @@ export default function ServiceWorkflow({
 }: ServiceWorkflowProps) {
   return (
     <div className="relative mx-auto max-w-4xl">
-      <div className="space-y-4">
-        {services.map((service, index) => {
-          const hasNext = index < services.length - 1;
+      <div className="absolute bottom-14 left-5 top-14 w-px bg-[#3dbe42]/70 sm:bottom-[78px] sm:left-7 sm:top-[78px]" />
 
-          return (
+      <div className="space-y-4">
+        {services.map((service, index) => (
           <div
             key={service.title}
             className="relative grid grid-cols-[2.5rem_1fr] gap-4 sm:grid-cols-[3.5rem_1fr] sm:gap-8"
           >
-            {hasNext && (
-              <div
-                aria-hidden="true"
-                className="absolute bottom-[-1rem] left-5 top-14 w-px bg-[#3dbe42]/70 sm:left-7 sm:top-[78px]"
-              />
-            )}
-
             <div className="relative flex min-h-[112px] self-start items-center justify-center sm:min-h-[156px]">
               <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[#3dbe42] bg-black text-sm font-semibold text-white shadow-[0_0_24px_rgba(61,190,66,0.22)] sm:h-14 sm:w-14 sm:text-lg">
                 {index + 1}
@@ -73,8 +65,7 @@ export default function ServiceWorkflow({
               )}
             </div>
           </div>
-          );
-        })}
+        ))}
       </div>
     </div>
   );
