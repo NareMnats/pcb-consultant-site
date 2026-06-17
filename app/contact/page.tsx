@@ -37,7 +37,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       <SiteNav active="contact" />
 
       <header className="px-8 py-24">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-3xl">
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">Contact</p>
 
           <h1 className="text-4xl font-semibold">Start a Project or Ask a Question</h1>
