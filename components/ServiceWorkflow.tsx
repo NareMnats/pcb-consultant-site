@@ -17,9 +17,9 @@ export default function ServiceWorkflow({
         {services.map((service, index) => (
           <div
             key={service.title}
-            className="relative grid grid-cols-[2.5rem_1fr] gap-4 sm:grid-cols-[3.5rem_1fr] sm:gap-8"
+            className="relative grid grid-cols-[2.5rem_1fr] items-stretch gap-4 sm:grid-cols-[3.5rem_1fr] sm:gap-8"
           >
-            <div className="relative flex min-h-[112px] self-start items-center justify-center sm:min-h-[156px]">
+            <div className="relative flex items-center justify-center sm:min-h-[156px]">
               <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[#3dbe42] bg-black text-sm font-semibold text-white shadow-[0_0_24px_rgba(61,190,66,0.22)] sm:h-14 sm:w-14 sm:text-lg">
                 {index + 1}
               </span>
