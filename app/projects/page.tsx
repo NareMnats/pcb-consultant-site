@@ -30,15 +30,15 @@ export default function Projects() {
       descriptionHeading: "Product Overview",
       introHeading: "System Overview",
       intro:
-        "Embedded Linux platform based on an ARM Cortex-A9 application processor, integrating DDR memory, flash storage, Ethernet, USB, and sensor interfaces, supported by a multi-rail power architecture with sequencing requirements for reliable boot and peripheral initialization.",
+        "An intricate five-board embedded Linux system running on an ARM Cortex-A9 processor platform, integrating DDR3 memory, eMMC flash storage, 10/100 Ethernet PHY, and USB 2.0 alongside a parallel RGB LCD display and a touch screen interface. The system features a multi-rail power architecture delivered by a PMIC and other regulators, with precise sequencing to ensure clean, reliable boot-up and peripheral initialization. Segmenting the architecture across five distinct PCBs required careful board-to-board interconnect design.",
       outcome:
         "Successfully completed electrical design ahead of schedule and delivered a compact hardware system meeting mechanical, power and cost constraints for production deployment, launching the product in Spring 2020.",
       details: [
-        "Hardware development from concept through production release, spanning circuit design and schematic capture in Cadence, layout supervision, system bring-up, electrical and functional validation, and hand-off to manufacturing.",
+        "Hardware development from concept through production release, spanning circuit design and schematic capture, layout supervision, system bring-up, electrical and functional validation, and hand-off to manufacturing.",
         "Multi-board architecture of the embedded platform, including processor selection, memory subsystem design (DDR/Flash), display, speaker and other peripheral integration such as Ethernet, USB, SPI and I2C.",
         "High-speed PCB design, including stackup definition, impedance control, signal termination, and layout considerations to meet signal integrity and EMI/EMC requirements.",
-        "Board bring-up and hardware debug, resolving electrical and production issues through structured root-cause analysis.",
-        "New programming method that cuts down on test and flashing time during assembly, making the manufacturing process much more efficient.",
+        "Board bring-up and hardware debug, resolving electrical and production issues through structured root-cause analysis and corner case tests.",
+        "New programming method that cuts down on test and flashing time during assembly, streamlining the manufacturing process.",
       ],
       image:
         "https://media.extron.com/public/landing/content/tlppro300m/img/tlppro300m_environment.jpg",
@@ -47,16 +47,21 @@ export default function Projects() {
       title: "Voice Enabled Bluetooth Remote Control",
       category: "Wireless Hardware",
       description:
-        "Wireless hardware designed to allow teachers to interact with the Merlyn AI classroom digital assistant with push-to-talk commands and wireless navigation over BLE, enabling remote control of desktop applications and access to a variety of instructional tools.",
+        "Bluetooth LE remote control designed for classroom interaction with an AI classroom digital assistant, through push-to-talk voice commands and wireless navigation, enabling remote control of desktop applications and access to a variety of instructional tools.",
       credit:
         "Developed while employed as Senior Electrical Engineer at Merlyn Mind (2022-2026).",
+      descriptionHeading: "Product Overview",
+      introHeading: "System Overview",
       intro:
-        "Developed second-generation hardware prototypes with improved Bluetooth performance, wireless range, and voice quality, while unifying the design with a related product variant to reduce product SKUs and simplify manufacturing and support.",
+        "A split-architecture wireless system comprising a battery-powered Remote Control Unit (RCU) and a paired USB dongle. The RCU is built on an ARM Cortex-M33 Bluetooth LE SoC running Zephyr RTOS, integrating an IMU for motion sensing and a microphone for voice-enabled interaction, while the dedicated USB dongle acts as a plug-and-play receiver for seamless host device connectivity.",
+      outcome:
+        "Delivered first pass hardware prototypes with improved Bluetooth LE performance, wireless range, and voice quality, while unifying the design with a related product variant to reduce product SKUs and simplifying manufacturing and support. Executed full board bring-up, firmware integration and validation of initial prototypes to advance the product through the Engineering Validation & Testing (EVT) phase.",
       details: [
-        "Defined system hardware architecture and led selection of the Bluetooth LE SoC and critical sensing components through structured technical and vendor-support trade-off studies, using weighted decision matrices to evaluate solution maturity and assess design risk.",
-        "Designed embedded prototypes in Altium constrained by existing mechanical enclosure, reusing existing plastic tooling to reduce time-to-market while incorporating DFM considerations such as trace widths, via-in-pad usage, and testability for production and bring-up.",
-        "Developed board bring-up and validation strategy, including test plans for hardware verification and system-level functionality across power, sensing, BLE, and audio subsystems.",
-        "Implemented test firmware and configured peripherals on a Zephyr RTOS based platform, enabling hardware bring-up and root-cause analysis of IMU, BLE, USB and audio issues.",
+        "System hardware architecture and selection of BLE SoC through structured trade studies and vendor evaluation, using weighted decision matrices to assess risk and solution maturity.",
+        "IMU evaluation using Fitt's test and pan-tilt servo fixture to measure drift and evaluate air mouse algorithm solutions prior to design integration.",
+        "Prototype hardware design in Altium utilizing manufacturer capabilities as guidelines for a manufacturable design, while constraining to reuse existing plastic enclosure tooling and accelerate time-to-market.",
+        "Test firmware on Zephyr RTOS environment, enabling device tree configuration and peripheral bring-up for electrical validation.",
+        "System level functional testing and root-cause analysis of issues spanning BLE, USB, IMU, and audio subsystems utilizing protocol analyzers for hardware/firmware debug.",
       ],
       image: "/images/merlynremote_withlaptop.png",
       imagePosition: "object-[100%_center]",
@@ -65,15 +70,21 @@ export default function Projects() {
       title: "SSI 100 System Status Indicator",
       category: "Lighting Hardware",
       description:
-        "Architectural room status indicator concept inspired by the Extron SSI 100, designed for occupancy visibility, scheduling status, safety indication, and integrated AV room workflows.",
+        "Light fixtures with customizable laser engraving that dynamically indicate workspace availability, integrating with calendar systems and room occupancy sensors to provide real-time status updates for scheduled and ad hoc meetings.",
       credit:
         "Developed while employed as Hardware Design Engineer at Extron Electronics (2018-2022).",
+      descriptionHeading: "Product Overview",
+      introHeading: "System Overview",
       intro:
-        "Developed room-status indicator hardware concepts for integrated AV spaces requiring visible scheduling, occupancy, and safety state feedback.",
+        "An embedded Linux system based on an ARM Cortex-A8 microprocessor platform, integrating DDR3 memory, NAND flash, 10/100 Ethernet PHY, PMIC with an ORing circuit allowing flexible powering via PoE or 12VDC. The design featured a high RGB LED count driven by a constant-current sink LED driver, requiring careful thermal design, heat dissipation strategies, and optimized LED spacing to accommodate both wall and ceiling-mounted variants using a single, unified hardware platform.",
+      outcome:
+        "Successfully drove the product through the Engineering Validation & Testing (EVT) phase, pre-compliance and initial QA testing to Design Validation & Testing (DVT) stage in Spring 2022.",
       details: [
-        "Displayed multi-color room status indication.",
-        "Supported PoE-powered wall and ceiling mount use cases.",
-        "Designed around scheduling, occupancy, and integrated AV room workflows.",
+        "Hardware architecture including defining power topology, peripherals and LED arrangement for a more efficient design with schematic design of wall and ceiling mounted variants completed in Allegro Design Entry HDL.",
+        "Component selection, including LED binning (to maintain color and intensity uniformity across products) and LED driver proof-of-concept work using evaluation board and PSoC development kit to characterize dimming behavior and color mixing performance, prior to design integration.",
+        "High-speed PCB design, including stackup definition, impedance control, signal termination, and layout considerations to meet signal integrity and EMI/EMC requirements.",
+        "DDR3 memory layout optimization to avoid modifications to plastic and metal, simulating design in HyperLynx SI to verify signal integrity.",
+        "Thermal mitigation strategies through circuit-level and layout-level changes, supported by power dissipation calculations and thermal measurements.",
       ],
       image: "/images/ssi100.png",
       imagePosition: "object-[70%_center]",
