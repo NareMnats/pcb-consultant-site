@@ -32,7 +32,7 @@ export default function Projects() {
       outcome:
         "Successfully completed electrical hardware design ahead of schedule and launched the product in Spring 2020.",
       details: [
-        "Owned hardware development from system architecture through production release, including PCB design, system bring-up, electrical and functional validation, and manufacturing transition.",
+        "Owned hardware development from concept through production release, including PCB design, system bring-up, electrical and functional validation, and manufacturing transition.",
         "Architected the embedded platform, including processor selection, memory subsystem design (DDR and flash), and peripheral interfaces integration such as Ethernet, USB, SPI and I2C.",
         "Defined high-speed PCB design constraints, including stackup, impedance control, termination strategies, and layout considerations to meet signal integrity and EMI requirements.",
         "Led board bring-up and hardware debug, resolving electrical and production issues through structured root-cause analysis.",
@@ -220,7 +220,7 @@ function ProjectModal({
         onClick={onClose}
       />
 
-      <div className="relative z-10 max-h-[80vh] w-full max-w-3xl overflow-auto rounded-2xl border border-white/10 bg-neutral-950 p-8 text-white">
+      <div className="relative z-10 max-h-[80vh] w-full max-w-3xl overflow-auto rounded-2xl border border-white/10 bg-neutral-950 p-8 text-neutral-400">
         <button
           type="button"
           aria-label="Close"
@@ -238,23 +238,23 @@ function ProjectModal({
           }`}
         />
 
-        <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+        <p className="text-sm uppercase tracking-[0.3em]">
           {project.category}
         </p>
 
-        <h3 className="mt-3 text-2xl font-semibold">{project.title}</h3>
+        <h3 className="mt-3 text-2xl font-semibold text-white">{project.title}</h3>
 
         {project.introHeading && (
           <p className="mt-6 font-semibold">{project.introHeading}</p>
         )}
 
-        <p className={`${project.introHeading ? "mt-3" : "mt-4"} text-neutral-400`}>
+        <p className={project.introHeading ? "mt-3" : "mt-4"}>
           {project.intro}
         </p>
 
         <p className="mt-6 font-semibold">Key Contributions</p>
 
-        <ul className="mt-3 list-disc space-y-3 pl-5 text-neutral-400">
+        <ul className="mt-3 list-disc space-y-3 pl-5">
           {project.details.map((detail) => (
             <li key={detail}>{detail}</li>
           ))}
@@ -264,7 +264,7 @@ function ProjectModal({
           <>
             <p className="mt-6 font-semibold">Outcome</p>
 
-            <p className="mt-3 text-neutral-400">{project.outcome}</p>
+            <p className="mt-3">{project.outcome}</p>
           </>
         )}
       </div>
