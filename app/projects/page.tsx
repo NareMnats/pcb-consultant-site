@@ -9,6 +9,7 @@ type Project = {
   category: string;
   description: string;
   credit: string;
+  descriptionHeading?: string;
   introHeading?: string;
   intro: string;
   outcome?: string;
@@ -26,17 +27,18 @@ export default function Projects() {
         "Compact PoE-powered touchpanel for room control applications including AV systems, HVAC, lighting, and scheduling. This 3.5-inch design introduced the first touch panel of its size to the company's TouchLink portfolio.",
       credit:
         "Developed while employed as Hardware Design Engineer at Extron Electronics (2018-2022).",
+      descriptionHeading: "Product Overview",
       introHeading: "System Overview",
       intro:
         "Embedded Linux platform based on an ARM Cortex-A9 application processor, integrating DDR memory, flash storage, Ethernet, USB, and sensor interfaces, supported by a multi-rail power architecture with sequencing requirements for reliable boot and peripheral initialization.",
       outcome:
-        "Successfully completed electrical hardware design ahead of schedule and launched the product in Spring 2020.",
+        "Successfully completed electrical design ahead of schedule and delivered a compact hardware system meeting mechanical, power and cost constraints for production deployment, launching the product in Spring 2020.",
       details: [
-        "Owned hardware development from concept through production release, including PCB design, system bring-up, electrical and functional validation, and manufacturing transition.",
-        "Architected the embedded platform, including processor selection, memory subsystem design (DDR and flash), and peripheral interfaces integration such as Ethernet, USB, SPI and I2C.",
-        "Defined high-speed PCB design constraints, including stackup, impedance control, termination strategies, and layout considerations to meet signal integrity and EMI requirements.",
-        "Led board bring-up and hardware debug, resolving electrical and production issues through structured root-cause analysis.",
-        "Introduced a streamlined board programming approach that reduced programming and test time during manufacturing, improving production efficiency.",
+        "Hardware development from concept through production release, spanning circuit design and schematic capture in Cadence, layout supervision, system bring-up, electrical and functional validation, and hand-off to manufacturing.",
+        "Multi-board architecture of the embedded platform, including processor selection, memory subsystem design (DDR/Flash), display, speaker and other peripheral integration such as Ethernet, USB, SPI and I2C.",
+        "High-speed PCB design, including stackup definition, impedance control, signal termination, and layout considerations to meet signal integrity and EMI/EMC requirements.",
+        "Board bring-up and hardware debug, resolving electrical and production issues through structured root-cause analysis.",
+        "New programming method that cuts down on test and flashing time during assembly, making the manufacturing process much more efficient.",
       ],
       image:
         "https://media.extron.com/public/landing/content/tlppro300m/img/tlppro300m_environment.jpg",
@@ -243,6 +245,14 @@ function ProjectModal({
         </p>
 
         <h3 className="mt-3 text-2xl font-semibold text-white">{project.title}</h3>
+
+        {project.descriptionHeading && (
+          <>
+            <p className="mt-6 font-semibold">{project.descriptionHeading}</p>
+
+            <p className="mt-3">{project.description}</p>
+          </>
+        )}
 
         {project.introHeading && (
           <p className="mt-6 font-semibold">{project.introHeading}</p>
