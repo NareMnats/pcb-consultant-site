@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import type { Service } from "@/lib/services";
 
 type ServiceWorkflowProps = {
@@ -9,6 +12,70 @@ export default function ServiceWorkflow({
   services,
   onSelect,
 }: ServiceWorkflowProps) {
+  const cardRefs = useRef<Array<HTMLElement | null>>([]);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 639px)");
+    let observer: IntersectionObserver | null = null;
+
+    const stopObserver = () => {
+      observer?.disconnect();
+      observer = null;
+      setActiveIndex(null);
+    };
+
+    const startObserver = () => {
+      observer = new IntersectionObserver(
+        (entries) => {
+          const mostVisible = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (!mostVisible) {
+            return;
+          }
+
+          const index = Number(
+            (mostVisible.target as HTMLElement).dataset.serviceIndex,
+          );
+
+          setActiveIndex(Number.isNaN(index) ? null : index);
+        },
+        {
+          rootMargin: "-35% 0px -35% 0px",
+          threshold: [0.25, 0.5, 0.75],
+        },
+      );
+
+      cardRefs.current.forEach((card) => {
+        if (card) {
+          observer?.observe(card);
+        }
+      });
+    };
+
+    if (mobileQuery.matches) {
+      startObserver();
+    }
+
+    const handleQueryChange = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        startObserver();
+        return;
+      }
+
+      stopObserver();
+    };
+
+    mobileQuery.addEventListener("change", handleQueryChange);
+
+    return () => {
+      stopObserver();
+      mobileQuery.removeEventListener("change", handleQueryChange);
+    };
+  }, [services.length]);
+
   return (
     <div className="relative mx-auto max-w-4xl">
       <div className="space-y-4">
@@ -19,6 +86,10 @@ export default function ServiceWorkflow({
           >
             <div>
               <article
+                ref={(element) => {
+                  cardRefs.current[index] = element;
+                }}
+                data-service-index={index}
                 role="button"
                 tabIndex={0}
                 aria-label={`Open ${service.title} details`}
@@ -29,7 +100,11 @@ export default function ServiceWorkflow({
                     event.preventDefault();
                   }
                 }}
-                className="group grid min-h-[112px] cursor-pointer grid-cols-1 items-stretch overflow-hidden rounded-lg border border-white/10 bg-neutral-950 text-left shadow-xl shadow-black/30 transition-all duration-200 hover:border-[#3dbe42] hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 sm:mx-auto sm:min-h-[156px] sm:w-fit sm:grid-cols-[minmax(8rem,15rem)_minmax(0,max-content)] sm:justify-start"
+                className={`group grid min-h-[112px] cursor-pointer grid-cols-1 items-stretch overflow-hidden rounded-lg border text-left shadow-xl shadow-black/30 transition-all duration-200 hover:border-[#3dbe42] hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 sm:mx-auto sm:min-h-[156px] sm:w-fit sm:grid-cols-[minmax(8rem,15rem)_minmax(0,max-content)] sm:justify-start ${
+                  activeIndex === index
+                    ? "border-[#3dbe42] bg-neutral-900 ring-2 ring-[#3dbe42]/25"
+                    : "border-white/10 bg-neutral-950"
+                }`}
               >
                 <div
                   aria-hidden="true"
