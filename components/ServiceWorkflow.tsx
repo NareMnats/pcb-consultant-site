@@ -8,6 +8,109 @@ type ServiceWorkflowProps = {
   onSelect: (service: Service) => void;
 };
 
+const serviceIcon = (title: string) => {
+  const iconProps = {
+    "aria-hidden": true,
+    className: "absolute right-5 top-5 h-8 w-8 text-[#3dbe42] sm:right-6 sm:top-6",
+    fill: "none",
+    stroke: "currentColor",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    strokeWidth: 1.8,
+    viewBox: "0 0 32 32",
+  };
+
+  switch (title) {
+    case "Requirements Definition":
+      return (
+        <svg {...iconProps}>
+          <rect x="9" y="6" width="16" height="20" rx="1.5" />
+          <path d="M13 11h8" />
+          <path d="M13 16h8" />
+          <path d="M13 21h6" />
+        </svg>
+      );
+    case "System Architecture":
+      return (
+        <svg {...iconProps}>
+          <rect x="5" y="6" width="8" height="7" rx="1.5" />
+          <rect x="19" y="6" width="8" height="7" rx="1.5" />
+          <rect x="12" y="20" width="8" height="7" rx="1.5" />
+          <path d="M13 9.5h6" />
+          <path d="M9 13v4h7v3" />
+          <path d="M23 13v4h-7" />
+        </svg>
+      );
+    case "Component Selection":
+      return (
+        <svg {...iconProps}>
+          <rect x="10" y="10" width="12" height="12" rx="2" />
+          <path d="M6 13h4" />
+          <path d="M6 19h4" />
+          <path d="M22 13h4" />
+          <path d="M22 19h4" />
+          <path d="M13 6v4" />
+          <path d="M19 6v4" />
+          <path d="M13 22v4" />
+          <path d="M19 22v4" />
+        </svg>
+      );
+    case "Schematic Design":
+      return (
+        <svg {...iconProps}>
+          <path d="M5 16h4" />
+          <path d="M25 16h4" />
+          <path d="M9 16l2-5 4 10 4-10 4 10 2-5" />
+        </svg>
+      );
+    case "PCB Layout":
+      return (
+        <svg {...iconProps}>
+          <rect x="5" y="7" width="22" height="18" rx="2" />
+          <circle cx="10" cy="20" r="1.6" />
+          <circle cx="22" cy="12" r="1.6" />
+          <path d="M11.6 20h4.4l4.4-5.9" />
+        </svg>
+      );
+    case "Firmware Development":
+      return (
+        <svg {...iconProps}>
+          <path d="M12 10l-6 6 6 6" />
+          <path d="M20 10l6 6-6 6" />
+          <path d="M17 8l-2 16" />
+        </svg>
+      );
+    case "Bring-Up & Debug":
+      return (
+        <svg {...iconProps}>
+          <path d="M10 14h12" />
+          <path d="M16 8v18" />
+          <path d="M11 9l2 3" />
+          <path d="M21 9l-2 3" />
+          <path d="M10 20l-3 3" />
+          <path d="M22 20l3 3" />
+          <circle cx="16" cy="16" r="6" />
+        </svg>
+      );
+    case "System Test & Validation":
+      return (
+        <svg {...iconProps}>
+          <path d="M7 17l5 5L25 9" />
+          <path d="M8 8h10" />
+          <path d="M8 13h7" />
+          <path d="M8 26h16" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...iconProps}>
+          <circle cx="16" cy="16" r="9" />
+          <path d="M16 10v6l4 3" />
+        </svg>
+      );
+  }
+};
+
 export default function ServiceWorkflow({
   services,
   onSelect,
@@ -100,23 +203,20 @@ export default function ServiceWorkflow({
                     event.preventDefault();
                   }
                 }}
-                className={`group grid min-h-[112px] cursor-pointer grid-cols-1 items-stretch overflow-hidden rounded-lg border text-left shadow-xl shadow-black/30 transition-all duration-200 hover:border-[#3dbe42] hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 sm:mx-auto sm:min-h-[156px] sm:w-fit sm:grid-cols-[minmax(8rem,15rem)_minmax(0,max-content)] sm:justify-start ${
+                className={`group relative grid min-h-[112px] cursor-pointer grid-cols-1 items-stretch overflow-hidden rounded-lg border text-left shadow-xl shadow-black/30 transition-all duration-200 hover:border-[#3dbe42] hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 sm:mx-auto sm:min-h-[156px] sm:w-fit ${
                   activeIndex === index
                     ? "border-[#3dbe42] bg-neutral-900 ring-2 ring-[#3dbe42]/25"
                     : "border-white/10 bg-neutral-950"
                 }`}
               >
-                <div
-                  aria-hidden="true"
-                  className="hidden bg-[radial-gradient(circle_at_center,rgba(61,190,66,0.12),transparent_62%)] sm:block"
-                />
+                {serviceIcon(service.title)}
 
-                <div className="flex flex-col justify-center border-white/10 px-5 py-5 sm:border-l sm:px-10 sm:py-6">
+                <div className="flex flex-col justify-center px-5 py-5 pr-16 sm:px-10 sm:py-6 sm:pr-20">
                   <h4 className="text-xl font-medium text-white sm:text-2xl">
                     {service.title}
                   </h4>
 
-                  <p className="mt-3 max-w-xs text-sm leading-6 text-neutral-400 sm:mt-4">
+                  <p className="mt-3 line-clamp-2 max-w-sm text-sm leading-6 text-neutral-400 sm:mt-4">
                     {service.summary}
                   </p>
                 </div>

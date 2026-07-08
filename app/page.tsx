@@ -75,7 +75,7 @@ export default function Home() {
 
             {/* SERVICES */}
             <section id="services" className="px-8 py-28">
-              <div className="mx-auto max-w-7xl">
+              <div className="mx-auto max-w-4xl">
                 <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
                   Services
                 </p>

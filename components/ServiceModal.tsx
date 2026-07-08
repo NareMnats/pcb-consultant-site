@@ -103,7 +103,7 @@ export default function ServiceModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md" onClick={onClose} />
 
-      <div className="relative z-10 max-h-[80vh] w-full max-w-3xl overflow-auto rounded-2xl border border-white/10 bg-neutral-950 p-8 text-white">
+      <div className="relative z-10 max-h-[80vh] w-full max-w-3xl overflow-auto rounded-2xl border border-[#3dbe42] bg-neutral-950 p-8 text-white ring-2 ring-[#3dbe42]/25">
         <button
           aria-label="Close"
           className="absolute right-3 top-3 text-neutral-300 transition duration-200 hover:text-[#3dbe42]"
