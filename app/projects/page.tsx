@@ -125,7 +125,7 @@ export default function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className={`h-full w-full object-cover transition duration-700 hover:scale-105 ${
+                  className={`h-full w-full object-cover ${
                     project.imagePosition || "object-center"
                   }`}
                 />
