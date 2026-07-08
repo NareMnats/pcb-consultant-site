@@ -147,7 +147,7 @@ export default function Projects() {
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
-                  className="mt-10 w-fit cursor-pointer rounded-full border border-white/20 px-6 py-3 text-sm transition hover:bg-white hover:text-black"
+                  className="mt-10 w-fit cursor-pointer rounded-full border border-white/20 px-6 py-3 text-sm transition hover:border-[#3dbe42] hover:bg-[#3dbe42] hover:text-black"
                 >
                   View Work
                 </button>
