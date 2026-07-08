@@ -58,9 +58,11 @@ const serviceIcon = (title: string) => {
     case "Schematic Design":
       return (
         <svg {...iconProps}>
-          <path d="M5 16h4" />
-          <path d="M25 16h4" />
-          <path d="M9 16l2-5 4 10 4-10 4 10 2-5" />
+          <rect x="5" y="7" width="22" height="18" rx="2" />
+          <path d="M8 16h5" />
+          <path d="M20 16h4" />
+          <path d="M13 11v10l7-5z" />
+          <path d="M20 11v10" />
         </svg>
       );
     case "PCB Layout":
@@ -83,13 +85,15 @@ const serviceIcon = (title: string) => {
     case "Bring-Up & Debug":
       return (
         <svg {...iconProps}>
-          <path d="M10 14h12" />
-          <path d="M16 8v18" />
-          <path d="M11 9l2 3" />
-          <path d="M21 9l-2 3" />
-          <path d="M10 20l-3 3" />
-          <path d="M22 20l3 3" />
-          <circle cx="16" cy="16" r="6" />
+          <circle cx="16" cy="10" r="3" />
+          <ellipse cx="16" cy="19" rx="6" ry="7" />
+          <path d="M14 8l-3-3" />
+          <path d="M18 8l3-3" />
+          <path d="M10 16H6" />
+          <path d="M22 16h4" />
+          <path d="M10.5 21l-3 2" />
+          <path d="M21.5 21l3 2" />
+          <path d="M16 13v12" />
         </svg>
       );
     case "System Test & Validation":
