@@ -7,7 +7,7 @@ export default function About() {
     <main className="min-h-screen bg-black text-white">
       <SiteNav active="about" />
 
-      <section className="px-8 py-20 md:py-28">
+      <section className="px-5 py-20 sm:px-8 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <Image
@@ -28,7 +28,7 @@ export default function About() {
               From concept to working hardware.
             </h1>
 
-            <div className="mt-8 space-y-6 text-lg text-neutral-400">
+            <div className="mt-8 space-y-6 text-base leading-7 text-neutral-400 sm:text-lg sm:leading-normal">
               <p>
                 I&apos;m Mikael, a hardware design engineer with over 8 years of
                 industry experience in embedded hardware design and system-level
@@ -40,7 +40,7 @@ export default function About() {
               <p>
                 My background includes the design of electronic circuits and
                 multilayer mixed-signal PCBAs for ARM-based embedded systems
-                from NXP, STMicroelectronics, Nordic Semiconductor, and Infineon.
+                from NXP, ST, Nordic, and Infineon.
                 I have worked across embedded Linux, RTOS, and bare-metal
                 platforms, with experience spanning high-speed memory and video
                 interfaces, wired and wireless communication protocols, audio
