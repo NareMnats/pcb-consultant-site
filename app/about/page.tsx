@@ -19,20 +19,55 @@ export default function About() {
             />
           </div>
 
-          <div>
-            <p className="mb-6 text-sm uppercase tracking-[0.3em] text-neutral-500">
+          <div className="max-w-3xl">
+            <p className="mb-6 pl-1 text-sm uppercase tracking-[0.3em] text-neutral-500">
               About Me
             </p>
 
-            <h1 className="max-w-4xl text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
-              Practical hardware engineering shaped by real product constraints.
+            <h1 className="text-4xl font-semibold leading-[0.95] sm:text-5xl md:text-7xl">
+              From concept to working hardware.
             </h1>
 
-            <p className="mt-8 max-w-2xl text-lg text-neutral-400">
-              I&apos;m Mikael, an electrical and embedded systems engineer helping
-              teams move from rough product ideas to boards that can be built,
-              tested, debugged, and improved with confidence.
-            </p>
+            <div className="mt-8 space-y-6 text-lg text-neutral-400">
+              <p>
+                I&apos;m Mikael, a hardware design engineer with over 8 years of
+                industry experience in embedded hardware design and system-level
+                integration. I hold a B.S. in Electrical Engineering and a B.S.
+                in Biomedical Engineering from California State University, Long
+                Beach, along with a minor in Chemistry.
+              </p>
+
+              <p>
+                My background includes the design of electronic circuits and
+                multilayer mixed-signal PCBAs for ARM-based embedded systems
+                from NXP, STMicroelectronics, Nordic Semiconductor, and Infineon.
+                I have worked across embedded Linux, RTOS, and bare-metal
+                platforms, with experience spanning high-speed memory and video
+                interfaces, wired and wireless communication protocols, audio
+                subsystems, power management, and firmware development in C for
+                board bring up.
+              </p>
+
+              <p>
+                I enjoy turning hardware concepts into working products and have
+                experience across the full product development lifecycle, from
+                system architecture and component selection through engineering
+                validation, design validation, and production release. My goal is
+                to help startups and engineering teams accelerate product
+                development by delivering reliable, prototype-ready hardware that
+                validates ideas and serves as a strong proof of concept before
+                committing to production.
+              </p>
+
+              <p>
+                My work philosophy is <em>measure twice, cut once</em>. I take a
+                thoughtful, detail-oriented approach to every project, emphasizing
+                sound engineering decisions early in the design process to reduce
+                risk and avoid costly redesigns. My focus is on delivering
+                robust, well-engineered hardware that works as intended and
+                provides a solid foundation for future product development.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -45,7 +80,7 @@ export default function About() {
             </p>
 
             <h2 className="mt-6 max-w-2xl text-4xl font-semibold">
-              Bring the product goal, constraints, and open questions.
+              Ready to turn your concept into a real product?
             </h2>
           </div>
 
