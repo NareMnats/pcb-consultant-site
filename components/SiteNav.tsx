@@ -43,8 +43,13 @@ export default function SiteNav({
       if (target) {
         window.requestAnimationFrame(() => {
           target.scrollIntoView({ behavior: "smooth", block: "start" });
+          window.history.replaceState(null, "", window.location.pathname);
         });
       }
+    } else if (pathname === "/") {
+      window.requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: "auto" });
+      });
     }
   }, [pathname]);
 
@@ -61,6 +66,7 @@ export default function SiteNav({
         window.history.replaceState(null, "", href);
         window.requestAnimationFrame(() => {
           target.scrollIntoView({ behavior: "smooth", block: "start" });
+          window.history.replaceState(null, "", window.location.pathname);
         });
       }
     }
