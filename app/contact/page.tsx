@@ -82,7 +82,7 @@ const handleSubmit = async (e: React.FormEvent) => {
             </label>
 
             <div className="flex gap-4">
-              <button type="submit" className="rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition hover:bg-[#3dbe42]">Send</button>
+              <button type="submit" className="cursor-pointer rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition duration-150 hover:scale-[1.03] hover:brightness-110 active:scale-95 active:brightness-75">Send</button>
               {status && <p className="text-sm text-neutral-400">{status}</p>}
             </div>
           </form>
