@@ -55,14 +55,14 @@ export default function Home() {
             <div className="mt-10 flex gap-4">
               <Link
                 href="/contact"
-                className="rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition hover:bg-[#3dbe42]"
+                className="rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition duration-150 hover:bg-[#3dbe42] active:scale-95 active:brightness-75"
               >
                 Start a Project
               </Link>
 
               <Link
                 href="/projects"
-                className="rounded-full border border-white/30 px-6 py-3 text-sm transition hover:bg-white/10"
+                className="rounded-full border border-white/30 px-6 py-3 text-sm transition duration-150 hover:bg-white/10 active:scale-95 active:border-[#3dbe42] active:bg-white/15"
               >
                 View Work
               </Link>
@@ -108,7 +108,6 @@ export default function Home() {
             >
               LinkedIn
             </a>
-            <a href="#">Email</a>
           </div>
         </div>
       </footer>

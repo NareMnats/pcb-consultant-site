@@ -111,7 +111,7 @@ export default function SiteNav({
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
-            className="relative z-50 flex h-10 w-10 shrink-0 items-center justify-center lg:hidden"
+            className="relative z-50 flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition duration-150 active:scale-90 active:bg-white/15 lg:hidden"
             aria-label="Toggle menu"
           >
             <div className="flex flex-col gap-1.5">
@@ -131,8 +131,8 @@ export default function SiteNav({
                 onClick={(event) => handleNavClick(event, item.href)}
                 className={
                   item.key === active
-                    ? "text-white border-b-4 border-transparent transition-colors duration-200 hover:border-[#3dbe42]"
-                    : "text-neutral-200 border-b-4 border-transparent transition-colors duration-200 hover:text-white hover:border-[#3dbe42]"
+                    ? "text-white border-b-4 border-transparent transition duration-150 hover:border-[#3dbe42] active:translate-x-1 active:text-[#3dbe42]"
+                    : "text-neutral-200 border-b-4 border-transparent transition duration-150 hover:text-white hover:border-[#3dbe42] active:translate-x-1 active:text-[#3dbe42]"
                 }
               >
                 {item.label}

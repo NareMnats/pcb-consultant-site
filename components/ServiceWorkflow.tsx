@@ -207,7 +207,7 @@ export default function ServiceWorkflow({
                     event.preventDefault();
                   }
                 }}
-                className={`group relative grid h-[184px] cursor-pointer grid-cols-1 items-stretch overflow-hidden rounded-lg border text-left shadow-xl shadow-black/30 transition-all duration-200 hover:border-[#3dbe42] hover:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 sm:mx-auto sm:h-auto sm:min-h-[156px] sm:w-fit ${
+                className={`group relative grid h-[184px] cursor-pointer grid-cols-1 items-stretch overflow-hidden rounded-lg border text-left shadow-xl shadow-black/30 transition-all duration-200 hover:border-[#3dbe42] hover:bg-neutral-900 active:scale-[0.98] active:border-[#3dbe42] active:bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 sm:mx-auto sm:h-auto sm:min-h-[156px] sm:w-fit ${
                   activeIndex === index
                     ? "border-[#3dbe42] bg-neutral-900 ring-2 ring-[#3dbe42]/25"
                     : "border-white/10 bg-neutral-950"

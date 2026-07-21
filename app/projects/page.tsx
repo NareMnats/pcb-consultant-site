@@ -147,7 +147,7 @@ export default function Projects() {
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
-                  className="mt-10 w-fit cursor-pointer rounded-full border border-white/20 px-6 py-3 text-sm transition hover:border-[#3dbe42] hover:bg-[#3dbe42] hover:text-black"
+                  className="mt-10 w-fit cursor-pointer rounded-full border border-white/20 px-6 py-3 text-sm transition duration-150 hover:border-[#3dbe42] hover:bg-[#3dbe42] hover:text-black active:scale-95 active:border-[#3dbe42] active:bg-[#3dbe42] active:text-black"
                 >
                   View Work
                 </button>
@@ -184,7 +184,7 @@ export default function Projects() {
 
           <Link
             href="/contact"
-            className="w-fit rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition hover:bg-[#3dbe42]"
+            className="w-fit rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition duration-150 hover:bg-[#3dbe42] active:scale-95 active:brightness-75"
           >
             Start a Project
           </Link>

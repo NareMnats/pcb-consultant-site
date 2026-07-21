@@ -86,7 +86,7 @@ export default function About() {
 
           <Link
             href="/contact"
-            className="w-fit rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition hover:bg-[#3dbe42]"
+            className="w-fit rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition duration-150 hover:bg-[#3dbe42] active:scale-95 active:brightness-75"
           >
             Start a Project
           </Link>
@@ -98,8 +98,13 @@ export default function About() {
           <p>© 2026 MovSys Engineering & Consulting</p>
 
           <div className="flex gap-6">
-            <a href="#">LinkedIn</a>
-            <a href="#">Email</a>
+            <a
+              href="https://www.linkedin.com/in/mikaelmovsisyan/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
       </footer>
