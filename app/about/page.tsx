@@ -30,22 +30,21 @@ export default function About() {
 
             <div className="mt-8 space-y-6 text-base leading-7 text-neutral-400 sm:text-lg sm:leading-normal">
               <p>
-                I&apos;m Mikael, a hardware design engineer with over 8 years of
-                industry experience in embedded hardware design and system-level
-                integration. I hold a B.S. in Electrical Engineering and a B.S.
-                in Biomedical Engineering from California State University, Long
-                Beach, along with a minor in Chemistry.
+                I&apos;m Mikael, a Senior Hardware Design Engineer with over 8
+                years of experience in embedded hardware design and system-level
+                integration. I hold degrees in Electrical Engineering and
+                Biomedical Engineering, with a minor in Chemistry, from
+                California State University, Long Beach.
               </p>
 
               <p>
-                My background includes the design of electronic circuits and
-                multilayer mixed-signal PCBAs for ARM-based embedded systems
-                from NXP, ST, Nordic, and Infineon.
-                I have worked across embedded Linux, RTOS, and bare-metal
-                platforms, with experience spanning high-speed memory and video
-                interfaces, wired and wireless communication protocols, audio
-                subsystems, power management, and firmware development in C for
-                board bring up.
+                My expertise spans multilayer mixed-signal PCBA design for
+                ARM-based embedded systems utilizing silicon from NXP, ST,
+                Nordic, and Infineon. I&apos;ve worked across embedded Linux,
+                RTOS, and bare-metal environments, handling everything from
+                high-speed memory and video interfaces to power management,
+                wired/wireless protocols, audio subsystems, sensor integration,
+                and low-level C firmware for board bring-up.
               </p>
 
               <p>
