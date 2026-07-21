@@ -123,7 +123,7 @@ export default function ServiceWorkflow({
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 639px)");
+    const mobileQuery = window.matchMedia("(max-width: 1023px)");
     let observer: IntersectionObserver | null = null;
 
     const stopObserver = () => {
