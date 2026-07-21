@@ -128,7 +128,7 @@ const services: Service[] = [
   {
     title: "PCB Layout",
     summary:
-      "Convert validated schematics into a manufacturable Altium PCB release package.",
+      "Convert validated schematics into Altium board design file and deliver PCB release package.",
     details: {
       intro:
         "Convert validated schematics into a physical, manufacturable printed circuit board layout. PCB layout is performed in Altium Designer.",
