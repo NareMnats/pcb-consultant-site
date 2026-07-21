@@ -62,7 +62,7 @@ export default function Home() {
 
               <Link
                 href="/projects"
-                className="rounded-full border border-white/30 px-6 py-3 text-sm transition duration-150 hover:bg-white/10 active:scale-95 active:border-[#3dbe42] active:bg-white/15"
+                className="rounded-full border border-white/30 px-6 py-3 text-sm transition duration-150 hover:bg-white/10 active:scale-[0.97] active:opacity-75"
               >
                 View Work
               </Link>

@@ -131,8 +131,8 @@ export default function SiteNav({
                 onClick={(event) => handleNavClick(event, item.href)}
                 className={
                   item.key === active
-                    ? "text-white border-b-4 border-transparent transition duration-150 hover:border-[#3dbe42] active:translate-x-1 active:text-[#3dbe42]"
-                    : "text-neutral-200 border-b-4 border-transparent transition duration-150 hover:text-white hover:border-[#3dbe42] active:translate-x-1 active:text-[#3dbe42]"
+                    ? "text-white border-b-4 border-transparent transition duration-150 hover:border-[#3dbe42] active:translate-x-0.5 active:opacity-70"
+                    : "text-neutral-200 border-b-4 border-transparent transition duration-150 hover:text-white hover:border-[#3dbe42] active:translate-x-0.5 active:opacity-70"
                 }
               >
                 {item.label}
