@@ -217,7 +217,7 @@ export default function ServiceWorkflow({
   }, [services.length]);
 
   return (
-    <div className="relative mx-auto max-w-4xl">
+    <div className="relative mx-auto max-w-4xl pb-[30vh] lg:pb-0">
       <div className="space-y-4">
         {services.map((service, index) => (
           <div
