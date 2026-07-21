@@ -72,7 +72,7 @@ export default function SiteNav({
     <>
       <nav className={navClass}>
         <div className="flex items-center justify-between gap-3">
-          <h1 className="max-w-[74%] text-[15px] font-semibold leading-none lg:max-w-none lg:text-[22px]">
+          <h1 className="max-w-[74%] text-[15px] font-semibold leading-none md:max-w-none lg:text-[22px]">
             <Link href="/" className="flex min-w-0 items-center gap-2.5">
               <Image
                 src="/movsys-logo.svg"
@@ -82,10 +82,10 @@ export default function SiteNav({
                 className="relative -top-0.5 h-[35px] w-auto shrink-0"
                 priority
               />
-              <span className="truncate tracking-[0.1425em] lg:hidden">
+              <span className="truncate tracking-[0.1425em] md:hidden">
                 MOVSYS ENGINEERING
               </span>
-              <span className="hidden truncate tracking-[0.1425em] lg:inline">
+              <span className="hidden truncate tracking-[0.1425em] md:inline">
                 MOVSYS ENGINEERING & CONSULTING
               </span>
             </Link>

@@ -85,7 +85,7 @@ export default function About() {
 
           <Link
             href="/contact"
-            className="w-fit cursor-pointer rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition duration-150 hover:scale-[1.03] hover:brightness-110 active:scale-95 active:brightness-75"
+            className="w-fit shrink-0 cursor-pointer whitespace-nowrap rounded-full bg-[#3dbe42] px-6 py-3 text-sm font-medium text-black transition duration-150 hover:scale-[1.03] hover:brightness-110 active:scale-95 active:brightness-75"
           >
             Start a Project
           </Link>
