@@ -177,14 +177,14 @@ export default function ServiceWorkflow({
           if (
             currentIndex === null ||
             mostVisible[0] === currentIndex ||
-            mostVisible[1] >= currentRatio + 0.12
+            mostVisible[1] >= currentRatio + 0.1
           ) {
             updateActiveIndex(mostVisible[0]);
           }
         },
         {
           rootMargin: "-35% 0px -35% 0px",
-          threshold: [0.25, 0.5, 0.75],
+          threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
         },
       );
 
