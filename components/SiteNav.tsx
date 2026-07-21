@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, type MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 
 type NavItem = {
   href: string;
@@ -33,17 +33,35 @@ export default function SiteNav({
       ? "absolute top-0 left-0 z-50 w-full px-4 py-6 md:px-8"
       : "relative z-50 w-full bg-transparent px-4 py-6 md:px-8";
 
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    if (pathname === "/" && window.location.hash) {
+      const target = document.getElementById(window.location.hash.slice(1));
+      if (target) {
+        window.requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+    }
+  }, [pathname]);
+
   const handleNavClick = (
     event: MouseEvent<HTMLAnchorElement>,
     href: string,
   ) => {
     if (pathname === "/" && href.startsWith("/#")) {
-      const target = document.getElementById(href.slice(2));
+      const targetId = href.slice(2);
+      const target = document.getElementById(targetId);
 
       if (target) {
         event.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-        window.history.pushState(null, "", href);
+        window.history.replaceState(null, "", href);
+        window.requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
       }
     }
 
