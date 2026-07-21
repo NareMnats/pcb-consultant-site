@@ -121,33 +121,66 @@ export default function ServiceWorkflow({
 }: ServiceWorkflowProps) {
   const cardRefs = useRef<Array<HTMLElement | null>>([]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const activeIndexRef = useRef<number | null>(null);
 
   useEffect(() => {
     const mobileQuery = window.matchMedia("(max-width: 1023px)");
     let observer: IntersectionObserver | null = null;
+    const visibilityRatios = new Map<number, number>();
+
+    const updateActiveIndex = (index: number | null) => {
+      activeIndexRef.current = index;
+      setActiveIndex(index);
+    };
 
     const stopObserver = () => {
       observer?.disconnect();
       observer = null;
-      setActiveIndex(null);
+      visibilityRatios.clear();
+      updateActiveIndex(null);
     };
 
     const startObserver = () => {
       observer = new IntersectionObserver(
         (entries) => {
-          const mostVisible = entries
-            .filter((entry) => entry.isIntersecting)
-            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          entries.forEach((entry) => {
+            const index = Number(
+              (entry.target as HTMLElement).dataset.serviceIndex,
+            );
 
-          if (!mostVisible) {
+            if (!Number.isNaN(index)) {
+              visibilityRatios.set(
+                index,
+                entry.isIntersecting ? entry.intersectionRatio : 0,
+              );
+            }
+          });
+
+          const mostVisible = [...visibilityRatios.entries()].reduce<
+            [number, number] | null
+          >((best, current) => {
+            if (!best || current[1] > best[1]) {
+              return current;
+            }
+
+            return best;
+          }, null);
+
+          if (!mostVisible || mostVisible[1] === 0) {
             return;
           }
 
-          const index = Number(
-            (mostVisible.target as HTMLElement).dataset.serviceIndex,
-          );
+          const currentIndex = activeIndexRef.current;
+          const currentRatio =
+            currentIndex === null ? 0 : visibilityRatios.get(currentIndex) ?? 0;
 
-          setActiveIndex(Number.isNaN(index) ? null : index);
+          if (
+            currentIndex === null ||
+            mostVisible[0] === currentIndex ||
+            mostVisible[1] >= currentRatio + 0.12
+          ) {
+            updateActiveIndex(mostVisible[0]);
+          }
         },
         {
           rootMargin: "-35% 0px -35% 0px",
