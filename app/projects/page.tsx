@@ -17,6 +17,7 @@ type Project = {
   details: string[];
   image: string;
   imagePosition?: string;
+  cardImageClassName?: string;
 };
 
 export default function Projects() {
@@ -66,6 +67,7 @@ export default function Projects() {
         "Performed system-level debugging across hardware, firmware, wireless, USB, and audio subsystems to resolve integration issues.",
       ],
       image: "/images/merlynremote_withlaptop.png",
+      cardImageClassName: "scale-[1.08]",
     },
     {
       title: "SSI 100 System Status Indicator",
@@ -128,7 +130,7 @@ export default function Projects() {
                   alt={project.title}
                   className={`h-full w-full object-cover ${
                     project.imagePosition || "object-center"
-                  }`}
+                  } ${project.cardImageClassName || ""}`}
                 />
               </div>
 
