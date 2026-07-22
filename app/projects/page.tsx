@@ -249,7 +249,7 @@ function ProjectModal({
         <img
           src={project.image}
           alt={project.title}
-          className={`mb-4 h-48 w-full rounded-md object-cover ${
+          className={`mb-4 h-auto max-h-[45vh] w-full rounded-md object-contain ${
             project.imagePosition || "object-center"
           }`}
         />
