@@ -52,7 +52,7 @@ export default function Projects() {
       modalDescription:
         "Bluetooth LE remote control with voice input and wireless navigation, designed for classroom interaction with an AI-powered educational assistant.",
       credit:
-        "Developed while employed as Senior Electrical Engineer at Merlyn for Education (2022-Present).",
+        "Developed while employed as Senior Electrical Engineer at Merlyn for Education (2022\u2011Present).",
       descriptionHeading: "Product Overview",
       introHeading: "System Overview",
       intro:
