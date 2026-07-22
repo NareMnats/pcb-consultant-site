@@ -27,19 +27,19 @@ const services: Service[] = [
       bullets: [
         {
           heading: "Operational Scope",
-          text: "Outline product use cases and operating environments",
+          text: "Outline product use cases and operating environments.",
         },
         {
           heading: "Technical Specifications",
-          text: "Detail system-level requirements and electrical specifications",
+          text: "Detail system-level requirements and electrical specifications.",
         },
         {
           heading: "Design Limitations",
-          text: "Define physical, power, cost, and manufacturing constraints",
+          text: "Define physical, power, cost, and manufacturing constraints.",
         },
         {
           heading: "Acceptance Criteria",
-          text: "Set performance targets with measurable success metrics",
+          text: "Set performance targets with measurable success metrics.",
         },
       ],
     },
@@ -54,19 +54,19 @@ const services: Service[] = [
       bullets: [
         {
           heading: "Block Diagram",
-          text: "Develop a system block diagram and group functional blocks into subsystems",
+          text: "Develop a system block diagram and group functional blocks into subsystems.",
         },
         {
           heading: "Power Architecture",
-          text: "Define high-level power tree, power regulation topologies and consumption estimates",
+          text: "Define high-level power tree, power regulation topologies and consumption estimates.",
         },
         {
           heading: "Interconnect Strategy",
-          text: "Define system interfaces including connectors, communication protocols, and board-to-board interconnects",
+          text: "Define system interfaces including connectors, communication protocols, and board-to-board interconnects.",
         },
         {
           heading: "Form Factor",
-          text: "Plan board shape, size, number of boards (e.g. single vs. multi-board designs)",
+          text: "Plan board shape, size, number of boards (e.g. single vs. multi-board designs).",
         },
       ],
     },
@@ -81,19 +81,19 @@ const services: Service[] = [
       bullets: [
         {
           heading: "Trade-Off Analyses",
-          text: "Select components balancing electrical performance, power consumption, cost, and availability at major distributors (e.g. Digikey, Mouser)",
+          text: "Select components balancing electrical performance, power consumption, cost, and availability at major distributors (e.g. Digikey, Mouser).",
         },
         {
           heading: "Interface Compatibility",
-          text: "Validate that the selected parts can communicate with one another including protocols and logic-level alignment",
+          text: "Validate that the selected parts can communicate with one another including protocols and logic-level alignment.",
         },
         {
           heading: "Power Analysis",
-          text: "Finalize power tree and use component datasheets to calculate current consumption per voltage rail and total power consumption",
+          text: "Finalize power tree and use component datasheets to calculate current consumption per voltage rail and total power consumption.",
         },
         {
           heading: "CAD Library & Part Integration",
-          text: "Ensure all selected components are implementation-ready with validated symbols, footprints, pin mapping and 3D models",
+          text: "Ensure all selected components are implementation-ready with validated symbols, footprints, pin mapping and 3D models.",
         },
       ],
     },
@@ -108,19 +108,19 @@ const services: Service[] = [
       bullets: [
         {
           heading: "Circuit Design",
-          text: "Develop power, digital, analog, and mixed-signal circuits, interface implementation and component sizing",
+          text: "Develop power, digital, analog, and mixed-signal circuits, interface implementation and component sizing.",
         },
         {
           heading: "Analysis & Simulation",
-          text: "Perform SPICE simulation and engineering analysis of critical circuits to validate performance and reduce design risk",
+          text: "Perform SPICE simulation and engineering analysis of critical circuits to validate performance and reduce design risk.",
         },
         {
           heading: "Schematic Capture",
-          text: "Create schematics in Altium Designer, implementing designed circuit blocks with selected components",
+          text: "Create schematics in Altium Designer, implementing designed circuit blocks with selected components.",
         },
         {
           heading: "Design Review & Verification",
-          text: "Run Electrical Rules Checks (ERCs), connectivity verification, and schematic reviews to identify issues prior to PCB layout",
+          text: "Run Electrical Rules Checks (ERCs), connectivity verification, and schematic reviews to identify issues prior to PCB layout.",
         },
       ],
     },
@@ -135,19 +135,19 @@ const services: Service[] = [
       bullets: [
         {
           heading: "Board Floorplanning",
-          text: "Define board stack-up, board outline, component placement strategy based on functional partitioning and mechanical drawings (connectors, mounting)",
+          text: "Define board stack-up, board outline, component placement strategy based on functional partitioning and mechanical drawings (connectors, mounting).",
         },
         {
           heading: "Board Layout",
-          text: "Route signals (copper tracks/planes) optimizing design for manufacturability to meet fabrication and assembly capabilities of the selected PCB manufacturer",
+          text: "Route signals (copper tracks/planes) optimizing design for manufacturability to meet fabrication and assembly capabilities of the selected PCB manufacturer.",
         },
         {
           heading: "Design Review",
-          text: "Run Design Rules Checks (DRCs), connectivity verification, and final review of component placement and routing prior to release",
+          text: "Run Design Rules Checks (DRCs), connectivity verification, and final review of component placement and routing prior to release.",
         },
         {
           heading: "Production Release",
-          text: "Generate and review fabrication/assembly outputs (Gerbers, drill files, BOM, pick-and-place, STEP models) and provide support during fabrication and initial build",
+          text: "Generate and review fabrication/assembly outputs (Gerbers, drill files, BOM, pick-and-place, STEP models) and provide support during fabrication and initial build.",
         },
       ],
     },
@@ -162,19 +162,19 @@ const services: Service[] = [
       bullets: [
         {
           heading: "Firmware Architecture",
-          text: "Define firmware structure and execution flow (e.g. state machines, flowcharts)",
+          text: "Define firmware structure and execution flow (e.g. state machines, flowcharts).",
         },
         {
           heading: "System Initialization",
-          text: "Configure the microcontroller, clocks, and peripherals drivers required for system operation",
+          text: "Configure the microcontroller, clocks, and peripherals drivers required for system operation.",
         },
         {
           heading: "Interface Development",
-          text: "Develop and validate communication interfaces (e.g. SPI, I2C, UART, GPIO) using evaluation hardware",
+          text: "Develop and validate communication interfaces (e.g. SPI, I2C, UART, GPIO) using evaluation hardware.",
         },
         {
           heading: "Test Firmware",
-          text: "Develop firmware to test application logic and hardware subsystems using either bare metal or Hardware Abstraction Layer (HAL) code",
+          text: "Develop firmware to test application logic and hardware subsystems using either bare metal or Hardware Abstraction Layer (HAL) code.",
         },
       ],
     },
@@ -189,19 +189,19 @@ const services: Service[] = [
       bullets: [
         {
           heading: "Initial Inspection",
-          text: "Perform physical verification of assembled boards including component placement, orientation, solder quality, mechanical fit checks, and detection of shorts using a DMM prior to power-up",
+          text: "Perform physical verification of assembled boards including component placement, orientation, solder quality, mechanical fit checks, and detection of shorts using a DMM prior to power-up.",
         },
         {
           heading: "System Power-Up",
-          text: "Apply power and verify voltage rails with DMM, power sequencing, regulator stability, current draw, and overall power consumption",
+          text: "Apply power and verify voltage rails with DMM, power sequencing, regulator stability, current draw, and overall power consumption.",
         },
         {
           heading: "Peripheral Bring-Up",
-          text: "Flash test firmware to boot the system, initialize peripherals, verify clock signals, validate GPIO functionality, and confirm basic system operation. Use lab equipment (e.g. oscilloscope, logic analyzer, DMM) to validate communication interfaces, signal timing, signal integrity, and logic-level behavior",
+          text: "Flash test firmware to boot the system, initialize peripherals, verify clock signals, validate GPIO functionality, and confirm basic system operation. Use lab equipment (e.g. oscilloscope, logic analyzer, DMM) to validate communication interfaces, signal timing, signal integrity, and logic-level behavior.",
         },
         {
           heading: "Hardware & Firmware Debug",
-          text: "Troubleshoot hardware and firmware issues and resolve design flaws. Step through firmware execution using a debugger probe to verify system behavior, and execution flow",
+          text: "Troubleshoot hardware and firmware issues and resolve design flaws. Step through firmware execution using a debugger probe to verify system behavior, and execution flow.",
         },
       ],
     },
