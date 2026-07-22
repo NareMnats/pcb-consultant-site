@@ -135,15 +135,15 @@ export default function Projects() {
               </div>
 
               <div className="relative flex min-h-[28rem] flex-col justify-center p-8 pb-24 md:p-12 md:pb-20">
-                <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+                <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 sm:text-sm">
                   {project.category}
                 </p>
 
-                <h3 className="mt-5 text-4xl font-semibold leading-tight">
+                <h3 className="mt-5 text-3xl font-semibold leading-tight sm:text-4xl">
                   {project.title}
                 </h3>
 
-                <p className="mt-6 text-lg text-neutral-400">
+                <p className="mt-6 text-base text-neutral-400 sm:text-lg">
                   {project.description}
                 </p>
 
