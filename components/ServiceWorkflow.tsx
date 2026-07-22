@@ -124,7 +124,9 @@ export default function ServiceWorkflow({
   const activeIndexRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const mobileQuery = window.matchMedia("(max-width: 1023px)");
+    const mobileQuery = window.matchMedia(
+      "(max-width: 1279px), (hover: none), (pointer: coarse)",
+    );
     let observer: IntersectionObserver | null = null;
     const visibilityRatios = new Map<number, number>();
 

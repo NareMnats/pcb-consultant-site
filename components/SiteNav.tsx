@@ -28,7 +28,6 @@ export default function SiteNav({
 }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isHomeNav = active === "home";
   const navClass =
     variant === "overlay"
       ? "absolute top-0 left-0 z-50 w-full px-4 py-6 md:px-8"
@@ -99,9 +98,7 @@ export default function SiteNav({
           </h1>
 
           <div
-            className={`hidden gap-8 text-sm font-medium tracking-[0.08em] text-neutral-300 ${
-              isHomeNav ? "xl:flex" : "lg:flex"
-            }`}
+            className="site-nav-desktop gap-8 text-sm font-medium tracking-[0.08em] text-neutral-300"
           >
             {navItems.map((item) => (
               <Link
@@ -122,9 +119,7 @@ export default function SiteNav({
           <button
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`relative z-50 h-10 w-10 shrink-0 items-center justify-center rounded-full transition duration-150 active:scale-90 active:bg-white/15 ${
-              isHomeNav ? "flex xl:hidden" : "flex lg:hidden"
-            }`}
+            className="site-nav-mobile-toggle relative z-50 h-10 w-10 shrink-0 items-center justify-center rounded-full transition duration-150 active:scale-90 active:bg-white/15"
             aria-label="Toggle menu"
           >
             <div className="flex flex-col gap-1.5">
@@ -137,9 +132,7 @@ export default function SiteNav({
 
         {menuOpen && (
           <div
-            className={`relative z-50 mt-6 flex flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm font-medium tracking-[0.08em] text-neutral-200 backdrop-blur ${
-              isHomeNav ? "xl:hidden" : "lg:hidden"
-            }`}
+            className="site-nav-mobile-panel relative z-50 mt-6 flex-col gap-4 rounded-2xl border border-white/10 bg-black/90 p-6 text-sm font-medium tracking-[0.08em] text-neutral-200 backdrop-blur"
           >
             {navItems.map((item) => (
               <Link
@@ -161,9 +154,7 @@ export default function SiteNav({
 
       {menuOpen && (
         <div
-          className={`fixed inset-0 z-40 ${
-            isHomeNav ? "xl:hidden" : "lg:hidden"
-          }`}
+          className="site-nav-mobile-backdrop fixed inset-0 z-40"
           onClick={() => setMenuOpen(false)}
         />
       )}

@@ -41,3 +41,28 @@ textarea,
 select {
   font-family: inherit;
 }
+
+.site-nav-desktop {
+  display: none;
+}
+
+.site-nav-mobile-toggle,
+.site-nav-mobile-panel {
+  display: flex;
+}
+
+.site-nav-mobile-backdrop {
+  display: block;
+}
+
+@media (min-width: 1280px) and (hover: hover) and (pointer: fine) {
+  .site-nav-desktop {
+    display: flex;
+  }
+
+  .site-nav-mobile-toggle,
+  .site-nav-mobile-panel,
+  .site-nav-mobile-backdrop {
+    display: none;
+  }
+}
