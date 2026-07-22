@@ -90,7 +90,6 @@ export default function Projects() {
         "Optimized the design through electrical, thermal, and system-level testing to improve reliability and reduce mechanical changes.",
       ],
       image: "/images/ssi100.png",
-      imagePosition: "object-[70%_center]",
     },
   ];
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -249,7 +248,7 @@ function ProjectModal({
         <img
           src={project.image}
           alt={project.title}
-          className={`mb-4 h-auto max-h-[45vh] w-full rounded-md object-contain ${
+          className={`mb-4 h-56 max-h-[45vh] w-full rounded-md object-contain sm:h-72 md:h-80 ${
             project.imagePosition || "object-center"
           }`}
         />
