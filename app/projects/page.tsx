@@ -120,11 +120,11 @@ export default function Projects() {
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className="grid overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 lg:grid-cols-2"
+              className="grid overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 md:grid-cols-2"
             >
               <div
-                className={`h-80 overflow-hidden lg:h-auto ${
-                  index % 2 === 1 ? "lg:order-2" : ""
+                className={`h-80 overflow-hidden md:h-auto ${
+                  index % 2 === 1 ? "md:order-2" : ""
                 }`}
               >
                 <img
