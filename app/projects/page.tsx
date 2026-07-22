@@ -16,7 +16,7 @@ type Project = {
   outcome?: string;
   details: string[];
   image: string;
-  imagePosition?: string;
+  cardImagePosition?: string;
   modalImageClassName?: string;
 };
 
@@ -44,7 +44,8 @@ export default function Projects() {
         "Improved the manufacturing programming process, reducing assembly and test time.",
       ],
       image: "/images/TLP300M.png",
-      modalImageClassName: "lg:object-cover lg:object-[77%_center]",
+      cardImagePosition: "object-[77%_center]",
+      modalImageClassName: "object-[77%_center]",
     },
     {
       title: "Voice-Enabled Bluetooth Remote Control",
@@ -68,7 +69,7 @@ export default function Projects() {
         "Performed system-level debugging across hardware, firmware, wireless, USB, and audio subsystems to resolve integration issues.",
       ],
       image: "/images/merlyn.webp",
-      modalImageClassName: "lg:object-cover lg:object-[center_25%]",
+      modalImageClassName: "object-[center_25%]",
     },
     {
       title: "SSI 100 System Status Indicator",
@@ -92,7 +93,8 @@ export default function Projects() {
         "Optimized the design through electrical, thermal, and system-level testing to improve reliability and reduce mechanical changes.",
       ],
       image: "/images/ssi100.png",
-      modalImageClassName: "lg:object-cover lg:object-[39%_24%]",
+      cardImagePosition: "object-[39%_24%]",
+      modalImageClassName: "object-[39%_24%]",
     },
   ];
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -120,7 +122,17 @@ export default function Projects() {
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className="grid overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 md:grid-cols-2"
+              role="button"
+              tabIndex={0}
+              aria-label={`Open ${project.title} details`}
+              onClick={() => setSelectedProject(project)}
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  setSelectedProject(project);
+                }
+              }}
+              className="grid cursor-pointer overflow-hidden rounded-3xl border border-white/10 bg-neutral-950 transition duration-150 hover:border-[#3dbe42] active:brightness-90 focus:outline-none focus:ring-2 focus:ring-[#3dbe42]/40 md:grid-cols-2"
             >
               <div
                 className={`h-80 overflow-hidden md:h-auto ${
@@ -131,35 +143,24 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   className={`h-full w-full object-cover ${
-                    project.imagePosition || "object-center"
+                    project.cardImagePosition || "object-center"
                   }`}
                 />
               </div>
 
-              <div className="relative flex min-h-[28rem] flex-col justify-center p-8 pb-24 md:p-12 md:pb-20">
+              <div className="relative flex min-h-[24rem] flex-col justify-center p-8 md:min-h-[22rem] md:p-8 lg:min-h-[28rem] lg:p-12">
                 <p className="text-xs uppercase tracking-[0.3em] text-neutral-500 sm:text-sm">
                   {project.category}
                 </p>
 
-                <h3 className="mt-5 text-3xl font-semibold leading-tight sm:text-4xl">
+                <h3 className="mt-5 text-3xl font-semibold leading-tight lg:text-4xl">
                   {project.title}
                 </h3>
 
-                <p className="mt-6 text-base text-neutral-400 sm:text-lg">
+                <p className="mt-6 text-base text-neutral-400 md:text-sm lg:text-lg">
                   {project.description}
                 </p>
 
-                <button
-                  type="button"
-                  onClick={() => setSelectedProject(project)}
-                  className="mt-10 w-fit cursor-pointer rounded-full border border-white/20 px-6 py-3 text-sm transition duration-150 hover:border-[#3dbe42] hover:bg-[#3dbe42] hover:text-black active:scale-[0.97] active:opacity-75"
-                >
-                  View Work
-                </button>
-
-                <p className="absolute bottom-6 right-8 max-w-[calc(100%-4rem)] text-right text-xs leading-snug text-neutral-500 md:bottom-8 md:right-12 md:max-w-[calc(100%-6rem)] md:truncate">
-                  {project.credit}
-                </p>
               </div>
             </article>
           ))}
@@ -251,9 +252,9 @@ function ProjectModal({
         <img
           src={project.image}
           alt={project.title}
-          className={`mb-4 h-56 max-h-[45vh] w-full rounded-md object-contain sm:h-72 md:h-80 ${
-            project.imagePosition || "object-center"
-          } ${project.modalImageClassName || ""}`}
+          className={`mb-4 h-56 max-h-[45vh] w-full rounded-md object-cover sm:h-72 md:h-80 ${
+            project.modalImageClassName || "object-center"
+          }`}
         />
 
         <p className="text-sm uppercase tracking-[0.3em]">
@@ -295,6 +296,10 @@ function ProjectModal({
             <p className="mt-3">{project.outcome}</p>
           </>
         )}
+
+        <p className="mt-8 border-t border-white/10 pt-5 text-xs leading-relaxed text-neutral-500">
+          {project.credit}
+        </p>
       </div>
     </div>
   );
