@@ -17,7 +17,7 @@ type Project = {
   details: string[];
   image: string;
   imagePosition?: string;
-  cardImageClassName?: string;
+  modalImageClassName?: string;
 };
 
 export default function Projects() {
@@ -44,6 +44,7 @@ export default function Projects() {
         "Improved the manufacturing programming process, reducing assembly and test time.",
       ],
       image: "/images/TLP300M.png",
+      modalImageClassName: "lg:object-cover lg:object-[77%_center]",
     },
     {
       title: "Voice-Enabled Bluetooth Remote Control",
@@ -66,8 +67,8 @@ export default function Projects() {
         "Developed prototype hardware and supporting firmware for bring-up, electrical validation, and functional testing.",
         "Performed system-level debugging across hardware, firmware, wireless, USB, and audio subsystems to resolve integration issues.",
       ],
-      image: "/images/merlynremote_withlaptop.png",
-      cardImageClassName: "scale-[1.08]",
+      image: "/images/merlyn.webp",
+      modalImageClassName: "lg:object-cover lg:object-[center_25%]",
     },
     {
       title: "SSI 100 System Status Indicator",
@@ -91,6 +92,7 @@ export default function Projects() {
         "Optimized the design through electrical, thermal, and system-level testing to improve reliability and reduce mechanical changes.",
       ],
       image: "/images/ssi100.png",
+      modalImageClassName: "lg:object-cover lg:object-[39%_24%]",
     },
   ];
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -130,7 +132,7 @@ export default function Projects() {
                   alt={project.title}
                   className={`h-full w-full object-cover ${
                     project.imagePosition || "object-center"
-                  } ${project.cardImageClassName || ""}`}
+                  }`}
                 />
               </div>
 
@@ -251,7 +253,7 @@ function ProjectModal({
           alt={project.title}
           className={`mb-4 h-56 max-h-[45vh] w-full rounded-md object-contain sm:h-72 md:h-80 ${
             project.imagePosition || "object-center"
-          }`}
+          } ${project.modalImageClassName || ""}`}
         />
 
         <p className="text-sm uppercase tracking-[0.3em]">
