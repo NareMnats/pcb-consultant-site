@@ -66,7 +66,6 @@ export default function Projects() {
         "Performed system-level debugging across hardware, firmware, wireless, USB, and audio subsystems to resolve integration issues.",
       ],
       image: "/images/merlynremote_withlaptop.png",
-      imagePosition: "object-[100%_center]",
     },
     {
       title: "SSI 100 System Status Indicator",
